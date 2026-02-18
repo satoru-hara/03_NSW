@@ -1,41 +1,28 @@
-# 03_NSW - Natural Structure Works
+# 02_NAW - Natural Architecture Works
 
-HNS (Human Natural Structure) is the highest-level system within Satoru Hara's architecture.
-It defines the structural principles of humans, society, and civilization, providing a unified framework that connects individual capability, collective systems, and long-term civilizational development.
+NAW (Natural Architecture Works) defines how humans interface with work, cognition, and execution.
+It provides a structural understanding of human workflow, decision-making, and task architecture,
+forming the work layer within Satoru Hara's overall system.
 
-This section represents the "structure layer," sitting above KFW (physical capability) and NAW (work architecture), and establishing the conceptual foundation for understanding human systems at every scale.
+This section connects the physical foundation defined in KFW with the higher-level human and
+civilization structures defined in HNS.
 
 ------------------------------------------------------------
 
 Included Books
 
-01_Natural-Civilization-Framework
-  A structural model of civilization, describing how human societies form, evolve, and maintain coherence.
-  Defines the fundamental architecture of collective systems.
+01_Human-Interface-Framework
+  A framework describing how humans interact with tasks, tools, information, and environments.
+  Defines principles of natural interaction and efficient workflow design.
 
-02_Human-OS-Core
-  The core operating system of human beings.
-  Explains the essential components that govern human behavior, capability, and systemic function.
+02_Natural-Brain
+  A structural model of cognition, decision-making, and mental processing.
+  Explains how the mind organizes work, maintains focus, and executes tasks.
 
-03_Human-OS-Module
-  A modular extension of the Human OS, detailing functional subsystems and their interactions.
-  Provides a structured view of human capability as a system of modules.
-
-04_Natural-Application
-  A framework describing how human capabilities are applied in real environments.
-  Connects structural principles to practical execution.
-
-05_Civilization-System
-  A system-level view of how human groups organize, coordinate, and build large-scale structures.
-  Explores governance, cooperation, and long-term societal dynamics.
-
-06_External-Module
-  Describes external systems that interact with human capability and civilization.
-  Covers tools, environments, and external structures that shape human behavior.
-
-07_Human-Natural-Structure-Technical-Note
-  Technical notes and clarifications that support the entire HNS framework.
-  Provides precise definitions and structural refinements.
+03_BodyOS-Technical-Standard-Specification
+  A technical standard describing how the body supports work execution through posture,
+  ergonomics, and physical-cognitive integration.
+  Defines the structural relationship between physical mechanics and work performance.
 
 ------------------------------------------------------------
 
@@ -44,13 +31,14 @@ Structure
 - Each folder contains a README explaining its purpose
 - Each book folder includes a PDF (full text)
 - Numbering ensures clarity, order, and reproducibility
-- HNS is organized strictly by book units, not by layers or modules
+- NAW is organized strictly by book units, not by layers or modules
 
 ------------------------------------------------------------
 
-Purpose of NSW
+Purpose of NAW
 
-NSW defines the structural blueprint of human beings and human civilization.
-It provides the highest-level conceptual architecture that connects physical capability (KFW), work execution (NAW), and the broader systems that shape human life.
+NAW defines the architecture of human work.
+It explains how humans think, act, and execute tasks in a structured and reproducible way.
 
-This section establishes the long-term, abstract, and systemic foundation of the entire framework.
+This system forms the bridge between physical capability (KFW) and the broader human-civilization
+structure (HNS), making it the central operational layer of the entire framework.
