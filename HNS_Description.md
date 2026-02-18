@@ -5,28 +5,22 @@ Author: S. Hara
 ---
 
 ## Overview
-The Human Natural Structure (HNS) is a dual-layer explanatory
-framework describing human functioning through two complementary
-structures:
+The Human Natural Structure (HNS) is a dual-layer explanatory framework
+that describes human functioning through two complementary structures:
+the natural layers that constitute human behavior, and the cognitive
+categories used to interpret and communicate those layers.
 
-1. **HNS Human Natural Layers**  
-   The internal natural architecture of human behavior—how humans
-   operate as biological, cognitive, interactive, and environmental
-   systems.
+The natural layers represent how humans operate as biological,
+cognitive, interactive, and environmental systems. The cognitive
+categories provide the conceptual scaffolding used to classify and
+explain those natural structures.
 
-2. **HNS Abstract Cognitive Categories**  
-   The external explanatory structure used to interpret, classify,
-   and communicate that natural architecture.
+Together, these two sets of six elements form a coherent 2 × 6
+correspondence: the natural layers define what operates, while the
+cognitive categories define how that operation is described.
 
-Together, these two sets of six elements form a coherent **2 × 6
-correspondence structure**:  
-the Human Natural Layers define *what operates*, while the
-Abstract Cognitive Categories define *how that operation is
-described*.
-
-HNS does not prescribe methods, interventions, or practices.  
-It records the structure of human functioning and the structure of
-its explanation.
+HNS does not prescribe methods or practices. It records the structure
+of human functioning and the structure of its explanation.
 
 ---
 
