@@ -1,8 +1,12 @@
 #Human Natural Structure Foundational Specification 1.0
-Official Reference Repository for the HNS-36 Coordinate System
+##Official Reference Repository for the HNS-36 Coordinate System
 Author: S. Hara
 
 This repository provides the official reference version of the Human Natural Structure Foundational Specification (HNS-36) — the foundational coordinate system that unifies AI and human cognition under a single structural framework.
+
+------------------------------------------------------------
+HNS‑36 Specification
+------------------------------------------------------------
 
 1. Purpose
 HNS-36 defines a 36-cell cognitive coordinate system designed to enable AI and humans to think within the same structural framework.
