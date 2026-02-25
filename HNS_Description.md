@@ -1,5 +1,5 @@
-#Human Natural Structure Foundational Specification 1.0
-##Official Reference Repository for the HNS-36 Coordinate System
+# Human Natural Structure Foundational Specification 1.0
+## Official Reference Repository for the HNS-36 Coordinate System
 Author: S. Hara
 
 This repository provides the official reference version of the Human Natural Structure Foundational Specification (HNS-36) — the foundational coordinate system that unifies AI and human cognition under a single structural framework.
