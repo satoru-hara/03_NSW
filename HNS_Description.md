@@ -1,99 +1,124 @@
-# Human Natural Structure (HNS)
-A Dual-Layer Structural Framework for Human Functioning  
+Human Natural Structure Foundational Specification 1.0
+Official Reference Repository for the HNS-36 Coordinate System
 Author: S. Hara
 
----
+This repository provides the official reference version of the Human Natural Structure Foundational Specification (HNS-36) — the foundational coordinate system that unifies AI and human cognition under a single structural framework.
 
-## Overview
-The Human Natural Structure (HNS) is a dual-layer explanatory framework
-that describes human functioning through two complementary structures:
-the natural layers that constitute human behavior, and the cognitive
-categories used to interpret and communicate those layers.
+------------------------------------------------------------
+Download (PDF)
+human_natural_structure_foundational_specification.pdf
+------------------------------------------------------------
 
-The natural layers represent how humans operate as biological,
-cognitive, interactive, and environmental systems. The cognitive
-categories provide the conceptual scaffolding used to classify and
-explain those natural structures.
+1. Purpose
+HNS-36 defines a 36-cell cognitive coordinate system designed to enable AI and humans to think within the same structural framework.
 
-Together, these two sets of six elements form a coherent 2 × 6
-correspondence: the natural layers define what operates, while the
-cognitive categories define how that operation is described.
+This specification:
+- Formally defines the 36-matrix
+- Establishes the fundamental reference coordinate system for the entire HNS framework
+- Limits its role to defining structure only (not implementation or methodology)
 
-HNS does not prescribe methods or practices. It records the structure
-of human functioning and the structure of its explanation.
+2. Scope
+This specification covers the foundational components required to classify and organize AI and human thought within a unified structural framework:
 
----
+- Human natural layers (causal structure)
+- Abstract cognitive categories (non-causal explanatory axes)
+- 36-cell structural matrix
+- Mapping rules
+- Boundary conditions
+- Standardized cell format
 
-## 1. HNS Human Natural Layers  
-*(Internal Natural Structure)*
+Not included:
+- Implementation
+- Applications
+- Evaluation
+- Methodologies
 
-These six layers represent the causal architecture of human
-nature.  
-Each layer describes a fundamental domain of human functioning.
+3. Definition: The 36-Matrix
+The "36-matrix" is defined as:
 
-### **Layer 1 — PhysicalOS**  
-The physical and biological foundation of the human system.
+A coordinate system composed of 36 cells formed by the intersection of:
+- Six natural layers (causal structure)
+- Six abstract cognitive categories (explanatory structure)
 
-### **Layer 2 — CognitiveOS**  
-Perception, memory, processing, and internal mental operations.
+This matrix functions as the standard reference frame for positioning AI and human thought within the HNS framework.
 
-### **Layer 3 — InteractionOS**  
-Human-to-human and human-to-environment interaction dynamics.
+4. Structural Role of HNS-36
+HNS-36 serves as the foundational structure that aligns AI and human cognition:
 
-### **Layer 4 — EnvironmentOS**  
-Surrounding conditions, spatial context, and environmental
-structures.
+- Integrates the six existing HNS volumes into a single structural framework
+- Clarifies the cross-structure of causal layers x explanatory categories
+- Establishes reference coordinates for future analysis, research, and applications
 
-### **Layer 5 — LoadOS**  
-Internal and external loads, pressures, and constraints acting on
-the system.
+This repository hosts the official reference version of the HNS-36 coordinate system.
 
-### **Layer 6 — PatternOS**  
-Behavioral patterns, tendencies, and emergent outcomes.
+5. Application
+HNS-36 is applicable to:
+- Analysis
+- Research
+- Description
+- Structural positioning
 
-Together, these six layers form the natural causal structure of
-human behavior and experience.
+Not included:
+- Evaluation
+- Prescription
+- Improvement
+- Implementation
 
----
+6. Closure
+HNS-36 consolidates the entire HNS framework under a single coordinate system, establishing a stable foundation for future expansion, research, and application.
 
-## 2. HNS Abstract Cognitive Categories  
-*(External Explanatory Structure)*
+------------------------------------------------------------
+HNS-36 Core Coordinate System
+------------------------------------------------------------
 
-These six categories are not part of nature itself.  
-They are explanatory tools used to interpret, classify, and
-communicate the Human Natural Layers.
+1. Human Natural Layers (Causal Structure)
+Six causal strata that constitute the natural structure of humans, societies, and civilizations.
 
-### **Civilization Categories**  
-Broad abstractions of human civilization.
+Layer 1 — PhysicalOS
+  Physical and biological foundations.
 
-### **Core Categories**  
-Foundational principles and essential structures.
+Layer 2 — CognitiveOS
+  Perception, memory, processing, internal cognition.
 
-### **Module Categories**  
-Components, elements, and functional units.
+Layer 3 — InteractionOS
+  Human-to-human and human-to-environment interactions.
 
-### **Application Categories**  
-Practical uses, implementations, and applied contexts.
+Layer 4 — EnvironmentOS
+  Physical, social, and institutional environments.
 
-### **System Categories**  
-Organized systems, mechanisms, and societal structures.
+Layer 5 — LoadOS
+  Internal and external loads, pressures, constraints.
 
-### **External Categories**  
-Extensions, expansions, and outer contextual factors.
+Layer 6 — PatternOS
+  Emergent patterns, tendencies, behavioral outcomes.
 
-These categories provide the cognitive scaffolding necessary to
-interpret and apply the HNS effectively.
+2. Abstract Cognitive Categories (Non-causal Explanatory Axes)
+Explanatory axes applied across all natural layers.
 
----
+- Civilization Categories
+  Broad abstractions of civilization.
 
-## Summary
-HNS is a dual-layer structural framework:
+- Core Categories
+  Foundational principles and essential structures.
 
-- **Human Natural Layers** describe the natural architecture of
-  human functioning.
-- **Abstract Cognitive Categories** describe the explanatory
-  structure used to interpret that architecture.
+- Module Categories
+  Components, elements, functional units.
 
-This 2 × 6 correspondence forms the foundation for all HNS
-volumes and the overall operating system of human behavior,
-interaction, and civilization.
+- Application Categories
+  Practical uses and applied contexts.
+
+- System Categories
+  Organized systems and societal mechanisms.
+
+- External Categories
+  Extensions and outer contextual factors.
+
+------------------------------------------------------------
+Summary
+------------------------------------------------------------
+HNS-36 is the foundational coordinate system of the Human Natural Structure framework:
+
+- Human Natural Layers define the causal architecture of human functioning.
+- Abstract Cognitive Categories define the explanatory structure used to interpret that architecture.
+
+Together, they form the 36-cell matrix that unifies AI and human cognition under a single structural reference frame.
