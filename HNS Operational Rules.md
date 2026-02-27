@@ -1,4 +1,4 @@
-# HNS Operational Rules (ASCII Edition)
+# HNS Operational Rules
 Normative Operational Specification for HNS-36 Mode
 
 
