@@ -1,7 +1,6 @@
 
-# Human Natural Structure Framework  
-## Foundational Specification HNS‑36  
-### Cross‑Domain Structure
+# Human Natural Structure Framework Foundational Specification HNS‑36  
+## Cross‑Domain Structure
 
 ---
 
