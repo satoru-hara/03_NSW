@@ -2,7 +2,9 @@
 
 This directory contains the **minimal core of the Human Neural Structure (HNS) OS**.
 
-HNS Minimal includes:
+---
+
+## HNS Minimal includes:
 - The essential 3-Layer × 3-Category structure  
 - Boundary (confusion-prohibition rules)  
 - Output rules  
