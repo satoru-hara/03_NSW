@@ -25,14 +25,14 @@ This is the core document and the only required component for HNS to function as
 - Provide a clean, isolated location for the HNS OS  
 - Prevent mixing OS with extensions or application-level content  
 - Ensure clarity for new readers and contributors  
-- Maintain structural purity for standardization
+- Maintain structural purity for standardization  
 
 ---
 
 ## Related Directories
 
 ### `/HNS_Extension/`
-Contains optional extensions such as the 36-Matrix (Layer × Category × Relation).  
+Contains optional extensions such as the **36-Matrix (Layer × Category × Relation)**.  
 These are **not part of the minimal OS**.
 
 ---
