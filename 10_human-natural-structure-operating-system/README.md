@@ -110,7 +110,7 @@ Contact for details.
 ## **Contact**
 For technical briefings or enterprise inquiries:
 
-📩 **contact@your-domain.com**
+📩 **satoru.hara@nifty.com**
 
 ---
 
