@@ -1,13 +1,13 @@
 # 03_NSW - Natural Structure Works
 
-HNS (Human Natural Structure) is the highest-level system within Satoru Hara's architecture.
+HNS (Human Natural Structure) is the highest-level system within Satoru Hara's architecture.  
 It defines the structural principles of humans, society, and civilization, providing a unified framework that connects individual capability, collective systems, and long-term civilizational development.
 
 This section represents the "structure layer," sitting above KFW (physical capability) and NAW (work architecture), and establishing the conceptual foundation for understanding human systems at every scale.
 
 ------------------------------------------------------------
 
-Included Books (HNS Full 11‑Volume Series)
+## Included Books (HNS Full 11‑Volume Series)
 
 01_Natural-Civilization-Framework  
   A structural model of civilization, describing how human societies form, evolve, and maintain coherence.  
@@ -56,21 +56,20 @@ Included Books (HNS Full 11‑Volume Series)
   Supplementary explanations, definitions, and methodological details supporting the entire HNS framework.  
   ISBN: 9798248464395
 
+------------------------------------------------------------
+
+## Structure
+
+- Each folder contains a README explaining its purpose  
+- Each book folder includes a PDF (full text)  
+- Numbering ensures clarity, order, and reproducibility  
+- HNS is organized strictly by book units, not by layers or modules  
 
 ------------------------------------------------------------
 
-Structure
+## Purpose of NSW
 
-- Each folder contains a README explaining its purpose
-- Each book folder includes a PDF (full text)
-- Numbering ensures clarity, order, and reproducibility
-- HNS is organized strictly by book units, not by layers or modules
-
-------------------------------------------------------------
-
-Purpose of NSW
-
-NSW defines the structural blueprint of human beings and human civilization.
+NSW defines the structural blueprint of human beings and human civilization.  
 It provides the highest-level conceptual architecture that connects physical capability (KFW), work execution (NAW), and the broader systems that shape human life.
 
 This section establishes the long-term, abstract, and systemic foundation of the entire framework.
