@@ -7,35 +7,55 @@ This section represents the "structure layer," sitting above KFW (physical capab
 
 ------------------------------------------------------------
 
-Included Books
+Included Books (HNS Full 11‑Volume Series)
 
-01_Natural-Civilization-Framework
-  A structural model of civilization, describing how human societies form, evolve, and maintain coherence.
-  Defines the fundamental architecture of collective systems.
+01_Natural-Civilization-Framework  
+  A structural model of civilization, describing how human societies form, evolve, and maintain coherence.  
+  ISBN: 9798248456017
 
-02_Human-OS-Core
-  The core operating system of human beings.
-  Explains the essential components that govern human behavior, capability, and systemic function.
+02_Human-OS-Core  
+  The core operating system of human beings.  
+  Defines the essential components that govern human behavior, capability, and systemic function.  
+  ISBN: 9798248457823
 
-03_Human-OS-Module
-  A modular extension of the Human OS, detailing functional subsystems and their interactions.
-  Provides a structured view of human capability as a system of modules.
+03_Human-OS-Module  
+  A modular extension of the Human OS, detailing functional subsystems and their interactions.  
+  ISBN: 9798248458721
 
-04_Natural-Application
-  A framework describing how human capabilities are applied in real environments.
-  Connects structural principles to practical execution.
+04_Natural-Application  
+  A framework describing how human capabilities are applied in real environments.  
+  Connects structural principles to practical execution.  
+  ISBN: 9798248459483
 
-05_Civilization-System
-  A system-level view of how human groups organize, coordinate, and build large-scale structures.
-  Explores governance, cooperation, and long-term societal dynamics.
+05_Civilization-System  
+  A system-level view of how human groups organize, coordinate, and build large-scale structures.  
+  ISBN: 9798248460366
 
-06_External-Module
-  Describes external systems that interact with human capability and civilization.
-  Covers tools, environments, and external structures that shape human behavior.
+06_External-Module  
+  Describes external systems that interact with human capability and civilization.  
+  ISBN: 9798248461851
 
-07_Human-Natural-Structure-Technical-Note
-  Technical notes and clarifications that support the entire HNS framework.
-  Provides precise definitions and structural refinements.
+07_Human-Natural-Structure-Foundational-Specification  
+  The foundational specification of HNS, defining the base structural rules of the entire framework.  
+  ISBN: 9798249142193
+
+08_Human-Natural-Structure-Observational-Specification  
+  The observational layer of HNS, describing how human structure is recognized, measured, and interpreted.  
+  ISBN: 9798252069296
+
+09_Human-Natural-Structure-Analytical-Specification  
+  The analytical layer of HNS, providing the tools and criteria for structural evaluation and analysis.  
+  ISBN: 9798252325996
+
+10_Human-Natural-Structure-Operating-System  
+  The complete OS-level specification of HNS.  
+  Defines the unified blueprint, system architecture, and implementation notes.  
+  ISBN: 9798253091593
+
+11_Human-Natural-Structure-Technical-Note  
+  Supplementary explanations, definitions, and methodological details supporting the entire HNS framework.  
+  ISBN: 9798248464395
+
 
 ------------------------------------------------------------
 
