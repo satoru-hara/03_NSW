@@ -1,12 +1,12 @@
 # **HumanOS – Human Natural Structure Operating System**
-*A unified structural operating system for human cognition, behavior, and adaptation.*
+*A structural operating system for human cognition, behavior, and adaptation.*
 
 ---
 
 ## **Overview**
-HumanOS (Human Natural Structure Operating System) is the first operating‑system‑level architecture that formalizes **Human Natural Structure (HNS)** as a universal, minimal, and reproducible framework.
+HumanOS (Human Natural Structure Operating System) formalizes **Human Natural Structure (HNS)** as a universal, minimal, and reproducible architecture.
 
-It defines how perception, action, cognition, adaptation, and behavior emerge from structural principles rather than metaphor, preference, or domain‑specific theory.
+It defines how perception, action, cognition, adaptation, and behavior emerge from **structural principles**, not metaphor, preference, or domain‑specific theory.
 
 HumanOS provides a consistent foundation for AI, education, organizational design, human performance, and research by treating human capability as an **OS‑level architecture**.
 
@@ -14,14 +14,14 @@ HumanOS provides a consistent foundation for AI, education, organizational desig
 
 ## **Core Architecture**
 
-HumanOS is built on a three‑part structural framework:
+HumanOS is organized into three structural layers:
 
 ### **1. Blueprint**
 - Natural Layers (L1–L6)  
 - Cognitive Categories (C1–C6)  
 - 36‑Matrix structural grid  
 - Constraints, invariants, and boundary conditions  
-- Generative principles of human behavior and cognition  
+- Generative principles of cognition and behavior  
 
 ### **2. Specification**
 - HNS Observational Specification  
@@ -31,7 +31,7 @@ HumanOS is built on a three‑part structural framework:
 
 ### **3. Implementation Notes**
 - Integration into AI reasoning models  
-- Hallucination‑reduction layer  
+- Hallucination‑reduction mechanisms  
 - Semantic‑space stabilization  
 - Cognitive‑load modeling  
 - Applications in education, organizations, and system design  
@@ -39,8 +39,8 @@ HumanOS is built on a three‑part structural framework:
 ---
 
 ## **Why HumanOS?**
-Existing models of human behavior are fragmented, metaphor‑driven, or domain‑dependent.  
-HumanOS solves this by providing a framework that is:
+Most models of human behavior are fragmented, metaphor‑driven, or domain‑dependent.  
+HumanOS resolves this by providing a framework that is:
 
 - **Universal**  
 - **Minimal**  
@@ -115,5 +115,4 @@ For technical briefings or enterprise inquiries:
 ---
 
 ## **Status**
-HumanOS is currently open for collaboration with partners in AI, education, organizational design, and research.
-
+HumanOS is open for collaboration with partners in AI, education, organizational design, and research.
