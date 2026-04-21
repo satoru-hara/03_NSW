@@ -1,8 +1,7 @@
-# Human Natural Structure (HNS)
-# VERSION.md
-# v1.0 - Structural Operating System Release
-# Author: Satoru Hara
-# Date: 2026-04-17
+# Human Natural Structure (HNS) – Version Specification v1.0
+### Structural Operating System for Human Understanding in AI
+Author: Satoru Hara  
+Date: 2026-04-17
 
 ---
 
