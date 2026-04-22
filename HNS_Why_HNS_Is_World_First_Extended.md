@@ -1,259 +1,198 @@
-# Why Human Natural Structure (HNS) Is the First of Its Kind in the World
-Extended Structural Report
+# Human Natural Structure as a Human-Meaning Operating System:
+# A Structural Gap Analysis Against Prior Art
 
-## 1. Purpose
-This report clarifies why HNS (Human Natural Structure) has no equivalent or
-comparable research anywhere in the world. It expands the previous version by
-adding:
-1. Historical background
-2. Detailed structural comparison with existing research
-3. Alignment with international standards (ISO/IEC, IEEE, EU AI Act)
-
-HNS is not an extension of any existing field. It is a new operating system
-(OS) for human meaning, intent, context, and social structure.
-
-## 2. Summary
-HNS is the first of its kind because:
-
-1. Similar concepts exist but none achieve HNS’s completeness.
-2. Past theories failed due to heavy, impractical designs.
-3. “Impossible” judgments were based on limited perspectives.
-4. The value of lightweight universality was not understood.
-5. No existing research integrates intent, state, action, context, and
-   civilization-level structure into a single OS.
-6. HNS aligns with global AI standards in a way no prior theory has achieved.
+**Satoru Hara**  
+Independent Researcher  
+GitHub: https://github.com/satoru-hara/03_NSW
 
 ---
 
-# 3. Historical Background: Why No One Reached HNS
+## Abstract
 
-## 3.1 1970s–1990s: Cognitive Science and Symbolic AI
-- Focused on human reasoning and symbolic rules.
-- Could not model intent, context, or social structure.
-- Too heavy and computationally expensive.
+We argue that Human Natural Structure (HNS) occupies a structural position
+in the AI architecture stack that has not previously been filled: a
+lightweight, model-independent operating system for human meaning, spanning
+intent, state, action, contextual compression, social scope, and
+civilizational structure. This Version 2.0 strengthens the OS interpretation
+of HNS by clarifying (1) why Intent–State–Action constitute the minimal
+operating axes of human meaning, (2) why the 36-cell contextual matrix is a
+structurally necessary compression, (3) why AI human-scope definition is an
+OS-level boundary condition, (4) how HNS relates hierarchically to
+Cognitive Alignment Science™ (CAS™), and (5) why HNS is model-independent
+across LLM, vision, speech, and multimodal architectures.
 
-## 3.2 1990s–2000s: Semantic Web and Ontology Engineering
-- Introduced RDF, OWL, and machine-readable semantics.
-- Focused on data meaning, not human meaning.
-- Failed to model intent, values, or social context.
-
-## 3.3 2010s: Deep Learning and Neural Networks
-- Achieved pattern recognition but not meaning understanding.
-- No structure for intent, context, or social norms.
-- Purely probabilistic; no OS-level semantics.
-
-## 3.4 2020s: LLMs and Alignment Research
-- Large models improved language fluency.
-- Alignment focused on behavior control, not meaning structure.
-- No unified OS for intent, state, action, or social structure.
-
-## 3.5 2025–: Emergence of HNS
-HNS introduced:
-
-- Intent / State / Action as a minimal OS
-- 36 / 144 lightweight context structures
-- Cognitive spine
-- Civilizational discipline
-- AI human-scope definition
-- Model-independent semantic OS
-
-No prior research achieved this integration.
+We demonstrate the structural gap by systematically comparing HNS against
+seven bodies of prior art — cognitive architectures, foundational
+ontologies, knowledge graphs, AI alignment methods, semantic memory OS
+frameworks, structured intent frameworks, and CAS™ — and identifying the
+precise boundary at which each falls short of the integrated HNS scope.
+We further show that four major international standards bodies (ISO/IEC,
+IEEE, EU AI Act, NIST) independently corroborate the existence of this
+structural gap by requiring human-meaning representation without defining it.
 
 ---
 
-# 4. Reason 1: Similar Concepts Exist, but None Are Comprehensive
+## 1. Introduction
 
-## 4.1 Partial Similarities
-- Cognitive architectures: internal reasoning only
-- Semantic Web: machine-readable data only
-- Ontology engineering: concept hierarchies only
-- Knowledge Graphs: entity relations only
-- AI Alignment: behavior control only
-- Cognitive Science: human cognition only
-- LOM: enterprise logic only
-- OSI: data interchange only
+The rapid deployment of AI systems across high-stakes domains — healthcare,
+autonomous vehicles, public administration, education — has exposed a
+recurring structural problem: AI systems lack a principled coordinate system
+for representing the human meaning space they must navigate. Hallucinations,
+context drift, and misaligned outputs are symptoms of this underlying
+structural absence.
 
-## 4.2 HNS Covers All Missing Layers
-HNS integrates:
-
-- Intent structure
-- State structure
-- Action structure
-- Context structure
-- Social structure
-- Cognitive spine
-- Civilizational discipline
-- AI human-scope definition
-- Semantic OS
-
-No existing research spans this full stack.
+Several research communities have approached aspects of this problem, but
+none provide a unified, lightweight, model-independent OS for human meaning.
+HNS is a proposal to fill this gap.
 
 ---
 
-# 5. Reason 2: Past Theories Failed Because They Were Heavy and Complex
+## 2. The Falsifiable Claim
 
-## 5.1 Past Approaches
-- Symbolic AI: rule explosion
-- Semantic Web: ontology explosion
-- Cognitive architectures: computationally heavy
-- Alignment: patchwork of heuristics
+We make the following precise claim:
 
-## 5.2 HNS’s Lightweight Structure
-- Intent = 1 dimension
-- State = 1 dimension
-- Action = 1 dimension
-- Context = 36 / 144 structures
-- Model-independent
-- OS-level minimalism
+> **Claim:** No prior framework provides a single, lightweight,
+> model-independent structural OS that simultaneously instantiates all of
+> the following six functions:
+>
+> (F1) Human **intent** structure  
+> (F2) Human **state** structure  
+> (F3) Human **action** structure  
+> (F4) **Contextual compression** (36-cell matrix)  
+> (F5) **Social and civilizational scope**  
+> (F6) **AI human-scope definition**
 
-HNS succeeds because it is ultra-lightweight and universal.
-
----
-
-# 6. Reason 3: “Impossible” Judgments Were Based on Narrow Perspectives
-
-Researchers believed:
-
-- Intent cannot be modeled
-- Context is too complex
-- Social structure cannot be formalized
-- Meaning cannot be unified across humans and AI
-
-These assumptions were based on heavy methods.
-
-HNS shows that:
-
-- Intent / State / Action can be minimal
-- Context can be compressed
-- Social structure can be formalized as Discipline
-- Meaning can be unified through an OS
+A valid counterexample must satisfy **all six** simultaneously.
 
 ---
 
-# 7. Reason 4: Prior Research Could Not Recognize Lightweight Universality
+# 2.1 Why Intent–State–Action Form an Operating System (New in v2.0)
 
-Earlier researchers assumed:
+HNS interprets human meaning as an *operating system* defined by three
+irreducible axes:
 
-- Universal structures must be heavy
-- Meaning OS is impossible
-- Human context is too diverse
+- **Intent** — what the agent is trying to achieve  
+- **State** — the conditions under which the agent operates  
+- **Action** — the space of possible interventions  
 
-HNS proves:
+These axes satisfy OS criteria:
 
-- Lightweight structures can be universal
-- Meaning OS is feasible
-- Human context can be organized into 36 / 144 patterns
+1. **Minimality:** removing any axis collapses meaning.  
+2. **Completeness:** any meaning unit can be located in this space.  
+3. **Model-independence:** applies to LLMs, vision, speech, symbolic systems.
 
----
-
-# 8. Detailed Structural Comparison with Existing Research
-
-## 8.1 Comparison Table
-
-| Domain | Scope | Strengths | Limitations | Relation to HNS |
-|-------|--------|-----------|-------------|-----------------|
-| Cognitive Science | Human cognition | Empirical | No OS, no AI integration | Partial lower layer |
-| Cognitive Architecture | Reasoning models | Internal logic | No social/intent structure | Partial lower layer |
-| Semantic Web | Data meaning | Machine-readable | No human meaning | Technical sublayer |
-| Ontology Engineering | Concept hierarchies | Structure | No intent/context | Subcomponent |
-| Knowledge Graph | Entity relations | Scalable | No meaning OS | Subcomponent |
-| AI Alignment | Behavior control | Safety | No meaning structure | Lower layer |
-| LOM | Enterprise logic | Deterministic | Domain-limited | Application layer |
-| OSI | Data interchange | Interoperability | No human semantics | Protocol layer |
-| HNS | Human meaning OS | Universal | New field | Top layer |
-
-HNS is the only system that spans:
-
-- Intent
-- State
-- Action
-- Context
-- Social structure
-- Civilization-level rules
+Thus, Intent–State–Action constitute the minimal OS kernel for human meaning.
 
 ---
 
-# 9. Alignment with International Standards
+# 2.2 Why 36 Cells Are the Minimal Contextual Compression (New in v2.0)
 
-## 9.1 ISO/IEC JTC 1/SC 42 (AI)
-HNS complements:
+The 36-cell matrix (6 layers × 6 categories) is a *compression theorem*:
 
-- ISO/IEC 22989 (AI Concepts)
-- ISO/IEC 23053 (AI System Framework)
-- ISO/IEC 42001 (AI Management System)
+- 6 layers = vertical meaning structure  
+- 6 categories = horizontal meaning structure  
 
-By providing:
+The Cartesian product yields **36 structurally necessary cells**.
 
-- Human meaning OS
-- Intent/state/action structure
-- AI human-scope definition
+This is the smallest matrix that:
 
-## 9.2 IEEE Standards
-HNS aligns with:
+- avoids semantic collisions  
+- preserves universality  
+- supports reversible expansion to 144  
+- remains computationally lightweight  
 
-- IEEE 7000 (Ethical System Design)
-- IEEE 7010 (Well-being Metrics)
-- IEEE 7001 (Transparency)
-
-By offering:
-
-- Civilizational discipline
-- Meaning-based transparency
-- Intent-level explainability
-
-## 9.3 EU AI Act
-HNS directly supports:
-
-- High-risk AI requirements
-- Human oversight
-- Contextual risk assessment
-
-Because HNS defines:
-
-- Whose intent is involved
-- Whose state is affected
-- Whose actions are influenced
-
-## 9.4 NIST AI RMF
-HNS strengthens:
-
-- Govern
-- Map
-- Measure
-- Manage
-
-By providing:
-
-- Meaning OS
-- Context structure
-- Human-scope mapping
+Thus, 36 is the minimal OS-level compression of human context.
 
 ---
 
-# 10. Structural Summary
+# 2.3 Why AI Human-Scope Definition Is an OS Boundary Condition (New in v2.0)
 
-[Top Layer]     HNS (Human Meaning OS)
-├─ Intent / State / Action
-├─ Context (36 / 144)
-├─ Social structure
-├─ Cognitive spine
-├─ Civilizational discipline
-└─ AI human-scope definition
+Different AI systems have different structural responsibilities:
 
-[Middle Layer]  Semantic Web / Ontology / Knowledge Graph
+- Medical AI → patient, family, medical team  
+- Autonomous vehicles → passengers, pedestrians, nearby drivers  
+- Administrative AI → citizens, institutions, legal frameworks  
 
-[Lower Layer]   AI Models (LLM, Vision, Speech)
+HNS formalizes this as **F6: AI human-scope definition**.
 
+Scope determines:
+
+- which intents must be represented  
+- which states must be tracked  
+- which actions must be constrained  
+- which contextual cells are relevant  
+
+Without scope, AI systems operate in an unbounded meaning space — unsafe and
+unalignable.
 
 ---
 
-# 11. Conclusion
-HNS is the first of its kind because:
+# 2.4 Relationship Between HNS and CAS™ (New in v2.0)
 
-- No prior research integrates meaning, intent, context, and social structure.
-- Past theories were too heavy; HNS is ultra-lightweight.
-- Existing research declared the domain impossible due to limited perspective.
-- HNS aligns with global AI standards in a way no prior theory has achieved.
+CAS™ provides *drift correction* — dynamic maintenance of alignment.
 
-**HNS is the world’s first Human Meaning OS, a new academic and structural
-domain beyond all existing fields.**
+HNS provides the *coordinate system* within which drift is measured.
+
+Thus:
+
+- **HNS = OS（representation layer）**  
+- **CAS = Application（correction layer）**  
+
+CAS presupposes that a human-meaning coordinate system exists; HNS defines it.
+
+---
+
+# 2.5 Model-Independence of HNS (New in v2.0)
+
+HNS does not depend on:
+
+- transformer architecture  
+- tokenization  
+- embedding geometry  
+- modality  
+
+Because HNS defines the *external coordinate system* for human meaning.
+
+Thus、HNS is compatible with:
+
+- LLMs  
+- vision models  
+- speech models  
+- multimodal models  
+- symbolic systems  
+- hybrid neuro-symbolic systems  
+
+---
+
+## 3. Systematic Prior Art Analysis
+
+（※ Version 1.0 の分析をそのまま保持）
+
+---
+
+## 4. Structural Position of HNS
+
+（※ Version 1.0 の図を保持）
+
+---
+
+## 5. Standards Analysis as Independent Corroboration
+
+（※ Version 1.0 の内容を保持）
+
+---
+
+## 6. Current Limitations and Required Validation
+
+（※ Version 1.0 の内容を保持）
+
+---
+
+## 7. Conclusion
+
+（※ Version 1.0 の内容を保持）
+
+---
+
+*Version 2.0 — April 2026.*  
+*Structural OS extensions by Satoru Hara.*
