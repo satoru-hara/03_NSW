@@ -1,4 +1,4 @@
-# Layered Coordinate System (LCS): Formal Specification (v0.1)
+# Layered Coordinate System (LCS): Formal Specification
 
 ## 1. Purpose and Position in the Architecture
 
