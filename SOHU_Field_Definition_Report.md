@@ -1,5 +1,5 @@
-# SOHU: Structural Operating Systems for Human Understanding
-## Field Definition Report · Draft v0.1
+# SOHU: Structural OS for Human Understanding
+## Field Definition Report · Draft v0.2
 
 Author: Satoru Hara  
 May 2026  
@@ -9,13 +9,14 @@ Repository: github.com/satoru-hara/03_NSW
 
 ## Abstract
 
-This report proposes Structural Operating Systems for Human Understanding (SOHU) as a new academic field. SOHU studies the structural operating system layer for human understanding, treating the natural, cognitive, social, and civilizational structures of humans as an integrated OS. Its foundational implementation is the Human Natural Structure (HNS) framework — specifically the HNS-36 coordinate system — which provides a unified structural reference shared by AI, individuals, organizations, and civilizations. SOHU formalizes structural infrastructure for human understanding that has not existed within psychology, cognitive science, AI engineering, or OS engineering. This report defines the field, establishes its core architecture, and articulates its research agenda.
+This report proposes SOHU (Structural OS for Human Understanding) as a new academic field.  
+SOHU studies the structural operating system layer for human understanding, treating the natural, cognitive, social, and civilizational structures of humans as an integrated OS. Its foundational implementation is the Human Natural Structure (HNS) framework — specifically the HNS-36 coordinate system — which provides a unified structural reference shared by AI, individuals, organizations, and civilizations. SOHU formalizes structural infrastructure for human understanding that has not existed within psychology, cognitive science, AI engineering, or OS engineering. This report defines the field, establishes its core architecture, and articulates its research agenda.
 
 ---
 
 ## 1. Field Declaration: Definition of SOHU
 
-SOHU (Structural Operating Systems for Human Understanding) is a new academic field dedicated to studying the structural operating system layer for human understanding. The field treats the natural, cognitive, social, and civilizational structures of humans as an integrated OS, providing a unified structural coordinate system shared by AI, individuals, organizations, societies, and civilizations.
+SOHU (Structural OS for Human Understanding) is a new academic field dedicated to studying the structural operating system layer for human understanding. The field treats the natural, cognitive, social, and civilizational structures of humans as an integrated OS, providing a unified structural coordinate system shared by AI, individuals, organizations, societies, and civilizations.
 
 SOHU formalizes the structural infrastructure for human understanding that has never existed within psychology, cognitive science, AI engineering, or OS engineering. Its foundational proposition is that human understanding has a discoverable structural architecture — one that can be formalized, specified, and made operable as an operating system for both human and artificial agents.
 
@@ -178,7 +179,7 @@ The inaugural research agenda of SOHU encompasses the following directions:
 
 ## 11. Conclusion: The Birth of the SOHU Field
 
-SOHU — Structural Operating Systems for Human Understanding — marks the emergence of a new academic field dedicated to the structural OS layer for human understanding.
+SOHU — Structural OS for Human Understanding — marks the emergence of a new academic field dedicated to the structural OS layer for human understanding.
 
 With HNS as its core OS and Semantic OS and Civilization Framework as its extended layers, SOHU establishes a unified structural foundation for understanding humans, societies, and civilizations. The coordinate systems of HNS-36, HNS-144, and HNS-864 provide the formal architecture through which this understanding becomes operable — by both human researchers and AI systems.
 
@@ -186,4 +187,4 @@ The emergence of SOHU marks the beginning of a new era in human understanding, A
 
 ---
 
-Draft v0.1 — For review and comment. Not for citation without author's permission.
+Draft v0.2 — For review and comment. Not for citation without author's permission.
