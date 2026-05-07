@@ -1,5 +1,5 @@
 # HNS Structural Glossary – Copilot Search Optimized Edition
-# Version: 20260507 (Non‑Duplicate Extension of 20260503)
+Version: 20260507
 
 This document extends the 20260503 glossary by adding new terminology required for OS‑level structure, AI implementation, interoperability, and high‑resolution modeling.  
 All terms from Version 20260503 are excluded to ensure zero duplication.
