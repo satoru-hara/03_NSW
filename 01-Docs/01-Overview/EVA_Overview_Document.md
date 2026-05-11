@@ -9,11 +9,11 @@ It is a structural OS that defines how AI reasoning is validated from outside th
 
 ## 1. Purpose of EVA
 EVA exists to provide:
-- External verification of AI reasoning
-- Structural guarantees of interpretive stability
-- Protection against model drift and hallucination
-- A consistent method for evaluating AI outputs
-- A bridge between human cognition (HNS) and AI behavior
+- External verification of AI reasoning  
+- Structural guarantees of interpretive stability  
+- Protection against model drift and hallucination  
+- A consistent method for evaluating AI outputs  
+- A bridge between human cognition (HNS) and AI behavior  
 
 EVA ensures that AI systems remain aligned with human-defined structures.
 
@@ -35,6 +35,7 @@ EVA depends on HNS for meaning and structural reference.
 ---
 
 ## 3. Core Functions of EVA
+
 ### 3.1 Reasoning Verification
 EVA checks whether AI reasoning:
 - Follows natural structure  
@@ -56,6 +57,26 @@ EVA operates outside the AI model:
 - AI cannot influence verification rules  
 
 This ensures independence and stability.
+
+---
+
+## 3.4 EVA’s Three Structural Conditions
+To function as a genuine external verification system, EVA requires **three structural conditions**.  
+These conditions define the minimum properties necessary for independent, tamper‑resistant, and continuously verifiable oversight of AI reasoning.
+
+### Verifiability
+AI reasoning steps must be output externally in a structured, machine‑readable format.  
+This enables third‑party programmatic analysis and ensures that verification does not depend on internal model access.
+
+### Transparency
+A monitoring mechanism must operate in parallel with inference, independent of the model’s internal processes.  
+The model must not be able to influence, suppress, or manipulate the monitoring pathway.
+
+### Physical Immutability
+The verification logic must reside on a substrate the model cannot alter.  
+This ensures that verification rules, logs, and structural criteria remain stable across updates and cannot be overwritten by the model.
+
+Only when all three conditions overlap does genuine external verification become possible.
 
 ---
 
@@ -128,4 +149,3 @@ EVA is:
 - Positioned for future standardization  
 
 EVA is not a product; it is a structural requirement.
-
