@@ -1,7 +1,7 @@
 # EVA-HNS Integrated Overview
 ### Unified Structural Framework for Human Understanding and AI Safety
 **Version: 20260513**  
-**Author: Satoru Hara (Natural Structure Works, NSW)**
+**Author: S. Hara (Natural Structure Works, NSW)**
 
 ---
 
@@ -15,7 +15,7 @@ This document provides an integrated overview of the five structural systems tha
 - ECS (External Control System)
 - LCS (Life Cycle Structure)
 
-These systems together define the world's first **structural full-stack operating system** for human cognition and AI safety.
+These systems together define the world's first structural full-stack operating system for human cognition and AI safety.
 
 ---
 
@@ -24,9 +24,9 @@ These systems together define the world's first **structural full-stack operatin
 ### 2.1 HNS — Human Natural Structure  
 A structural operating system that organizes human cognition, understanding, and reasoning into hierarchical layers:
 
-- **HNS-36** — Structural Coordinate System  
-- **HNS-144** — Observational Operating System  
-- **HNS-864** — Analytical Operating System  
+- HNS-36 — Structural Coordinate System  
+- HNS-144 — Observational Operating System  
+- HNS-864 — Analytical Operating System  
 
 HNS provides the internal structural basis for understanding both humans and AI.
 
@@ -48,7 +48,7 @@ HNS = operating system
 ---
 
 ### 2.3 EVA — External Verification Architecture  
-An operating system for **externally observing and verifying AI reasoning**.
+An operating system for externally observing and verifying AI reasoning.
 
 EVA enables:
 
@@ -62,7 +62,7 @@ EVA is the core of AI safety.
 ---
 
 ### 2.4 ECS — External Control System  
-A structural system for **externally controlling AI behavior**.
+A structural system for externally controlling AI behavior.
 
 ECS provides:
 
@@ -128,7 +128,7 @@ HumanOS
  +-- ECS  
  \-- LCS
 
-This is the world's first **structural full-stack OS** for human cognition and AI safety.
+This is the world's first structural full-stack OS for human cognition and AI safety.
 
 ---
 
@@ -136,11 +136,11 @@ This is the world's first **structural full-stack OS** for human cognition and A
 
 EVA-HNS covers all major AI safety requirements:
 
-- **Transparency** → HNS / EVA  
-- **Explainability** → HNS-144 / HNS-864  
-- **External Auditability** → EVA  
-- **Behavioral Control** → ECS  
-- **Lifecycle Governance** → LCS  
+- Transparency → HNS / EVA  
+- Explainability → HNS-144 / HNS-864  
+- External Auditability → EVA  
+- Behavioral Control → ECS  
+- Lifecycle Governance → LCS  
 
 EVA-HNS is structurally aligned with the EU AI Act and provides a complete framework for high-risk AI systems.
 
@@ -156,5 +156,13 @@ EVA-HNS is a unified structural architecture that integrates:
 - AI control (ECS)  
 - lifecycle governance (LCS)  
 
-This document serves as the **official integrated overview** for the EVA-HNS Full-Stack Architecture.
+This document serves as the official integrated overview for the EVA-HNS Full-Stack Architecture.
+
+---
+
+## 8. Author
+
+**S. Hara**  
+Natural Structure Works (NSW)  
+Toyota, Aichi, JAPAN
 
