@@ -65,12 +65,12 @@ This architecture enables **external observation, analysis, and verification** o
 Within the repository structure, `00-FullStack/` functions as the **top‑level framework layer**, equivalent to “Part 0: Framework” in ISO/IEC multi‑part standards.
 
 01-Docs/
-00-FullStack/   ← Full‑Stack Meta‑Specification (this folder)
-01-Overview/
-02-Specification/
-03-Conformance/
-04-UseCases/
-05-Implementations/
+  00-FullStack/   ← Full‑Stack Meta‑Specification (this folder)
+  01-Overview/
+  02-Specification/
+  03-Conformance/
+  04-UseCases/
+  05-Implementations/
 
 - **00-FullStack** → Series‑level integration  
 - **01–05** → Individual specification components
