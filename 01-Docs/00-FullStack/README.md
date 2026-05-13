@@ -8,7 +8,7 @@
 
 ## 1. Purpose of This Folder
 
-`00-FullStack/` serves as the **top‑level integration layer** of the EVA‑HNS Full‑Stack Specification Series.
+`00-FullStack` serves as the **top‑level integration layer** of the EVA‑HNS Full‑Stack Specification Series.
 
 This folder contains the **meta‑specification** that unifies all components of the EVA × HNS × HumanOS architecture, including:
 
@@ -40,8 +40,8 @@ The EVA‑HNS Full‑Stack Specification Series consists of the following eight 
 5. **EVA** — External Verification Architecture
 
 ### Rationale Documents (Non‑Normative)
-6. **HNS Depth Axis Design Rationale**
-7. **HNS Category Design Rationale**
+6. **HNS Depth Axis Design Rationale**  
+7. **HNS Category Design Rationale**  
 8. **HNS Architecture Layer Design Rationale**
 
 ---
@@ -50,10 +50,10 @@ The EVA‑HNS Full‑Stack Specification Series consists of the following eight 
 
 The EVA‑HNS Full‑Stack OS is the world’s first **structural full‑stack operating system**, composed of five integrated layers:
 
-HumanOS (Integration Layer)  
- ├─ HNS‑36 (Structural Coordinate System)  
- ├─ HNS‑144 (Observational OS)  
- ├─ HNS‑864 (Analytical OS)  
+HumanOS (Integration Layer)
+ ├─ HNS‑36 (Structural Coordinate System)
+ ├─ HNS‑144 (Observational OS)
+ ├─ HNS‑864 (Analytical OS)
  └─ EVA (External Verification OS)
 
 This architecture enables **external observation, analysis, and verification** of AI reasoning using a unified structural framework.
@@ -62,18 +62,18 @@ This architecture enables **external observation, analysis, and verification** o
 
 ## 4. Role of This Folder in the Repository
 
-Within the repository structure, `00-FullStack/` functions as the **top‑level framework layer**, equivalent to “Part 0: Framework” in ISO/IEC multi‑part standards.
+Within the repository structure, `00-FullStack` functions as the **top‑level framework layer**, equivalent to “Part 0: Framework” in ISO/IEC multi‑part standards.
 
 01-Docs
-  ├─ 00-FullStack        ← Full‑Stack Meta‑Specification (this folder)
-  ├─ 01-Overview
-  ├─ 02-Specification
-  ├─ 03-Conformance
-  ├─ 04-UseCases
-  └─ 05-Implementations
+ ├─ 00-FullStack        ← Full‑Stack Meta‑Specification (this folder)
+ ├─ 01-Overview
+ ├─ 02-Specification
+ ├─ 03-Conformance
+ ├─ 04-UseCases
+ └─ 05-Implementations
 
 - **00-FullStack** → Series‑level integration  
-- **01–05** → Individual specification components
+- **01–05** → Individual specification components  
 
 This structure ensures clarity and navigability for standardization bodies and technical readers.
 
