@@ -74,14 +74,15 @@ They are **not canonical**, but may be referenced as aliases.
 
 ### 3.2 Category Aliases
 
-| Canonical (v1.1) | v0.1 (Foundational Spec) |
-|------------------|--------------------------|
-| Existence        | Core / Civilization      |
-| Perception       | Module                   |
-| Interpretation   | System                   |
-| Intention        | Application              |
-| Action           | External / Application   |
-| Interaction      | Civilization / External  |
+| Canonical (v1.1) | v0.1 (OS-style)                     | v2.0 (if applicable) |
+|------------------|-------------------------------------|-----------------------|
+| Existence        | Core / Civilization                 | Structure             |
+| Perception       | Module                              | Function              |
+| Interpretation   | System                              | Meaning / Analysis    |
+| Intention        | Application                         | Purpose               |
+| Action           | External / Application (operational)| Behavior              |
+| Interaction      | Civilization / External (contextual)| Interaction           |
+
 
 Aliases may be shown in parentheses only when necessary for backward compatibility.
 
