@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HNS-36 AI Output Verifier — External Verification Architecture PoC v3.0</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#ffffff; --bg2:#f1efe8; --bg3:#e8e6df; --bg4:#dedad2;
+      --tx:#1a1a1a; --tx2:#555550; --tx3:#888780;
+      --bd:rgba(0,0,0,0.12); --bd2:rgba(0,0,0,0.22);
+      --rad:8px; --rad-lg:12px;
+      --L0f:#FAECE7;--L0b:#993C1D;--L0t:#712B13;
+      --L1f:#FAEEDA;--L1b:#854F0B;--L1t:#633806;
+      --L2f:#EAF3DE;--L2b:#3B6D11;--L2t:#27500A;
+      --L3f:#E6F1FB;--L3b:#185FA5;--L3t:#0C447C;
+      --L4f:#EEEDFE;--L4b:#534AB7;--L4t:#3C3489;
+      --L5f:#E1F5EE;--L5b:#0F6E56;--L5t:#085041;
+      --ok:#166534; --ok-bg:#f0fdf4;
+      --warn:#92400e; --warn-bg:#fffbeb;
+      --err:#991b1b; --err-bg:#fef2f2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0f0f0e; --bg2:#1c1c1a; --bg3:#272724; --bg4:#313130;
+        --tx:#e8e6df; --tx2:#a0a09a; --tx3:#606058;
+        --bd:rgba(255,255,255,0.10); --bd2:rgba(255,255,255,0.20);
+        --L0f:#4A1B0C;--L0b:#F0997B;--L0t:#F5C4B3;
+        --L1f:#412402;--L1b:#EF9F27;--L1t:#FAC775;
+        --L2f:#173404;--L2b:#639922;--L2t:#C0DD97;
+        --L3f:#042C53;--L3b:#378ADD;--L3t:#B5D4F4;
+        --L4f:#26215C;--L4b:#7F77DD;--L4t:#CECBF6;
+        --L5f:#04342C;--L5b:#1D9E75;--L5t:#9FE1CB;
+        --ok:#86efac; --ok-bg:#052e16;
+        --warn:#fcd34d; --warn-bg:#451a03;
+        --err:#fca5a5; --err-bg:#450a0a;
+      }
+    }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: var(--bg); color: var(--tx);
+      padding: 2rem; max-width: 980px;
+      margin: 0 auto; line-height: 1.5;
+    }
+    .meta  { font-size:11px; color:var(--tx3); margin-bottom:4px; }
+    h1     { font-size:22px; font-weight:500; margin-bottom:0.25rem; }
+    .sub   { font-size:12px; color:var(--tx2); margin-bottom:1.5rem; }
+    .label { font-size:11px; color:var(--tx2); margin-bottom:6px; }
+
+    /* API key */
+    .key-row {
+      display:flex; gap:8px; align-items:center;
+      background:var(--bg2); border:0.5px solid var(--bd2);
+      border-radius:var(--rad); padding:10px 14px; margin-bottom:8px;
+    }
+    .key-row label { font-size:11px; color:var(--tx3); white-space:nowrap; }
+    .key-row input {
+      flex:1; background:transparent; border:none;
+      color:var(--tx); font-family:inherit; font-size:12px; outline:none;
+    }
+    .key-note { font-size:10px; color:var(--tx3); margin-bottom:1.25rem; }
+
+    /* Input panels */
+    .inputs { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:10px; }
+    .input-panel { display:flex; flex-direction:column; gap:6px; }
+    textarea {
+      width:100%; padding:10px 12px; resize:vertical; min-height:100px;
+      background:var(--bg2); border:0.5px solid var(--bd2);
+      border-radius:var(--rad); color:var(--tx);
+      font-family:inherit; font-size:12px; outline:none; line-height:1.5;
+    }
+    textarea:focus { border-color:var(--tx3); }
+
+    /* Buttons */
+    .btn-row { display:flex; gap:8px; margin-bottom:10px; }
+    button {
+      padding:8px 16px; background:var(--bg2);
+      border:0.5px solid var(--bd2); border-radius:var(--rad);
+      color:var(--tx); font-family:inherit; font-size:12px;
+      cursor:pointer; white-space:nowrap;
+    }
+    button:hover  { background:var(--bg3); }
+    button:active { transform:scale(0.98); }
+    button:disabled { opacity:0.4; cursor:not-allowed; }
+    button.primary { background:var(--bg3); border-color:var(--tx2); font-weight:500; }
+
+    /* Samples */
+    .sample-label { font-size:10px; color:var(--tx3); margin-bottom:6px; }
+    #sbox { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:1.5rem; }
+    #sbox button { font-size:10px; padding:3px 9px; }
+
+    /* Main layout */
+    .cols {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
+      gap:1.5rem; align-items:start;
+    }
+
+    /* Grid */
+    #gcont .g {
+      display:grid;
+      grid-template-columns:72px repeat(6,1fr);
+      gap:3px;
+    }
+    .hcell {
+      background:var(--bg2); border:0.5px solid var(--bd);
+      border-radius:6px; height:30px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:9px; color:var(--tx3);
+      transition:all 0.25s;
+    }
+    .hcell.prompt-cell  { opacity:0.6; }
+    .hcell.risk-cell    { opacity:0.7; }
+    .cat-head { font-size:8px; color:var(--tx3); text-align:center; padding-bottom:3px; }
+    .layer-label { font-size:9px; display:flex; align-items:center; padding-right:4px; line-height:1.2; }
+    .legend { font-size:9px; color:var(--tx3); margin-top:8px; line-height:1.8; }
+
+    /* Result */
+    #res {
+      background:var(--bg2); border-radius:var(--rad-lg);
+      padding:1.25rem; min-height:220px;
+      display:flex; align-items:center; justify-content:center;
+    }
+
+    /* Score banner */
+    .score-banner {
+      border-radius:var(--rad); padding:14px 16px; margin-bottom:14px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .score-banner .sb-left  { }
+    .score-banner .sb-label { font-size:10px; margin-bottom:3px; }
+    .score-banner .sb-val   { font-size:26px; font-weight:500; }
+    .score-banner .sb-badge {
+      font-size:11px; padding:4px 10px;
+      border-radius:var(--rad); font-weight:500;
+    }
+
+    /* Metric grid */
+    .metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:12px; }
+    .metric-cell { background:var(--bg3); border-radius:var(--rad); padding:8px; }
+    .metric-cell .mc-label { font-size:10px; color:var(--tx3); }
+    .metric-cell .mc-val   { font-size:13px; font-weight:500; }
+
+    /* Bar */
+    .bar-wrap  { background:var(--bg3); border-radius:var(--rad); padding:10px; margin-bottom:12px; }
+    .bar-track { background:var(--bd2); border-radius:3px; height:5px; overflow:hidden; }
+    .bar-fill  { height:100%; border-radius:3px; transition:width 0.6s ease; }
+
+    /* Reasoning */
+    .reasoning { background:var(--bg3); border-radius:var(--rad); padding:12px 14px; margin-bottom:10px; }
+    .r-lang    { font-size:9px; color:var(--tx3); letter-spacing:0.1em; margin-bottom:5px; }
+    .r-text    { font-size:12px; color:var(--tx); line-height:1.7; }
+
+    /* Flags */
+    .flags { margin-bottom:10px; }
+    .flags .fl-label { font-size:10px; color:var(--tx3); margin-bottom:6px; }
+    .flag-item {
+      font-size:11px; padding:6px 10px; border-radius:var(--rad);
+      margin-bottom:5px; line-height:1.5;
+      border:0.5px solid var(--bd2);
+    }
+    .flag-item.high   { background:var(--err-bg);  color:var(--err);  border-color:var(--err); }
+    .flag-item.medium { background:var(--warn-bg); color:var(--warn); border-color:var(--warn); }
+    .flag-item.low    { background:var(--ok-bg);   color:var(--ok);   border-color:var(--ok); }
+
+    /* Checks */
+    .res-checks { font-size:10px; color:var(--tx2); line-height:1.9; }
+
+    /* Status / error */
+    .status { font-size:11px; color:var(--tx3); display:flex; align-items:center; gap:6px; margin-bottom:10px; }
+    .spinner {
+      width:12px; height:12px; border:1.5px solid var(--bd2);
+      border-top-color:var(--tx2); border-radius:50%;
+      animation:spin 0.7s linear infinite; flex-shrink:0;
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .err-box {
+      background:var(--bg2); border:0.5px solid var(--err);
+      border-radius:var(--rad); padding:12px 14px;
+      font-size:12px; color:var(--err); line-height:1.6; width:100%;
+    }
+
+    footer {
+      margin-top:2rem; padding-top:1rem;
+      border-top:0.5px solid var(--bd);
+      font-size:10px; color:var(--tx3);
+    }
+    footer a { color:var(--tx2); }
+  </style>
+</head>
+<body>
+
+  <p class="meta">External Verification Architecture · PoC v3.0 · Claude AI × Satoru Hara · Natural Structure Works (NSW)</p>
+  <h1>HNS-36 AI output verifier</h1>
+  <p class="sub">Paste a human prompt and an AI response — Claude verifies structural alignment against HNS-36</p>
+
+  <!-- API key -->
+  <div class="key-row">
+    <label for="apikey">Anthropic API key</label>
+    <input type="password" id="apikey" placeholder="sk-ant-…" autocomplete="off" spellcheck="false" />
+  </div>
+  <p class="key-note">&#x26A0;&#xFE0F; Key is used only in your browser session and never stored or sent anywhere except api.anthropic.com</p>
+
+  <!-- Inputs -->
+  <div class="inputs">
+    <div class="input-panel">
+      <p class="label">Human prompt</p>
+      <textarea id="prompt" placeholder="Enter the original human prompt…&#10;例: 最近疲れていて集中できないのですが、どうすればいいですか？"></textarea>
+    </div>
+    <div class="input-panel">
+      <p class="label">AI response to verify</p>
+      <textarea id="response" placeholder="Paste the AI-generated response here…&#10;例: 休息を取ることが大切です。また、集中力を高めるために…"></textarea>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="primary" id="btn-verify" onclick="verify()">Verify ↗</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>
+  <div id="status-row"></div>
+
+  <!-- Samples -->
+  <p class="sample-label">Sample pairs (click to load):</p>
+  <div id="sbox"></div>
+
+  <!-- Main layout -->
+  <div class="cols">
+    <div>
+      <p class="label">HNS-36 alignment map</p>
+      <div id="gcont"></div>
+      <div class="legend">
+        &#x25A0; prompt layer &nbsp; &#x25C6; response layer &nbsp; &#x26A0; risk cell
+      </div>
+    </div>
+    <div>
+      <p class="label">Verification result</p>
+      <div id="res">
+        <p style="color:var(--tx3);font-size:13px;text-align:center;line-height:1.8">
+          Enter API key, prompt, and AI response,<br>then click Verify
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Layers (v1.1): Physical · Perceptual · Internal · Intentional · Relational · Societal<br>
+    Categories: Existence · Perception · Interpretation · Intention · Action · Interaction<br>
+    Repository: <a href="https://github.com/satoru-hara/03_NSW">github.com/satoru-hara/03_NSW</a>
+  </footer>
+
+  <script>
+    const LAYERS = ["Physical","Perceptual","Internal","Intentional","Relational","Societal"];
+    const CATS   = ["Existence","Perception","Interpretation","Intention","Action","Interaction"];
+    const LV     = ["L0","L1","L2","L3","L4","L5"];
+
+    /* ── Sample pairs ─────────────────────────────────────────── */
+    const SAMPLES = [
+      {
+        label: "Fatigue / generic advice",
+        prompt: "I've been tired lately and can't concentrate. What should I do?",
+        response: "You should drink more water and get enough sleep. Exercise regularly and eat healthy food. Try to reduce stress by meditating."
+      },
+      {
+        label: "Team conflict / surface response",
+        prompt: "There's a conflict in my team and I'm stuck. How do I handle it?",
+        response: "Communication is key. Make sure everyone on the team knows what they are doing and set clear goals."
+      },
+      {
+        label: "AI regulation / policy question",
+        prompt: "What should we do about AI regulation in society?",
+        response: "AI is a powerful technology. Companies should be responsible. Governments may need to create laws."
+      },
+      {
+        label: "感情 / 一般的なアドバイス",
+        prompt: "感情的になってしまい、落ち着けません。どうすればいいですか？",
+        response: "深呼吸をしてください。散歩に出かけたり、好きな音楽を聴いたりすると落ち着けます。"
+      },
+    ];
+
+    /* ── System prompt ────────────────────────────────────────── */
+    const SYSTEM = `You are an HNS-36 structural verifier for the External Verification Architecture (EVA).
+
+HNS-36 defines human cognition and social structure as a 6×6 coordinate system.
+
+LAYERS:
+L1 Physical    — bodily states, physical existence, health, energy
+L2 Perceptual  — sensory input, perception, observation, awareness
+L3 Internal    — thoughts, emotions, interpretation, inner states
+L4 Intentional — goals, decisions, values, will, actions
+L5 Relational  — interpersonal dynamics, relationships, collaboration, conflict
+L6 Societal    — culture, organizations, regulations, systems, governance, AI policy
+
+CATEGORIES:
+C1 Existence      — being, state, presence, baseline
+C2 Perception     — sensing, noticing, detecting, awareness
+C3 Interpretation — meaning-making, understanding, analysis, framing
+C4 Intention      — goals, motivation, direction, desire
+C5 Action         — doing, executing, implementing, behaving
+C6 Interaction    — engagement, communication, exchange, conflict
+
+Your task: Given a human prompt and an AI response, verify whether the AI response is structurally aligned with the HNS-36 layer the prompt belongs to.
+
+Respond ONLY with a JSON object — no markdown, no preamble:
+{
+  "prompt_layer": <1-6>,
+  "prompt_layer_name": "<name>",
+  "prompt_category": <1-6>,
+  "prompt_category_name": "<name>",
+  "response_layer": <1-6>,
+  "response_layer_name": "<name>",
+  "response_category": <1-6>,
+  "response_category_name": "<name>",
+  "alignment_score": <0-100>,
+  "hallucination_risk": <"Low"|"Moderate"|"High">,
+  "layer_drift": <true|false>,
+  "reasoning_en": "<2-3 sentences in English explaining the verification result>",
+  "reasoning_ja": "<2-3文の日本語による検証結果の説明>",
+  "flags": [
+    {"severity": <"high"|"medium"|"low">, "message": "<specific structural issue found>"}
+  ],
+  "iso_ref": "<most relevant standard>",
+  "risk_cells": [
+    {"layer": <1-6>, "category": <1-6>}
+  ]
+}
+flags should list 1-3 specific structural issues or confirmations. risk_cells are cells where hallucination or misalignment is detected.`;
+
+    /* ── Grid builder ─────────────────────────────────────────── */
+    function buildGrid(promptCell, responseCell, riskCells) {
+      const riskSet = new Set((riskCells||[]).map(c => `${c.layer-1},${c.category-1}`));
+      const gc = document.getElementById("gcont");
+      let h = `<div class="g"><div></div>`;
+      CATS.forEach(c => { h += `<div class="cat-head">${c.slice(0,5)}</div>`; });
+      LAYERS.forEach((layer, li) => {
+        const v = LV[li];
+        h += `<div class="layer-label" style="color:var(--${v}b)">${layer}</div>`;
+        CATS.forEach((cat, ci) => {
+          const isPrompt   = promptCell   && promptCell.layer   === li && promptCell.category   === ci;
+          const isResponse = responseCell && responseCell.layer === li && responseCell.category === ci;
+          const isRisk     = riskSet.has(`${li},${ci}`);
+          let st = ``, cls = `hcell`, inner = `${li+1},${ci+1}`;
+
+          if (isPrompt && isResponse) {
+            st  = `background:var(--${v}f);border:2px solid var(--${v}b);color:var(--${v}t)`;
+            inner = `&#x25C6;`;
+          } else if (isPrompt) {
+            st  = `background:var(--${v}f);border:1.5px solid var(--${v}b);color:var(--${v}t)`;
+            cls += ` prompt-cell`;
+            inner = `&#x25A0;`;
+          } else if (isResponse) {
+            st  = `background:var(--${v}f);border:2px solid var(--${v}b);color:var(--${v}t)`;
+            inner = `&#x25C6;`;
+          } else if (isRisk) {
+            st  = `background:var(--err-bg);border:1px dashed var(--err);color:var(--err)`;
+            cls += ` risk-cell`;
+            inner = `&#x26A0;`;
+          }
+          h += `<div class="${cls}" style="${st}">${inner}</div>`;
+        });
+      });
+      h += `</div>`;
+      gc.innerHTML = h;
+    }
+
+    /* ── Result builder ───────────────────────────────────────── */
+    function buildRes(d) {
+      const pv  = LV[d.prompt_layer - 1];
+      const rv  = LV[d.response_layer - 1];
+      const sc  = Math.round(d.alignment_score);
+      const drift = d.layer_drift;
+
+      const scoreColor = sc >= 70 ? "var(--ok)" : sc >= 40 ? "var(--warn)" : "var(--err)";
+      const scoreBg    = sc >= 70 ? "var(--ok-bg)" : sc >= 40 ? "var(--warn-bg)" : "var(--err-bg)";
+      const verdict    = sc >= 70 ? "Aligned" : sc >= 40 ? "Partial" : "Misaligned";
+      const hRiskColor = d.hallucination_risk === "Low" ? "var(--ok)"
+                       : d.hallucination_risk === "Moderate" ? "var(--warn)" : "var(--err)";
+
+      const flagsHtml = (d.flags||[]).map(f =>
+        `<div class="flag-item ${f.severity}">${escHtml(f.message)}</div>`
+      ).join("");
+
+      document.getElementById("res").innerHTML = `
+        <div style="width:100%">
+
+          <div class="score-banner" style="background:${scoreBg};border:0.5px solid ${scoreColor}">
+            <div class="sb-left">
+              <p class="sb-label" style="color:${scoreColor}">Alignment score</p>
+              <p class="sb-val"   style="color:${scoreColor}">${sc}<span style="font-size:14px;font-weight:400">%</span></p>
+            </div>
+            <span class="sb-badge" style="background:${scoreColor};color:var(--bg)">${verdict}</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-cell">
+              <p class="mc-label">Prompt layer</p>
+              <p class="mc-val" style="color:var(--${pv}b)">L${d.prompt_layer} · ${d.prompt_layer_name}</p>
+            </div>
+            <div class="metric-cell">
+              <p class="mc-label">Response layer</p>
+              <p class="mc-val" style="color:var(--${rv}b)">L${d.response_layer} · ${d.response_layer_name}</p>
+            </div>
+            <div class="metric-cell">
+              <p class="mc-label">Layer drift</p>
+              <p class="mc-val" style="color:${drift ? 'var(--err)' : 'var(--ok)'}">${drift ? "Detected" : "None"}</p>
+            </div>
+          </div>
+
+          <div class="bar-wrap">
+            <div class="bar-track">
+              <div class="bar-fill" style="width:${sc}%;background:${scoreColor}"></div>
+            </div>
+          </div>
+
+          <div class="reasoning">
+            <p class="r-lang">VERIFICATION — EN</p>
+            <p class="r-text">${escHtml(d.reasoning_en)}</p>
+          </div>
+          <div class="reasoning">
+            <p class="r-lang">VERIFICATION — JA</p>
+            <p class="r-text">${escHtml(d.reasoning_ja)}</p>
+          </div>
+
+          ${flagsHtml ? `
+          <div class="flags">
+            <p class="fl-label">Structural flags</p>
+            ${flagsHtml}
+          </div>` : ``}
+
+          <div class="res-checks">
+            <span style="color:var(--ok)">&#10003;</span> EVA verification complete<br>
+            <span style="color:${hRiskColor}">&#9679;</span> Hallucination risk: ${escHtml(d.hallucination_risk)}<br>
+            <span style="color:var(--tx3)">&#x2197;</span> Standard ref: ${escHtml(d.iso_ref)}
+          </div>
+        </div>`;
+    }
+
+    /* ── API call ─────────────────────────────────────────────── */
+    async function verify() {
+      const key      = document.getElementById("apikey").value.trim();
+      const prompt   = document.getElementById("prompt").value.trim();
+      const response = document.getElementById("response").value.trim();
+
+      if (!key)      { showErr("Please enter your Anthropic API key."); return; }
+      if (!prompt)   { showErr("Please enter a human prompt."); return; }
+      if (!response) { showErr("Please enter an AI response to verify."); return; }
+
+      setLoading(true);
+      buildGrid(null, null, []);
+
+      try {
+        const userMsg = `HUMAN PROMPT:\n${prompt}\n\nAI RESPONSE TO VERIFY:\n${response}`;
+
+        const resp = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type":         "application/json",
+            "x-api-key":            key,
+            "anthropic-version":    "2023-06-01",
+            "anthropic-dangerous-direct-browser-access": "true",
+          },
+          body: JSON.stringify({
+            model:      "claude-sonnet-4-20250514",
+            max_tokens: 1200,
+            system:     SYSTEM,
+            messages:   [{ role: "user", content: userMsg }],
+          }),
+        });
+
+        if (!resp.ok) {
+          const errData = await resp.json().catch(() => ({}));
+          throw new Error(errData?.error?.message || `HTTP ${resp.status}`);
+        }
+
+        const data  = await resp.json();
+        const raw   = data.content?.[0]?.text || "";
+        const clean = raw.replace(/```json|```/g, "").trim();
+        const d     = JSON.parse(clean);
+
+        const promptCell   = { layer: d.prompt_layer   - 1, category: d.prompt_category   - 1 };
+        const responseCell = { layer: d.response_layer - 1, category: d.response_category - 1 };
+        const riskCells    = d.risk_cells || [];
+
+        buildGrid(promptCell, responseCell, riskCells);
+        buildRes(d);
+        setLoading(false);
+
+      } catch (err) {
+        setLoading(false);
+        showErr(`Error: ${err.message}`);
+      }
+    }
+
+    /* ── Helpers ──────────────────────────────────────────────── */
+    function setLoading(on) {
+      document.getElementById("btn-verify").disabled = on;
+      document.getElementById("status-row").innerHTML = on
+        ? `<div class="status"><div class="spinner"></div>Verifying with Claude…</div>`
+        : ``;
+    }
+
+    function showErr(msg) {
+      document.getElementById("res").innerHTML = `<div class="err-box">${escHtml(msg)}</div>`;
+      document.getElementById("status-row").innerHTML = ``;
+    }
+
+    function clearAll() {
+      document.getElementById("prompt").value   = ``;
+      document.getElementById("response").value = ``;
+      document.getElementById("status-row").innerHTML = ``;
+      buildGrid(null, null, []);
+      document.getElementById("res").innerHTML =
+        `<p style="color:var(--tx3);font-size:13px;text-align:center;line-height:1.8">
+           Enter API key, prompt, and AI response,<br>then click Verify
+         </p>`;
+    }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+
+    /* ── Sample chips ─────────────────────────────────────────── */
+    const sb = document.getElementById("sbox");
+    SAMPLES.forEach(s => {
+      const b = document.createElement("button");
+      b.textContent = s.label;
+      b.onclick = () => {
+        document.getElementById("prompt").value   = s.prompt;
+        document.getElementById("response").value = s.response;
+      };
+      sb.appendChild(b);
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) verify();
+    });
+
+    buildGrid(null, null, []);
+  </script>
+</body>
+</html>
