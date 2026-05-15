@@ -91,6 +91,19 @@ HNS-36 REFERENCE TABLE (FINAL ASCII-STABLE VERSION)
 | L6 Societ.  | L6 x C1     | L6 x C2     | L6 x C3        | L6 x C4     | L6 x C5     | L6 x C6      |
 +-------------+-------------+-------------+----------------+-------------+-------------+--------------+
 
+===============================================================================
+HNS-36 REFERENCE TABLE (FINAL NON-BREAKING ASCII VERSION)
+===============================================================================
+
+Layer (Lx)      Existence(C1)   Perception(C2)   Interpretation(C3)   Intention(C4)   Action(C5)     Interaction(C6)
+---------------------------------------------------------------------------------------------------------------
+L1 Physical     L1 x C1         L1 x C2          L1 x C3              L1 x C4          L1 x C5        L1 x C6
+L2 Perceptual   L2 x C1         L2 x C2          L2 x C3              L2 x C4          L2 x C5        L2 x C6
+L3 Internal     L3 x C1         L3 x C2          L3 x C3              L3 x C4          L3 x C5        L3 x C6
+L4 Intentional  L4 x C1         L4 x C2          L4 x C3              L4 x C4          L4 x C5        L4 x C6
+L5 Relational   L5 x C1         L5 x C2          L5 x C3              L5 x C4          L5 x C5        L5 x C6
+L6 Societal     L6 x C1         L6 x C2          L6 x C3              L6 x C4          L6 x C5        L6 x C6
+---------------------------------------------------------------------------------------------------------------
 
 ---
 
