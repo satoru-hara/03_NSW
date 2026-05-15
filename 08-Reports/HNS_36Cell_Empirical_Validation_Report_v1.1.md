@@ -108,6 +108,8 @@ def hns_map(text):
 
 # Example
 print(hns_map("I’ve been tired lately and can’t concentrate…"))
+```
+
 ## 6. Discussion
 
 The HNS 36-cell system is not theoretical; it is an implementable structural OS.
