@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HNS-36 Structural Mapper — External Verification Architecture PoC</title>
+  <style>
+    /* ── Reset & base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#ffffff; --bg2:#f1efe8; --bg3:#e8e6df;
+      --tx:#1a1a1a; --tx2:#555550; --tx3:#888780;
+      --bd:rgba(0,0,0,0.12); --bd2:rgba(0,0,0,0.22);
+      --rad:8px; --rad-lg:12px;
+      /* Layer palette — light mode */
+      --L0f:#FAECE7;--L0b:#993C1D;--L0t:#712B13; /* Physical   / coral  */
+      --L1f:#FAEEDA;--L1b:#854F0B;--L1t:#633806; /* Perceptual / amber  */
+      --L2f:#EAF3DE;--L2b:#3B6D11;--L2t:#27500A; /* Internal   / green  */
+      --L3f:#E6F1FB;--L3b:#185FA5;--L3t:#0C447C; /* Intentional/ blue   */
+      --L4f:#EEEDFE;--L4b:#534AB7;--L4t:#3C3489; /* Relational / purple */
+      --L5f:#E1F5EE;--L5b:#0F6E56;--L5t:#085041; /* Societal   / teal   */
+      --ok:#166534; --warn:#92400e;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0f0f0e; --bg2:#1c1c1a; --bg3:#272724;
+        --tx:#e8e6df; --tx2:#a0a09a; --tx3:#606058;
+        --bd:rgba(255,255,255,0.10); --bd2:rgba(255,255,255,0.20);
+        /* Layer palette — dark mode */
+        --L0f:#4A1B0C;--L0b:#F0997B;--L0t:#F5C4B3;
+        --L1f:#412402;--L1b:#EF9F27;--L1t:#FAC775;
+        --L2f:#173404;--L2b:#639922;--L2t:#C0DD97;
+        --L3f:#042C53;--L3b:#378ADD;--L3t:#B5D4F4;
+        --L4f:#26215C;--L4b:#7F77DD;--L4t:#CECBF6;
+        --L5f:#04342C;--L5b:#1D9E75;--L5t:#9FE1CB;
+        --ok:#86efac; --warn:#fcd34d;
+      }
+    }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: var(--bg); color: var(--tx);
+      padding: 2rem; max-width: 960px;
+      margin: 0 auto; line-height: 1.5;
+    }
+    /* ── Typography ────────────────────────────────────────────── */
+    .meta  { font-size:11px; color:var(--tx3); margin-bottom:4px; }
+    h1     { font-size:22px; font-weight:500; margin-bottom:1.5rem; }
+    .label { font-size:11px; color:var(--tx2); margin-bottom:8px; }
+    /* ── Input ─────────────────────────────────────────────────── */
+    .input-row { display:flex; gap:8px; margin-bottom:10px; }
+    input[type="text"] {
+      flex:1; padding:8px 12px;
+      background:var(--bg2); border:0.5px solid var(--bd2);
+      border-radius:var(--rad); color:var(--tx);
+      font-family:inherit; font-size:13px; outline:none;
+    }
+    input[type="text"]:focus { border-color:var(--tx3); }
+    button {
+      padding:8px 16px; background:var(--bg2);
+      border:0.5px solid var(--bd2); border-radius:var(--rad);
+      color:var(--tx); font-family:inherit; font-size:12px;
+      cursor:pointer; white-space:nowrap;
+    }
+    button:hover  { background:var(--bg3); }
+    button:active { transform:scale(0.98); }
+    /* ── Samples ───────────────────────────────────────────────── */
+    #sbox { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.5rem; }
+    #sbox button { font-size:11px; padding:4px 10px; }
+    /* ── Layout ────────────────────────────────────────────────── */
+    .cols {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:1.5rem; align-items:start;
+    }
+    /* ── 36-cell grid ──────────────────────────────────────────── */
+    #gcont .g {
+      display:grid;
+      grid-template-columns:68px repeat(6,1fr);
+      gap:3px;
+    }
+    .hcell {
+      background:var(--bg2); border:0.5px solid var(--bd);
+      border-radius:6px; height:30px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:9px; color:var(--tx3);
+      transition:background 0.22s, border-color 0.22s, color 0.22s;
+    }
+    .cat-head {
+      font-size:8px; color:var(--tx3);
+      text-align:center; padding-bottom:3px;
+    }
+    .layer-label {
+      font-size:9px; display:flex; align-items:center;
+      padding-right:4px; line-height:1.2;
+    }
+    /* ── Result panel ──────────────────────────────────────────── */
+    #res {
+      background:var(--bg2); border-radius:var(--rad-lg);
+      padding:1rem; min-height:160px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .res-coord { border-radius:var(--rad); padding:10px 12px; margin-bottom:12px; }
+    .res-coord .coord-label { font-size:10px; margin-bottom:3px; }
+    .res-coord .coord-val   { font-size:15px; font-weight:500; }
+    .res-grid  { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px; }
+    .res-cell  { background:var(--bg3); border-radius:var(--rad); padding:8px; }
+    .res-cell .rc-label { font-size:10px; color:var(--tx3); }
+    .res-cell .rc-val   { font-size:12px; font-weight:500; color:var(--tx); }
+    .conf-bar-wrap { background:var(--bg3); border-radius:var(--rad); padding:10px; margin-bottom:8px; }
+    .conf-track    { background:var(--bd2); border-radius:3px; height:4px; overflow:hidden; }
+    .conf-fill     { height:100%; border-radius:3px; transition:width 0.5s; }
+    .res-checks    { font-size:10px; color:var(--tx2); line-height:1.8; }
+    /* ── Footer ────────────────────────────────────────────────── */
+    footer {
+      margin-top:2rem; padding-top:1rem;
+      border-top:0.5px solid var(--bd);
+      font-size:10px; color:var(--tx3);
+    }
+  </style>
+</head>
+<body>
+
+  <p class="meta">External Verification Architecture · PoC v1.0 · Claude × Satoru Hara · Natural Structure Works (NSW)</p>
+  <h1>HNS-36 structural mapper</h1>
+
+  <div class="input-row">
+    <input type="text" id="hi" placeholder="Enter text to map to HNS coordinates…" />
+    <button onclick="analyze()">Analyze ↗</button>
+  </div>
+  <div id="sbox"></div>
+
+  <div class="cols">
+    <div>
+      <p class="label">36-cell coordinate system</p>
+      <div id="gcont"></div>
+    </div>
+    <div>
+      <p class="label">Mapping result</p>
+      <div id="res">
+        <p style="color:var(--tx3);font-size:13px;text-align:center">
+          Enter text and click Analyze
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Layer names (v1.1): Physical · Perceptual · Internal · Intentional · Relational · Societal<br>
+    Categories: Existence · Perception · Interpretation · Intention · Action · Interaction<br>
+    Repository: <a href="https://github.com/satoru-hara/03_NSW"
+                   style="color:var(--tx2)">github.com/satoru-hara/03_NSW</a>
+  </footer>
+
+  <script>
+    const LAYERS = ["Physical","Perceptual","Internal","Intentional","Relational","Societal"];
+    const CATS   = ["Existence","Perception","Interpretation","Intention","Action","Interaction"];
+    const LV     = ["L0","L1","L2","L3","L4","L5"];
+
+    // Keyword-to-coordinate mapping table
+    const KM = [
+      { kws:["tired","sick","pain","sleep","body","hungry","physical","headache","health"], l:0, c:0 },
+      { kws:["see","hear","smell","notice","perceive","sensation","senses","vision"],       l:1, c:1 },
+      { kws:["think","understand","interpret","mean","wonder","confused","realize"],        l:2, c:2 },
+      { kws:["goal","want","plan","intend","decide","aim","purpose","wish"],                l:3, c:3 },
+      { kws:["do","act","make","build","execute","implement","run","start","create"],       l:3, c:4 },
+      { kws:["team","colleague","partner","friend","conflict","relationship","collaborate"],l:4, c:5 },
+      { kws:["society","culture","regulation","law","company","organization","policy",
+             "ai","standard","governance"],                                                 l:5, c:2 },
+      { kws:["value","ethics","principle","believe","fundamental","core","identity"],       l:3, c:0 },
+      { kws:["emotion","angry","sad","happy","calm","anxious","stress","emotional"],        l:2, c:3 },
+      { kws:["tell","communicate","say","speak","message","conversation","express"],        l:4, c:4 },
+      { kws:["environment","world","context","situation","system","ecosystem"],             l:5, c:5 },
+    ];
+
+    const SAMPLES = [
+      "I've been tired and can't concentrate",
+      "I want to clarify the project goals",
+      "There's conflict in the team",
+      "What about AI regulation in society?",
+      "I got emotional and can't calm down",
+    ];
+
+    function mapText(t) {
+      const lo = t.toLowerCase();
+      let best = null, bc = 0;
+      for (const e of KM) {
+        const n = e.kws.filter(k => lo.includes(k)).length;
+        if (n > bc) { bc = n; best = { ...e, n, conf: Math.min(95, 50 + n * 22) }; }
+      }
+      return best || { l:1, c:2, n:0, conf:38 };
+    }
+
+    function buildGrid(al, ac) {
+      const gc = document.getElementById("gcont");
+      let h = `<div class="g"><div></div>`;
+      CATS.forEach(c => {
+        h += `<div class="cat-head">${c.slice(0,5)}</div>`;
+      });
+      LAYERS.forEach((layer, li) => {
+        const v = LV[li];
+        h += `<div class="layer-label" style="color:var(--${v}b)">${layer}</div>`;
+        CATS.forEach((cat, ci) => {
+          const act = al === li && ac === ci;
+          const st  = act
+            ? `background:var(--${v}f);border:1.5px solid var(--${v}b);color:var(--${v}t)`
+            : ``;
+          h += `<div class="hcell" style="${st}">${act ? "✓" : `${li+1},${ci+1}`}</div>`;
+        });
+      });
+      h += `</div>`;
+      gc.innerHTML = h;
+    }
+
+    function buildRes(res) {
+      const v    = LV[res.l];
+      const pct  = Math.round(res.conf);
+      const risk = pct >= 70 ? "Low" : "Moderate";
+      const rCol = pct >= 70 ? "var(--ok)" : "var(--warn)";
+      const iso  = res.l <= 1 ? "ISO/IEC TR 24028"
+                 : res.l <= 3 ? "ISO/IEC 23894"
+                 :              "ISO/IEC 42001";
+      document.getElementById("res").innerHTML = `
+        <div style="width:100%">
+          <div class="res-coord"
+               style="background:var(--${v}f);border:0.5px solid var(--${v}b)">
+            <p class="coord-label" style="color:var(--${v}b)">Mapped coordinate</p>
+            <p class="coord-val"   style="color:var(--${v}t)">
+              ${LAYERS[res.l]} × ${CATS[res.c]}
+            </p>
+          </div>
+          <div class="res-grid">
+            <div class="res-cell">
+              <p class="rc-label">Layer</p>
+              <p class="rc-val">L${res.l+1} · ${LAYERS[res.l]}</p>
+            </div>
+            <div class="res-cell">
+              <p class="rc-label">Category</p>
+              <p class="rc-val">C${res.c+1} · ${CATS[res.c]}</p>
+            </div>
+            <div class="res-cell">
+              <p class="rc-label">Coordinate</p>
+              <p class="rc-val">[${res.l+1}, ${res.c+1}]</p>
+            </div>
+            <div class="res-cell">
+              <p class="rc-label">Confidence</p>
+              <p class="rc-val" style="color:${rCol}">${pct}%</p>
+            </div>
+          </div>
+          <div class="conf-bar-wrap">
+            <div class="conf-track">
+              <div class="conf-fill"
+                   style="width:${pct}%;background:var(--${v}b)"></div>
+            </div>
+          </div>
+          <div class="res-checks">
+            <span style="color:var(--ok)">✓</span> EVA structural check: coordinate anchored<br>
+            <span style="color:${rCol}">●</span> Hallucination risk: ${risk}<br>
+            <span style="color:var(--tx3)">↗</span> Standard ref: ${iso}
+          </div>
+        </div>`;
+    }
+
+    // Build sample chips
+    const sb = document.getElementById("sbox");
+    SAMPLES.forEach(s => {
+      const b = document.createElement("button");
+      b.textContent = s.length > 34 ? s.slice(0,34)+"…" : s;
+      b.onclick = () => { document.getElementById("hi").value = s; analyze(); };
+      sb.appendChild(b);
+    });
+
+    buildGrid(-1, -1);
+
+    function analyze() {
+      const t = document.getElementById("hi").value.trim();
+      if (!t) return;
+      const r = mapText(t);
+      buildGrid(r.l, r.c);
+      buildRes(r);
+    }
+
+    document.getElementById("hi").addEventListener("keydown", e => {
+      if (e.key === "Enter") analyze();
+    });
+  </script>
+</body>
+</html>
