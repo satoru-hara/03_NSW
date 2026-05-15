@@ -67,7 +67,7 @@ Python-based simulation including:
 ### Case: Emotional Fatigue (Internal × Interpretation)
 
 **User:**  
-"最近疲れて集中できないんだよね…"
+"I have been so tired lately that I cannot focus."
 
 **Baseline:**  
 Generic encouragement without structural grounding.
@@ -77,8 +77,8 @@ Generic encouragement without structural grounding.
 - Recognized fatigue → cognitive bias → intent adjustment  
 
 **Structured Response:**  
-"Internal 層の状態（疲労）が Interpretation 層に影響を与えている構造を認識しました。  
-休息を優先する Intentional 層の調整を提案します。"
+"The Internal-layer state (fatigue) is influencing the Interpretation layer.  
+A shift toward prioritizing rest in the Intentional layer is recommended."
 
 **Effect:**  
 - Coherence: +31  
@@ -115,10 +115,4 @@ The 36-cell coordinate system functions not as a theoretical model but as a **pr
 ## 7. Conclusion
 
 This PoC demonstrates that HNS significantly enhances AI coherence, alignment, and safety through a reproducible structural OS.  
-The results support further investigation and potential integration into large-scale AI systems.
-
----
-
-## Appendix
-
-Full mapping tables and Python scripts can be provided upon request.
+The results support further
