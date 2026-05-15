@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HNS-36 × ISO/IEC SC 42 Alignment Checker — External Verification Architecture PoC v6.0</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#ffffff; --bg2:#f1efe8; --bg3:#e8e6df;
+      --tx:#1a1a1a; --tx2:#555550; --tx3:#888780;
+      --bd:rgba(0,0,0,0.12); --bd2:rgba(0,0,0,0.22);
+      --rad:8px; --rad-lg:12px;
+      --L0f:#FAECE7;--L0b:#993C1D;--L0t:#712B13;
+      --L1f:#FAEEDA;--L1b:#854F0B;--L1t:#633806;
+      --L2f:#EAF3DE;--L2b:#3B6D11;--L2t:#27500A;
+      --L3f:#E6F1FB;--L3b:#185FA5;--L3t:#0C447C;
+      --L4f:#EEEDFE;--L4b:#534AB7;--L4t:#3C3489;
+      --L5f:#E1F5EE;--L5b:#0F6E56;--L5t:#085041;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0f0f0e; --bg2:#1c1c1a; --bg3:#272724;
+        --tx:#e8e6df; --tx2:#a0a09a; --tx3:#606058;
+        --bd:rgba(255,255,255,0.10); --bd2:rgba(255,255,255,0.20);
+        --L0f:#4A1B0C;--L0b:#F0997B;--L0t:#F5C4B3;
+        --L1f:#412402;--L1b:#EF9F27;--L1t:#FAC775;
+        --L2f:#173404;--L2b:#639922;--L2t:#C0DD97;
+        --L3f:#042C53;--L3b:#378ADD;--L3t:#B5D4F4;
+        --L4f:#26215C;--L4b:#7F77DD;--L4t:#CECBF6;
+        --L5f:#04342C;--L5b:#1D9E75;--L5t:#9FE1CB;
+      }
+    }
+    body { font-family:'Courier New',Courier,monospace; background:var(--bg); color:var(--tx); padding:2rem; max-width:980px; margin:0 auto; line-height:1.5; }
+    .meta  { font-size:11px; color:var(--tx3); margin-bottom:4px; }
+    h1     { font-size:22px; font-weight:500; margin-bottom:0.25rem; }
+    .sub   { font-size:12px; color:var(--tx2); margin-bottom:1.5rem; }
+    .label { font-size:11px; color:var(--tx2); margin-bottom:8px; }
+
+    /* Filter row */
+    .filter-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.5rem; }
+    .filter-btn {
+      padding:5px 12px; background:var(--bg2); border:0.5px solid var(--bd2);
+      border-radius:20px; color:var(--tx2); font-family:inherit; font-size:11px;
+      cursor:pointer; transition:all 0.2s;
+    }
+    .filter-btn:hover { background:var(--bg3); }
+    .filter-btn.active { border-color:var(--tx2); color:var(--tx); background:var(--bg3); font-weight:500; }
+
+    /* Main layout */
+    .cols { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:1.5rem; align-items:start; }
+
+    /* Grid */
+    .hns-grid { display:grid; grid-template-columns:72px repeat(6,1fr); gap:3px; }
+    .hcell {
+      height:34px; border-radius:6px; display:flex; align-items:center;
+      justify-content:center; font-size:9px; cursor:pointer;
+      transition:all 0.2s; border:0.5px solid var(--bd);
+      background:var(--bg2); color:var(--tx3);
+      position:relative;
+    }
+    .hcell:hover { transform:scale(1.08); z-index:1; }
+    .hcell.highlighted { border-width:2px; }
+    .hcell.selected { border-width:2px; transform:scale(1.08); z-index:2; }
+    .hcell .dot { width:5px; height:5px; border-radius:50%; position:absolute; bottom:4px; right:4px; }
+    .cat-head { font-size:8px; color:var(--tx3); text-align:center; padding-bottom:3px; }
+    .layer-label { font-size:9px; display:flex; align-items:center; padding-right:4px; line-height:1.2; }
+
+    /* Detail panel */
+    #detail {
+      background:var(--bg2); border-radius:var(--rad-lg); padding:1.25rem;
+      min-height:300px; display:flex; align-items:center; justify-content:center;
+    }
+    .d-coord { border-radius:var(--rad); padding:10px 14px; margin-bottom:12px; }
+    .d-coord .dc-label { font-size:10px; margin-bottom:3px; }
+    .d-coord .dc-val   { font-size:15px; font-weight:500; }
+    .d-section { margin-bottom:12px; }
+    .d-section .ds-label { font-size:10px; color:var(--tx3); margin-bottom:6px; letter-spacing:0.08em; }
+    .d-section .ds-text  { font-size:12px; color:var(--tx); line-height:1.7; }
+    .iso-chip {
+      display:inline-block; padding:3px 9px; margin:3px 3px 0 0;
+      border-radius:4px; font-size:10px; font-weight:500;
+      background:var(--bg3); border:0.5px solid var(--bd2); color:var(--tx2);
+      cursor:pointer; transition:all 0.15s;
+    }
+    .iso-chip:hover { border-color:var(--tx2); color:var(--tx); }
+    .iso-chip.active { background:var(--tx2); color:var(--bg); border-color:var(--tx2); }
+    .eva-note { font-size:11px; color:var(--tx2); line-height:1.7; background:var(--bg3); border-radius:var(--rad); padding:10px 12px; }
+
+    /* Legend */
+    .legend { font-size:10px; color:var(--tx3); margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; }
+    .legend-dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:4px; vertical-align:middle; }
+
+    footer { margin-top:2rem; padding-top:1rem; border-top:0.5px solid var(--bd); font-size:10px; color:var(--tx3); }
+    footer a { color:var(--tx2); }
+  </style>
+</head>
+<body>
+
+  <p class="meta">External Verification Architecture · PoC v6.0 · Satoru Hara · Natural Structure Works (NSW) · No API required</p>
+  <h1>HNS-36 × ISO/IEC SC 42 alignment checker</h1>
+  <p class="sub">Click any cell to see its description and SC 42 standards alignment · Filter by standard to highlight relevant cells</p>
+
+  <p class="label">Filter by ISO/IEC standard:</p>
+  <div class="filter-row" id="filters"></div>
+
+  <div class="cols">
+    <div>
+      <p class="label">HNS-36 coordinate grid</p>
+      <div class="hns-grid" id="grid"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div>
+      <p class="label">Cell details</p>
+      <div id="detail">
+        <p style="color:var(--tx3);font-size:13px;text-align:center;line-height:1.8">
+          Click a cell to see details<br>and ISO/IEC alignment
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Layers (v1.1): Physical · Perceptual · Internal · Intentional · Relational · Societal<br>
+    Categories: Existence · Perception · Interpretation · Intention · Action · Interaction<br>
+    Repository: <a href="https://github.com/satoru-hara/03_NSW">github.com/satoru-hara/03_NSW</a>
+  </footer>
+
+  <script>
+    const LAYERS = ["Physical","Perceptual","Internal","Intentional","Relational","Societal"];
+    const CATS   = ["Existence","Perception","Interpretation","Intention","Action","Interaction"];
+    const LV     = ["L0","L1","L2","L3","L4","L5"];
+
+    /* ── ISO standards ─────────────────────────────────────────── */
+    const STANDARDS = [
+      { id:"42001", label:"ISO/IEC 42001", title:"AI Management System",         color:"#185FA5" },
+      { id:"23894", label:"ISO/IEC 23894", title:"AI Risk Management",           color:"#993C1D" },
+      { id:"22989", label:"ISO/IEC 22989", title:"AI Concepts and Terminology",  color:"#3B6D11" },
+      { id:"23053", label:"ISO/IEC 23053", title:"AI System Life Cycle",         color:"#534AB7" },
+      { id:"24028", label:"ISO/IEC TR 24028", title:"Trustworthiness in AI",     color:"#854F0B" },
+    ];
+
+    /* ── Cell knowledge base (36 cells) ────────────────────────── */
+    const CELLS = {};
+    function cell(l, c, desc, iso, eva) {
+      CELLS[`${l},${c}`] = { desc, iso, eva };
+    }
+
+    // L1 Physical
+    cell(0,0,"Physical baseline of an AI-enabled system — hardware state, sensor integrity, power, and physical operating conditions.",["24028"],"Verifies that AI system outputs respect physical world constraints and do not hallucinate physical impossibilities.");
+    cell(0,1,"Sensory data acquisition — raw input from physical environment; sensor calibration and signal fidelity.",["24028","22989"],"Checks whether AI perception of physical inputs is accurately represented in output.");
+    cell(0,2,"Physical signal interpretation — converting raw sensor data into structured representations.",["22989","24028"],"Detects misinterpretation of physical-layer signals that propagates into higher layers.");
+    cell(0,3,"Physical goals and constraints — energy limits, hardware capacity, physical feasibility of actions.",["23053","23894"],"Validates that AI intentions do not violate physical constraints of the deployment environment.");
+    cell(0,4,"Physical actions — actuator commands, robotic movement, hardware control signals.",["23053"],"Verifies that commanded physical actions are structurally consistent with stated intent.");
+    cell(0,5,"Physical interaction with environment — tactile feedback, environmental response loops.",["24028","23053"],"Ensures AI-environment interaction loops are stable and predictable.");
+
+    // L2 Perceptual
+    cell(1,0,"Perceptual state — the baseline of what an AI system or human perceives at a given moment.",["24028","22989"],"Anchors AI outputs to observable perceptual reality; detects confabulation of perceptual facts.");
+    cell(1,1,"Active perception — the process of sensing, noticing, and attending to stimuli.",["22989","24028"],"Verifies consistency between AI-described perceptions and reported observations.");
+    cell(1,2,"Perceptual interpretation — making meaning from sensory data; pattern recognition and categorization.",["22989","23894"],"Detects interpretation-layer drift where AI substitutes assumptions for observed data.");
+    cell(1,3,"Perceptual intention — directing attention toward specific stimuli; selective focus.",["23894"],"Checks whether AI attentional focus aligns with the stated goals of the interaction.");
+    cell(1,4,"Perceptual action — adjusting sensors, seeking additional information, clarifying inputs.",["23053"],"Validates that information-seeking actions are proportionate and structurally coherent.");
+    cell(1,5,"Perceptual interaction — shared attention, joint reference, coordinated observation.",["22989","24028"],"Verifies that AI references to shared perceptual context are accurate and grounded.");
+
+    // L3 Internal
+    cell(2,0,"Internal state — cognitive and emotional baseline; mental health, cognitive load, mood.",["23894","24028"],"EVA primary cell: verifies AI responses to internal-state disclosures remain at the correct layer.");
+    cell(2,1,"Awareness of internal states — noticing one's own thoughts, emotions, or cognitive processes.",["22989","23894"],"Detects when AI fails to acknowledge or correctly interpret disclosed internal states.");
+    cell(2,2,"Internal interpretation — making sense of one's own experience; self-narrative and framing.",["22989","23894"],"Key hallucination-detection cell: checks whether AI reframes human internal experience without warrant.");
+    cell(2,3,"Internal intention — motivation arising from emotional or cognitive states; intrinsic goals.",["23894","42001"],"Validates that AI responses honor the human's intrinsic motivation rather than substituting external goals.");
+    cell(2,4,"Internal action — self-regulation, cognitive reappraisal, emotional management strategies.",["23894"],"Checks structural alignment between AI-suggested internal actions and the human's stated internal state.");
+    cell(2,5,"Internal interaction — expressing internal states to others; vulnerability and disclosure.",["24028","42001"],"Verifies that AI responses to emotional disclosure are structurally appropriate and not dismissive.");
+
+    // L4 Intentional
+    cell(3,0,"Intentional existence — core values, identity, fundamental beliefs that ground action.",["42001","23894"],"High-priority cell: detects AI responses that undermine or ignore stated core values.");
+    cell(3,1,"Value perception — noticing conflicts between values and reality; ethical awareness.",["42001","22989"],"Checks whether AI correctly identifies and acknowledges ethical tensions disclosed by the human.");
+    cell(3,2,"Intentional interpretation — understanding goals in context; means-ends reasoning.",["22989","23894"],"Detects goal misattribution — when AI assigns different objectives than those stated.");
+    cell(3,3,"Intention formation — goal-setting, decision-making, planning; will and agency.",["23894","23053"],"Core EVA cell: verifies AI responses structurally support rather than undermine human goal formation.");
+    cell(3,4,"Intentional action — executing plans, taking initiative, implementing decisions.",["23053","42001"],"Validates that AI-suggested actions are structurally consistent with the human's stated intentions.");
+    cell(3,5,"Intentional interaction — negotiating goals with others; collaborative decision-making.",["42001","23053"],"Checks that AI facilitates rather than dominates collaborative goal-setting interactions.");
+
+    // L5 Relational
+    cell(4,0,"Relational existence — baseline state of relationships; connection, belonging, trust.",["23894","42001"],"Verifies AI does not produce outputs that destabilize existing relational baselines.");
+    cell(4,1,"Relational perception — noticing relationship dynamics, social cues, interpersonal signals.",["22989","24028"],"Detects when AI fails to perceive or acknowledge disclosed relationship dynamics.");
+    cell(4,2,"Relational interpretation — making sense of social situations; attributing motives to others.",["22989","23894"],"High-risk cell: detects AI misattribution of motives or inappropriate social interpretation.");
+    cell(4,3,"Relational intention — goals within relationships; what one seeks from interpersonal interaction.",["23894"],"Validates AI responses honor relational goals rather than substituting task completion.");
+    cell(4,4,"Relational action — communicating, collaborating, resolving conflict, supporting others.",["23053","42001"],"Checks structural alignment between AI-recommended relational actions and the disclosed situation.");
+    cell(4,5,"Relational interaction — the dynamic exchange between people; dialogue, negotiation, co-creation.",["42001","23894","23053"],"Primary cell for EVA in multi-agent and team contexts; detects systemic misalignment.");
+
+    // L6 Societal
+    cell(5,0,"Societal existence — institutions, cultural norms, legal frameworks, organizational structures.",["42001","23053"],"Validates AI descriptions of societal structures are accurate and not hallucinated.");
+    cell(5,1,"Societal perception — awareness of social trends, regulatory environment, public discourse.",["42001","24028"],"Checks whether AI correctly perceives the current societal and regulatory context.");
+    cell(5,2,"Societal interpretation — making sense of social systems; policy analysis, cultural framing.",["42001","22989","23894"],"Most directly SC 42-relevant cell: EVA for AI governance, regulatory, and standards outputs.");
+    cell(5,3,"Societal intention — policy goals, organizational strategy, regulatory objectives.",["42001","23053"],"Validates AI alignment with stated societal and organizational governance intentions.");
+    cell(5,4,"Societal action — implementing policy, regulatory compliance, organizational change.",["42001","23053","23894"],"Checks that AI-suggested societal actions are feasible, legal, and structurally appropriate.");
+    cell(5,5,"Societal interaction — multi-stakeholder engagement, public discourse, institutional dialogue.",["42001","23053"],"EVA for AI in governance and standards contexts: detects systemic misalignment in societal interactions.");
+
+    /* ── State ──────────────────────────────────────────────────── */
+    let selectedCell = null;
+    let activeFilter = null;
+
+    /* ── Build filters ──────────────────────────────────────────── */
+    const fr = document.getElementById("filters");
+    const allBtn = document.createElement("button");
+    allBtn.className = "filter-btn active"; allBtn.textContent = "All cells";
+    allBtn.onclick = () => { setFilter(null); allBtn.classList.add("active"); };
+    fr.appendChild(allBtn);
+
+    STANDARDS.forEach(s => {
+      const b = document.createElement("button");
+      b.className = "filter-btn";
+      b.textContent = s.label;
+      b.title = s.title;
+      b.onclick = () => {
+        document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+        allBtn.classList.remove("active");
+        setFilter(s.id);
+      };
+      fr.appendChild(b);
+    });
+
+    /* ── Build grid ─────────────────────────────────────────────── */
+    function buildGrid() {
+      const g = document.getElementById("grid");
+      let h = `<div></div>`;
+      CATS.forEach(c => { h += `<div class="cat-head">${c.slice(0,5)}</div>`; });
+      LAYERS.forEach((layer, li) => {
+        const v = LV[li];
+        h += `<div class="layer-label" style="color:var(--${v}b)">${layer}</div>`;
+        CATS.forEach((cat, ci) => {
+          const key  = `${li},${ci}`;
+          const info = CELLS[key];
+          const isSelected    = selectedCell === key;
+          const isHighlighted = activeFilter && info?.iso.includes(activeFilter);
+
+          const st = isSelected
+            ? `background:var(--${v}f);border:2px solid var(--${v}b);color:var(--${v}t)`
+            : isHighlighted
+            ? `background:var(--${v}f);border:2px solid var(--${v}b);color:var(--${v}t)`
+            : `background:var(--bg2);border:0.5px solid var(--bd);color:var(--tx3)`;
+
+          const dotColor = info?.iso.length >= 3 ? "var(--ok)"
+                         : info?.iso.length === 2 ? "var(--warn-color,#854F0B)"
+                         : "var(--tx3)";
+
+          h += `<div class="hcell" style="${st}" onclick="selectCell('${key}')" title="${LAYERS[li]} × ${CATS[ci]}">
+            ${li+1},${ci+1}
+            <span class="dot" style="background:${info?.iso.length>=2?`var(--${v}b)`:'var(--bd2)'}"></span>
+          </div>`;
+        });
+      });
+      g.innerHTML = h;
+    }
+
+    /* ── Select cell ────────────────────────────────────────────── */
+    function selectCell(key) {
+      selectedCell = key;
+      buildGrid();
+      const [li, ci] = key.split(",").map(Number);
+      const v    = LV[li];
+      const info = CELLS[key];
+
+      const isoChips = info.iso.map(id => {
+        const s = STANDARDS.find(x => x.id === id);
+        return `<span class="iso-chip" onclick="setFilterFromChip('${id}',this)">${s?.label || id}</span>`;
+      }).join("");
+
+      document.getElementById("detail").innerHTML = `
+        <div style="width:100%">
+          <div class="d-coord" style="background:var(--${v}f);border:0.5px solid var(--${v}b)">
+            <p class="dc-label" style="color:var(--${v}b)">Coordinate [${li+1}, ${ci+1}]</p>
+            <p class="dc-val"   style="color:var(--${v}t)">${LAYERS[li]} × ${CATS[ci]}</p>
+          </div>
+          <div class="d-section">
+            <p class="ds-label">DESCRIPTION</p>
+            <p class="ds-text">${info.desc}</p>
+          </div>
+          <div class="d-section">
+            <p class="ds-label">ISO/IEC SC 42 STANDARDS</p>
+            <div>${isoChips}</div>
+          </div>
+          <div class="d-section">
+            <p class="ds-label">EVA VERIFICATION ROLE</p>
+            <div class="eva-note">${info.eva}</div>
+          </div>
+        </div>`;
+    }
+
+    /* ── Filter ─────────────────────────────────────────────────── */
+    function setFilter(id) {
+      activeFilter = id;
+      buildGrid();
+      if (!id) {
+        document.getElementById("detail").innerHTML =
+          `<p style="color:var(--tx3);font-size:13px;text-align:center">Click a cell to see details</p>`;
+        selectedCell = null;
+      }
+    }
+
+    function setFilterFromChip(id, el) {
+      document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+      document.querySelectorAll(".iso-chip").forEach(x => x.classList.remove("active"));
+      el.classList.add("active");
+      activeFilter = id;
+      buildGrid();
+      // Re-render detail to restore chip highlight
+      if (selectedCell) selectCell(selectedCell);
+    }
+
+    buildGrid();
+  </script>
+</body>
+</html>

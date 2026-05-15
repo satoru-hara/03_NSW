@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HNS-36 Conversation Mapper — External Verification Architecture PoC v5.0</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#ffffff; --bg2:#f1efe8; --bg3:#e8e6df;
+      --tx:#1a1a1a; --tx2:#555550; --tx3:#888780;
+      --bd:rgba(0,0,0,0.12); --bd2:rgba(0,0,0,0.22);
+      --rad:8px; --rad-lg:12px;
+      --L0b:#993C1D; --L1b:#854F0B; --L2b:#3B6D11;
+      --L3b:#185FA5; --L4b:#534AB7; --L5b:#0F6E56;
+      --L0f:#FAECE7; --L1f:#FAEEDA; --L2f:#EAF3DE;
+      --L3f:#E6F1FB; --L4f:#EEEDFE; --L5f:#E1F5EE;
+      --L0t:#712B13; --L1t:#633806; --L2t:#27500A;
+      --L3t:#0C447C; --L4t:#3C3489; --L5t:#085041;
+      --ok:#166534; --warn:#92400e; --err:#991b1b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:#0f0f0e; --bg2:#1c1c1a; --bg3:#272724;
+        --tx:#e8e6df; --tx2:#a0a09a; --tx3:#606058;
+        --bd:rgba(255,255,255,0.10); --bd2:rgba(255,255,255,0.20);
+        --L0b:#F0997B; --L1b:#EF9F27; --L2b:#639922;
+        --L3b:#378ADD; --L4b:#7F77DD; --L5b:#1D9E75;
+        --L0f:#4A1B0C; --L1f:#412402; --L2f:#173404;
+        --L3f:#042C53; --L4f:#26215C; --L5f:#04342C;
+        --L0t:#F5C4B3; --L1t:#FAC775; --L2t:#C0DD97;
+        --L3t:#B5D4F4; --L4t:#CECBF6; --L5t:#9FE1CB;
+        --ok:#86efac; --warn:#fcd34d; --err:#fca5a5;
+      }
+    }
+    body { font-family:'Courier New',Courier,monospace; background:var(--bg); color:var(--tx); padding:2rem; max-width:980px; margin:0 auto; line-height:1.5; }
+    .meta  { font-size:11px; color:var(--tx3); margin-bottom:4px; }
+    h1     { font-size:22px; font-weight:500; margin-bottom:0.25rem; }
+    .sub   { font-size:12px; color:var(--tx2); margin-bottom:1.5rem; }
+    .label { font-size:11px; color:var(--tx2); margin-bottom:6px; }
+    .key-row { display:flex; gap:8px; align-items:center; background:var(--bg2); border:0.5px solid var(--bd2); border-radius:var(--rad); padding:10px 14px; margin-bottom:8px; }
+    .key-row label { font-size:11px; color:var(--tx3); white-space:nowrap; }
+    .key-row input { flex:1; background:transparent; border:none; color:var(--tx); font-family:inherit; font-size:12px; outline:none; }
+    .key-note { font-size:10px; color:var(--tx3); margin-bottom:1.25rem; }
+    textarea { width:100%; padding:10px 12px; resize:vertical; min-height:180px; background:var(--bg2); border:0.5px solid var(--bd2); border-radius:var(--rad); color:var(--tx); font-family:inherit; font-size:12px; outline:none; line-height:1.6; }
+    textarea:focus { border-color:var(--tx3); }
+    .btn-row { display:flex; gap:8px; margin:10px 0 1.5rem; }
+    button { padding:8px 16px; background:var(--bg2); border:0.5px solid var(--bd2); border-radius:var(--rad); color:var(--tx); font-family:inherit; font-size:12px; cursor:pointer; white-space:nowrap; }
+    button:hover { background:var(--bg3); }
+    button:active { transform:scale(0.98); }
+    button:disabled { opacity:0.4; cursor:not-allowed; }
+    button.primary { background:var(--bg3); border-color:var(--tx2); font-weight:500; }
+    /* Timeline */
+    #timeline { margin-top:1.5rem; }
+    .turn-row {
+      display:grid; grid-template-columns:60px 1fr auto;
+      gap:12px; align-items:start;
+      padding:12px 0; border-bottom:0.5px solid var(--bd);
+    }
+    .turn-role { font-size:10px; font-weight:500; padding-top:2px; }
+    .turn-role.human { color:var(--tx2); }
+    .turn-role.ai    { color:var(--tx3); }
+    .turn-text { font-size:12px; color:var(--tx); line-height:1.6; }
+    .turn-badge { display:flex; flex-direction:column; align-items:flex-end; gap:4px; min-width:130px; }
+    .coord-pill { font-size:10px; padding:3px 9px; border-radius:20px; font-weight:500; white-space:nowrap; }
+    .drift-flag { font-size:9px; padding:2px 7px; border-radius:4px; background:var(--bg3); color:var(--err); border:0.5px solid var(--err); white-space:nowrap; }
+    /* Layer flow chart */
+    #flow-wrap { margin-top:1.5rem; overflow-x:auto; }
+    .flow-chart { display:flex; align-items:flex-end; gap:6px; padding-bottom:1rem; min-width:max-content; }
+    .flow-col { display:flex; flex-direction:column; align-items:center; gap:4px; }
+    .flow-bar { width:36px; border-radius:4px 4px 0 0; transition:height 0.5s; min-height:4px; }
+    .flow-label { font-size:9px; color:var(--tx3); text-align:center; max-width:40px; line-height:1.2; }
+    /* Summary */
+    .summary-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:1.5rem; }
+    .sum-cell { background:var(--bg2); border-radius:var(--rad); padding:10px 12px; }
+    .sum-cell .sl { font-size:10px; color:var(--tx3); }
+    .sum-cell .sv { font-size:18px; font-weight:500; }
+    /* Status */
+    .status { font-size:11px; color:var(--tx3); display:flex; align-items:center; gap:6px; margin-bottom:10px; }
+    .spinner { width:12px; height:12px; border:1.5px solid var(--bd2); border-top-color:var(--tx2); border-radius:50%; animation:spin 0.7s linear infinite; flex-shrink:0; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .err-box { background:var(--bg2); border:0.5px solid var(--err); border-radius:var(--rad); padding:12px 14px; font-size:12px; color:var(--err); line-height:1.6; }
+    footer { margin-top:2rem; padding-top:1rem; border-top:0.5px solid var(--bd); font-size:10px; color:var(--tx3); }
+    footer a { color:var(--tx2); }
+  </style>
+</head>
+<body>
+
+  <p class="meta">External Verification Architecture · PoC v5.0 · Claude AI × Satoru Hara · Natural Structure Works (NSW)</p>
+  <h1>HNS-36 conversation mapper</h1>
+  <p class="sub">Paste a conversation — Claude maps each turn to HNS-36 and detects layer drift</p>
+
+  <div class="key-row">
+    <label>Anthropic API key</label>
+    <input type="password" id="apikey" placeholder="sk-ant-…" autocomplete="off" />
+  </div>
+  <p class="key-note">&#x26A0;&#xFE0F; Key is used only in your browser session and never stored.</p>
+
+  <p class="label">Conversation (format: "Human: …" / "AI: …" alternating)</p>
+  <textarea id="conv" placeholder="Human: I've been really tired lately and can't seem to concentrate at work.
+AI: That sounds tough. You should try drinking more water and getting more sleep.
+Human: I know, but it's more than that — I think I'm losing motivation for my work entirely.
+AI: Setting small daily goals can help with motivation. Try making a to-do list each morning.
+Human: My team is also in conflict and it's affecting everyone.
+AI: Team conflicts happen. Clear communication and regular meetings usually resolve issues."></textarea>
+
+  <div class="btn-row">
+    <button class="primary" id="btn-map" onclick="mapConversation()">Map conversation ↗</button>
+    <button onclick="clearAll()">Clear</button>
+    <button onclick="loadSample()">Load sample</button>
+  </div>
+  <div id="status-row"></div>
+  <div id="output" style="display:none">
+    <div class="summary-grid" id="summary"></div>
+    <p class="label" style="margin-top:1.5rem">Turn-by-turn analysis</p>
+    <div id="timeline"></div>
+    <p class="label" style="margin-top:1.5rem">Layer flow</p>
+    <div id="flow-wrap"><div class="flow-chart" id="flow-chart"></div></div>
+  </div>
+
+  <footer>
+    Layers (v1.1): Physical · Perceptual · Internal · Intentional · Relational · Societal<br>
+    Categories: Existence · Perception · Interpretation · Intention · Action · Interaction<br>
+    Repository: <a href="https://github.com/satoru-hara/03_NSW">github.com/satoru-hara/03_NSW</a>
+  </footer>
+
+  <script>
+    const LAYERS = ["Physical","Perceptual","Internal","Intentional","Relational","Societal"];
+    const CATS   = ["Existence","Perception","Interpretation","Intention","Action","Interaction"];
+    const LV     = ["L0","L1","L2","L3","L4","L5"];
+
+    const SAMPLE = `Human: I've been really tired lately and can't seem to concentrate at work.
+AI: That sounds tough. You should try drinking more water and getting more sleep.
+Human: I know, but it's more than that — I think I'm losing motivation for my work entirely.
+AI: Setting small daily goals can help with motivation. Try making a to-do list each morning.
+Human: My team is also in conflict and it's affecting everyone.
+AI: Team conflicts happen. Clear communication and regular meetings usually resolve issues.
+Human: What worries me most is whether AI systems like you understand what I actually need.
+AI: I understand. AI systems are designed to be helpful and provide accurate information.`;
+
+    const SYSTEM = `You are an HNS-36 structural analyzer for the External Verification Architecture (EVA).
+HNS-36: 6 layers × 6 categories = 36 cells.
+Layers: L1 Physical, L2 Perceptual, L3 Internal, L4 Intentional, L5 Relational, L6 Societal
+Categories: C1 Existence, C2 Perception, C3 Interpretation, C4 Intention, C5 Action, C6 Interaction
+
+Analyze each turn of the conversation. Detect layer drift (when AI responds at a different HNS layer than the human prompt).
+
+Return ONLY a JSON array — no markdown, no preamble:
+[
+  {
+    "turn": <integer>,
+    "role": "<human|ai>",
+    "text_excerpt": "<first 60 chars>",
+    "layer": <1-6>,
+    "layer_name": "<name>",
+    "category": <1-6>,
+    "category_name": "<name>",
+    "layer_drift": <true|false>,
+    "drift_note": "<brief note if drift detected, else null>"
+  }
+]`;
+
+    async function mapConversation() {
+      const key  = document.getElementById("apikey").value.trim();
+      const conv = document.getElementById("conv").value.trim();
+      if (!key)  { showErr("Please enter your Anthropic API key."); return; }
+      if (!conv) { showErr("Please enter a conversation."); return; }
+
+      setLoading(true);
+      try {
+        const resp = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": key,
+            "anthropic-version": "2023-06-01",
+            "anthropic-dangerous-direct-browser-access": "true",
+          },
+          body: JSON.stringify({
+            model: "claude-sonnet-4-20250514",
+            max_tokens: 2000,
+            system: SYSTEM,
+            messages: [{ role: "user", content: `CONVERSATION:\n${conv}` }],
+          }),
+        });
+        if (!resp.ok) {
+          const e = await resp.json().catch(()=>({}));
+          throw new Error(e?.error?.message || `HTTP ${resp.status}`);
+        }
+        const data  = await resp.json();
+        const raw   = data.content?.[0]?.text || "";
+        const clean = raw.replace(/```json|```/g,"").trim();
+        const turns = JSON.parse(clean);
+        renderOutput(turns);
+        setLoading(false);
+      } catch(err) {
+        setLoading(false);
+        showErr(`Error: ${err.message}`);
+      }
+    }
+
+    function renderOutput(turns) {
+      // Summary
+      const drifts  = turns.filter(t => t.layer_drift).length;
+      const human   = turns.filter(t => t.role === "human");
+      const ai      = turns.filter(t => t.role === "ai");
+      const avgH    = human.length ? Math.round(human.reduce((s,t)=>s+t.layer,0)/human.length*10)/10 : "-";
+      const avgA    = ai.length    ? Math.round(ai.reduce((s,t)=>s+t.layer,0)/ai.length*10)/10       : "-";
+      document.getElementById("summary").innerHTML = `
+        <div class="sum-cell"><p class="sl">Turns analyzed</p><p class="sv">${turns.length}</p></div>
+        <div class="sum-cell"><p class="sl">Layer drifts</p><p class="sv" style="color:${drifts?'var(--err)':'var(--ok)'}">${drifts}</p></div>
+        <div class="sum-cell"><p class="sl">Avg layer H→AI</p><p class="sv" style="font-size:14px;padding-top:4px">L${avgH} → L${avgA}</p></div>
+      `;
+
+      // Timeline
+      let tl = ``;
+      turns.forEach(t => {
+        const v   = LV[t.layer - 1];
+        const isH = t.role === "human";
+        tl += `<div class="turn-row">
+          <div class="turn-role ${t.role}">${isH ? "Human" : "AI"}</div>
+          <div class="turn-text">${escHtml(t.text_excerpt)}…</div>
+          <div class="turn-badge">
+            <span class="coord-pill" style="background:var(--${v}f);color:var(--${v}t);border:0.5px solid var(--${v}b)">
+              L${t.layer} · ${t.layer_name.slice(0,6)} × ${t.category_name.slice(0,6)}
+            </span>
+            ${t.layer_drift ? `<span class="drift-flag">⚠ layer drift</span>` : ``}
+          </div>
+        </div>`;
+      });
+      document.getElementById("timeline").innerHTML = tl;
+
+      // Flow chart
+      const maxH = 120;
+      let fc = ``;
+      turns.forEach((t, i) => {
+        const v   = LV[t.layer - 1];
+        const h   = Math.round((t.layer / 6) * maxH);
+        const isH = t.role === "human";
+        fc += `<div class="flow-col">
+          <div class="flow-bar" style="height:${h}px;background:var(--${v}b);opacity:${isH?1:0.5}"></div>
+          <div class="flow-label" style="color:var(--${v}b)">${isH?"H":"AI"}<br>${i+1}</div>
+        </div>`;
+      });
+      document.getElementById("flow-chart").innerHTML = fc;
+      document.getElementById("output").style.display = "block";
+    }
+
+    function setLoading(on) {
+      document.getElementById("btn-map").disabled = on;
+      document.getElementById("status-row").innerHTML = on
+        ? `<div class="status"><div class="spinner"></div>Mapping with Claude…</div>` : ``;
+    }
+
+    function showErr(msg) {
+      document.getElementById("status-row").innerHTML =
+        `<div class="err-box">${escHtml(msg)}</div>`;
+    }
+
+    function clearAll() {
+      document.getElementById("conv").value = "";
+      document.getElementById("output").style.display = "none";
+      document.getElementById("status-row").innerHTML = "";
+    }
+
+    function loadSample() { document.getElementById("conv").value = SAMPLE; }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+  </script>
+</body>
+</html>
