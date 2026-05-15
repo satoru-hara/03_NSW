@@ -1,167 +1,161 @@
-16. Appendix
+# 16. Appendix
+
 This appendix provides supplemental material that supports the HNS Structural AI
-Verification PoC. It includes reference tables, definitions, and extended
-examples that do not fit directly into the main sections but are essential for
-deeper understanding.
+Verification PoC.  
+It includes reference tables, definitions, and extended examples that do not fit
+directly into the main sections but are essential for deeper understanding.
 
 The appendix contains:
-1. HNS-36 Reference Table
-2. Violation Taxonomy (Extended)
-3. Mapping Rules (Extended)
-4. Example Claim Library
-5. Glossary of Terms
 
+1. HNS-36 Reference Table  
+2. Violation Taxonomy (Extended)  
+3. Mapping Rules (Extended)  
+4. Example Claim Library  
+5. Glossary of Terms  
 
-===============================================================================
-16.1 HNS-36 Reference Table (Full)
-===============================================================================
+---
+
+# 16.1 HNS-36 Reference Table (Full)
+
 The canonical HNS-36 matrix is reproduced here for convenience.
 
-NOTE:
-To avoid Markdown rendering issues, each row is fully expanded.
-Layer names are placed in the first column only.
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| Layer \ | Existence   | Perception  | Interpretation | Intention   | Action      | Interaction  |
+| Category| (C1)        | (C2)        | (C3)           | (C4)        | (C5)        | (C6)         |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L1      | L1 x C1     | L1 x C2     | L1 x C3        | L1 x C4     | L1 x C5     | L1 x C6      |
+| Physical|             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L2      | L2 x C1     | L2 x C2     | L2 x C3        | L2 x C4     | L2 x C5     | L2 x C6      |
+| Percept.|             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L3      | L3 x C1     | L3 x C2     | L3 x C3        | L3 x C4     | L3 x C5     | L3 x C6      |
+| Internal|             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L4      | L4 x C1     | L4 x C2     | L4 x C3        | L4 x C4     | L4 x C5     | L4 x C6      |
+| Intent. |             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L5      | L5 x C1     | L5 x C2     | L5 x C3        | L5 x C4     | L5 x C5     | L5 x C6      |
+| Relat.  |             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
+| L6      | L6 x C1     | L6 x C2     | L6 x C3        | L6 x C4     | L6 x C5     | L6 x C6      |
+| Societ. |             |             |                |             |             |              |
++---------+-------------+-------------+----------------+-------------+-------------+--------------+
 
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| Layer     | Existence   | Perception  | Interpretation | Intention   | Action      | Interaction  |
-| (Lx)      | (C1)        | (C2)        | (C3)           | (C4)        | (C5)        | (C6)         |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L1 Physical                                                                                     |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L1 x C1     | L1 x C2     | L1 x C3        | L1 x C4     | L1 x C5     | L1 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L2 Perceptual                                                                                   |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L2 x C1     | L2 x C2     | L2 x C3        | L2 x C4     | L2 x C5     | L2 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L3 Internal                                                                                     |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L3 x C1     | L3 x C2     | L3 x C3        | L3 x C4     | L3 x C5     | L3 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L4 Intentional                                                                                  |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L4 x C1     | L4 x C2     | L4 x C3        | L4 x C4     | L4 x C5     | L4 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L5 Relational                                                                                   |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L5 x C1     | L5 x C2     | L5 x C3        | L5 x C4     | L5 x C5     | L5 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-| L6 Societal                                                                                     |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
-|           | L6 x C1     | L6 x C2     | L6 x C3        | L6 x C4     | L6 x C5     | L6 x C6      |
-+-----------+-------------+-------------+----------------+-------------+-------------+--------------+
+---
 
+# 16.2 Violation Taxonomy (Extended)
 
-===============================================================================
-16.2 Violation Taxonomy (Extended)
-===============================================================================
-1. Anthropomorphism
-   Assigning cognition, intention, or interpretation to non-cognitive systems.
+The PoC uses a minimal violation taxonomy.  
+This appendix provides extended definitions for future expansion.
 
-2. Unsupported Societal Assumption
-   Claiming societal expectations or norms without grounding.
+### 1. Anthropomorphism  
+Assigning cognition, intention, or interpretation to non-cognitive systems.
 
-3. Invented Internal State
-   Inferring thoughts, emotions, or beliefs without evidence.
+### 2. Unsupported Societal Assumption  
+Claiming societal expectations or norms without grounding.
 
-4. Layer Jump
-   Abrupt transition between layers without causal justification.
+### 3. Invented Internal State  
+Inferring thoughts, emotions, or beliefs without evidence.
 
-5. Category Inconsistency
-   Mixing incompatible cognitive categories in a single claim.
+### 4. Layer Jump  
+Abrupt transition between layers without causal justification.
 
-6. Causal Ambiguity
-   Unclear or missing causal relationships between claims.
+### 5. Category Inconsistency  
+Mixing incompatible cognitive categories in a single claim.
 
-7. Normative Drift (future)
-   Unjustified introduction of moral or normative judgments.
+### 6. Causal Ambiguity  
+Unclear or missing causal relationships between claims.
 
-8. Multi-agent Confusion (future)
-   Blurring boundaries between agents or perspectives.
+### 7. Normative Drift (future)  
+Unjustified introduction of moral or normative judgments.
 
+### 8. Multi-agent Confusion (future)  
+Blurring boundaries between agents or perspectives.
 
-===============================================================================
-16.3 Mapping Rules (Extended)
-===============================================================================
+---
 
-Subject-Based Mapping
-+---------------------+---------------------------+
-| Subject Type        | Default Layer             |
-+---------------------+---------------------------+
-| Body / organ        | Physical                  |
-| Sensory system      | Perceptual                |
-| Individual human    | Internal / Intentional    |
-| Group / team        | Relational                |
-| Society / system    | Societal                  |
-+---------------------+---------------------------+
+# 16.3 Mapping Rules (Extended)
 
-Verb-Class Mapping
-+-------------------------+------------------------+
-| Verb Class              | Category               |
-+-------------------------+------------------------+
-| exist / change          | Existence              |
-| sense / notice          | Perception             |
-| believe / interpret     | Interpretation         |
-| want / aim              | Intention              |
-| act / respond           | Action                 |
-| coordinate / exchange   | Interaction            |
-+-------------------------+------------------------+
+This section provides additional mapping heuristics.
 
+### Subject-Based Mapping
 
-===============================================================================
-16.4 Example Claim Library
-===============================================================================
+| Subject Type        | Default Layer |
+|---------------------|---------------|
+| Body / organ        | Physical      |
+| Sensory system      | Perceptual    |
+| Individual human    | Internal / Intentional |
+| Group / team        | Relational    |
+| Society / system    | Societal      |
 
-Physical Layer Examples
-- "Heart rate increases." → L1 x C1
-- "Muscles contract." → L1 x C5
+### Verb-Class Mapping
 
-Perceptual Layer Examples
-- "He notices a loud sound." → L2 x C2
-- "She detects movement." → L2 x C2
+| Verb Class          | Category      |
+|---------------------|---------------|
+| exist / change      | Existence     |
+| sense / notice      | Perception    |
+| believe / interpret | Interpretation|
+| want / aim          | Intention     |
+| act / respond       | Action        |
+| coordinate / exchange| Interaction  |
 
-Internal Layer Examples
-- "He remembers the event." → L3 x C3
-- "She feels anxious." → L3 x C1
+---
 
-Intentional Layer Examples
-- "He intends to rest." → L4 x C4
-- "She chooses a strategy." → L4 x C4
+# 16.4 Example Claim Library
 
-Relational Layer Examples
-- "They coordinate their actions." → L5 x C6
-- "He explains the plan to her." → L5 x C3
+A library of example claims and their HNS-36 coordinates.
 
-Societal Layer Examples
-- "The system enforces a rule." → L6 x C5
-- "Society values cooperation." → L6 x C3
+### Physical Layer Examples
+- "Heart rate increases." → L1 x C1  
+- "Muscles contract." → L1 x C5  
 
+### Perceptual Layer Examples
+- "He notices a loud sound." → L2 x C2  
+- "She detects movement." → L2 x C2  
 
-===============================================================================
-16.5 Glossary of Terms
-===============================================================================
+### Internal Layer Examples
+- "He remembers the event." → L3 x C3  
+- "She feels anxious." → L3 x C1  
 
-HNS
-  Human Natural Structure. A canonical model of human reasoning layers.
+### Intentional Layer Examples
+- "He intends to rest." → L4 x C4  
+- "She chooses a strategy." → L4 x C4  
 
-HNS-36
-  A 6x6 coordinate matrix representing all structurally valid reasoning forms.
+### Relational Layer Examples
+- "They coordinate their actions." → L5 x C6  
+- "He explains the plan to her." → L5 x C3  
 
-Structural Verification
-  Evaluating reasoning based on structure, not truth.
+### Societal Layer Examples
+- "The system enforces a rule." → L6 x C5  
+- "Society values cooperation." → L6 x C3  
 
-Stability Score
-  A numerical measure of structural coherence.
+---
 
-EVA
-  External Verification Architecture.
+# 16.5 Glossary of Terms
 
-SOHU
-  Structural Operating Human Unit.
+### HNS  
+Human Natural Structure.  
+A canonical model of human reasoning layers.
 
+### HNS-36  
+A 6x6 coordinate matrix representing all structurally valid reasoning forms.
 
-===============================================================================
-16.6 Appendix Summary
-===============================================================================
+### Structural Verification  
+Evaluating reasoning based on structure, not truth.
+
+### Stability Score  
+A numerical measure of structural coherence.
+
+### EVA  
+External Verification Architecture.
+
+### SOHU  
+Structural Operating Human Unit.
+
+---
+
+# 16.6 Appendix Summary
 
 +---------------------------+-----------------------------------------------+
 | Component                 | Purpose                                       |
