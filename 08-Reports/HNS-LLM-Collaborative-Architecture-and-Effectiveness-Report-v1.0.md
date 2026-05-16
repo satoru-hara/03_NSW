@@ -12,8 +12,10 @@ HNS provides the structural frame through which LLM outputs can be stabilized, o
 
 The core claim of this report is simple:
 
-LLMs have capability but no stable human-structural coordinate system.  
-HNS has structure but no generative capability by itself.  
+LLMs have capability but no stable human-structural coordinate system.
+
+HNS has structure but no generative capability by itself.
+
 Their collaboration creates a practical architecture for stable, human-aligned AI reasoning.
 
 ---
@@ -56,9 +58,12 @@ The relationship can be summarized as follows:
 
 In this sense:
 
-LLM is the engine.  
-HNS is the steering system.  
-LLM generates movement.  
+LLM is the engine.
+
+HNS is the steering system.
+
+LLM generates movement.
+
 HNS provides direction and structural stability.
 
 ---
@@ -89,7 +94,8 @@ LLMs may mix causal levels, explanatory categories, implementation details, and 
 
 LLMs may produce text that appears coherent, even when the underlying structure is weak, unsupported, or internally inconsistent.
 
-These problems are not only knowledge problems.  
+These problems are not only knowledge problems.
+
 They are structural problems.
 
 Therefore, they require a structural response.
@@ -111,10 +117,12 @@ The HNS framework organizes human-related phenomena through layered and categori
 
 These structures can be used to locate the level at which a question, behavior, system, or response should be interpreted.
 
-HNS does not replace LLM reasoning.  
+HNS does not replace LLM reasoning.
+
 It organizes LLM reasoning.
 
-HNS does not provide the answer by itself.  
+HNS does not provide the answer by itself.
+
 It defines the structural space within which the answer should remain coherent.
 
 ---
@@ -157,7 +165,8 @@ HNS does not need to be implemented as a perfect mathematical system in order to
 
 For many practical AI applications, approximate structural coordinates are sufficient.
 
-The purpose of HNS is not to force exact numerical classification in every case.  
+The purpose of HNS is not to force exact numerical classification in every case.
+
 The purpose is to prevent uncontrolled drift across layers, categories, and abstraction levels.
 
 Even approximate HNS coordinates can help LLMs determine:
@@ -193,7 +202,8 @@ HNS is used to identify the structural domain of the input:
 
 The input is mapped to HNS coordinates.
 
-This mapping does not need to be perfectly precise.  
+This mapping does not need to be perfectly precise.
+
 Its purpose is to define the structural frame of the response.
 
 ### 7.3 Response Generation
@@ -235,13 +245,13 @@ HNS can collaborate with LLMs through several practical implementation pathways.
 
 | Implementation Mode | Description |
 |---|---|
-| Prompt-Level Guidance | HNS rules are included in system or developer prompts to guide model behavior |
-| Retrieval-Augmented Reference | HNS documents are retrieved as reference material during generation |
-| Coordinate Tagging | User inputs and model outputs are tagged with HNS coordinates |
-| Output Verification | Responses are checked against HNS layers, categories, and boundary rules |
-| Agent-Level Control | HNS is used as a reasoning controller for multi-step AI agents |
-| External Verification | HNS is connected to EVA-style external audit and verification systems |
-| Human-AI Interface Design | HNS is used to align AI responses with human cognitive and interaction structures |
+| Prompt-Level Guidance | HNS rules are included in system or developer prompts to guide model behavior. |
+| Retrieval-Augmented Reference | HNS documents are retrieved as reference material during generation. |
+| Coordinate Tagging | User inputs and model outputs are tagged with HNS coordinates. |
+| Output Verification | Responses are checked against HNS layers, categories, and boundary rules. |
+| Agent-Level Control | HNS is used as a reasoning controller for multi-step AI agents. |
+| External Verification | HNS is connected to EVA-style external audit and verification systems. |
+| Human-AI Interface Design | HNS is used to align AI responses with human cognitive and interaction structures. |
 
 These modes allow HNS to function not as static knowledge, but as an operational architecture for stabilizing LLM behavior.
 
@@ -253,14 +263,14 @@ The effectiveness of HNS–LLM collaboration can be evaluated through observable
 
 | Evaluation Area | Expected Effect |
 |---|---|
-| Context Stability | Reduced topic drift and improved continuity across long interactions |
-| Intent Alignment | Better preservation of the user’s original purpose |
-| Abstraction Control | More stable movement between concrete and abstract levels |
-| Structural Consistency | Fewer contradictions across layers and categories |
-| Hallucination Reduction | Reduced unsupported claims through structural boundary checks |
-| Explanation Quality | Clearer separation between cause, context, interpretation, and application |
-| Auditability | Easier post-hoc analysis of why a response was generated |
-| Human Alignment | Better matching between AI response structure and human cognitive expectations |
+| Context Stability | Reduced topic drift and improved continuity across long interactions. |
+| Intent Alignment | Better preservation of the user’s original purpose. |
+| Abstraction Control | More stable movement between concrete and abstract levels. |
+| Structural Consistency | Fewer contradictions across layers and categories. |
+| Hallucination Reduction | Reduced unsupported claims through structural boundary checks. |
+| Explanation Quality | Clearer separation between cause, context, interpretation, and application. |
+| Auditability | Easier post-hoc analysis of why a response was generated. |
+| Human Alignment | Better matching between AI response structure and human cognitive expectations. |
 
 These criteria do not require HNS to prove absolute correctness in advance.
 
@@ -276,7 +286,8 @@ Before the LLM era, HNS would have had limited practical deployment value becaus
 
 In the LLM era, HNS becomes operational.
 
-LLMs provide the generative capability.  
+LLMs provide the generative capability.
+
 HNS provides the structural coordination.
 
 This means HNS should not be understood merely as a theory of human structure.
@@ -317,13 +328,16 @@ HNS and LLMs are not competitors.
 
 They are complementary systems.
 
-LLMs provide generative intelligence.  
+LLMs provide generative intelligence.
+
 HNS provides structural intelligence.
 
-LLMs create responses.  
+LLMs create responses.
+
 HNS stabilizes the space in which responses are created.
 
-LLMs have capability without stable human-structural coordinates.  
+LLMs have capability without stable human-structural coordinates.
+
 HNS has structural coordinates without generative capability.
 
 Their collaboration creates a new possibility:
@@ -334,7 +348,8 @@ The value of HNS is therefore not limited to its conceptual structure.
 
 Its greatest value emerges when it collaborates with LLMs.
 
-HNS becomes operational through LLMs.  
+HNS becomes operational through LLMs.
+
 LLMs become structurally stabilized through HNS.
 
 This is the core significance of the HNS–LLM collaborative architecture.
