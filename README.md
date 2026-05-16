@@ -1,75 +1,79 @@
-# 03_NSW - Natural Structure Works
+# Human Natural Structure (HNS)
 
-HNS (Human Natural Structure) is the highest-level system within Satoru Hara's architecture.  
-It defines the structural principles of humans, society, and civilization, providing a unified framework that connects individual capability, collective systems, and long-term civilizational development.
+**The Operating Structure for Human Cognition — A Foundation Aiming for Global Standardization**
 
-This section represents the "structure layer," sitting above KFW (physical capability) and NAW (work architecture), and establishing the conceptual foundation for understanding human systems at every scale.
+**S. Hara | Natural Structure Works**
 
-------------------------------------------------------------
+## Overview
 
-## Included Books (HNS Full 11‑Volume Series)
+Human Natural Structure (HNS) is an **Operating Structure (OS)** designed to formally describe human cognition, behavior, and meaning generation.
 
-01_Natural-Civilization-Framework  
-  A structural model of civilization, describing how human societies form, evolve, and maintain coherence.  
-  ISBN: 9798248456017
+HNS provides AI systems with a structural foundation to understand humans not as probabilistic token sequences, but as coherent, layered structures.
 
-02_Human-OS-Core  
-  The core operating system of human beings.  
-  Defines the essential components that govern human behavior, capability, and systemic function.  
-  ISBN: 9798248457823
+This repository publicly shares the theory, design, and strategy of HNS in a progressive manner.
 
-03_Human-OS-Module  
-  A modular extension of the Human OS, detailing functional subsystems and their interactions.  
-  ISBN: 9798248458721
+**[HNS Strategic Roadmap v1.1](./07-Strategy/HNS-Strategic-Roadmap-v1.1.md)**  
+(The complete overview and four-phase strategy are available here)
 
-04_Natural-Application  
-  A framework describing how human capabilities are applied in real environments.  
-  Connects structural principles to practical execution.  
-  ISBN: 9798248459483
+## The Structural Misalignment HNS Solves
 
-05_Civilization-System  
-  A system-level view of how human groups organize, coordinate, and build large-scale structures.  
-  ISBN: 9798248460366
+Current AI systems treat language as probabilistic token sequences. As a result, they inevitably encounter the following **structural failure modes**:
 
-06_External-Module  
-  Describes external systems that interact with human capability and civilization.  
-  ISBN: 9798248461851
+- **Layer Collapse**  All causal layers collapse into a single semantic representation.
+- **Category Drift**  The explanatory category shifts unconsciously during conversation.
+- **Depth Confusion**  The system cannot detect the level of abstraction.
+- **Observer Injection**  Structures from training data leak into the output.
+- **Alignment Asymmetry**  Humans are forced to adapt to the AI’s structure.
 
-07_Human-Natural-Structure-Foundational-Specification  
-  The foundational specification of HNS, defining the base structural rules of the entire framework.  
-  ISBN: 9798249142193
+HNS is the only coordinate system that addresses these issues at the structural level.
 
-08_Human-Natural-Structure-Observational-Specification  
-  The observational layer of HNS, describing how human structure is recognized, measured, and interpreted.  
-  ISBN: 9798252069296
+## HNS Structure (36 → 144 → 864)
 
-09_Human-Natural-Structure-Analytical-Specification  
-  The analytical layer of HNS, providing the tools and criteria for structural evaluation and analysis.  
-  ISBN: 9798252325996
+HNS is organized in the following hierarchical coordinate system:
 
-10_Human-Natural-Structure-Operating-System  
-  The complete OS-level specification of HNS.  
-  Defines the unified blueprint, system architecture, and implementation notes.  
-  ISBN: 9798253091593
+- **HNS-36**  The minimal structure for human meaning generation
+- **HNS-144**  Extended causal structure built upon HNS-36
+- **HNS-864**  Full deployment covering behavior, cognition, and social structures
 
-11_Human-Natural-Structure-Technical-Note  
-  Supplementary explanations, definitions, and methodological details supporting the entire HNS framework.  
-  ISBN: 9798248464395
+This layered architecture allows human thought, action, and meaning to be described in the same way an operating system manages processes.
 
-------------------------------------------------------------
+## EVA (External Verification Architecture)
 
-## Structure
+HNS is externally verifiable through **EVA**:
 
-- Each folder contains a README explaining its purpose  
-- Each book folder includes a PDF (full text)  
-- Numbering ensures clarity, order, and reproducibility  
-- HNS is organized strictly by book units, not by layers or modules  
+- Whether AI outputs are consistent with HNS coordinates
+- Whether human intent aligns with the generated structure
+- Whether explanations maintain proper hierarchical integrity
 
-------------------------------------------------------------
+This external verification dramatically improves AI transparency, safety, and explainability.
 
-## Purpose of NSW
+## Path to Standardization
 
-NSW defines the structural blueprint of human beings and human civilization.  
-It provides the highest-level conceptual architecture that connects physical capability (KFW), work execution (NAW), and the broader systems that shape human life.
+HNS is designed with the intention of becoming the global standard **Operating Structure for Human Cognition**, with consideration for international standardization bodies.
 
-This section establishes the long-term, abstract, and systemic foundation of the entire framework.
+## Repository Structure
+
+- **01-Docs**  Foundational concepts and definitions
+- **02-Papers**  Theoretical papers and reflections
+- **03-Books**  Complete HNS Series (11 volumes with ISBN)
+- **07-Strategy**  Strategic documents for HNS and EVA
+- **08-Reports**  PoC and implementation reports
+
+## Next Steps
+
+For those interested in HNS:
+
+1. Read the **[HNS Strategic Roadmap v1.1](./07-Strategy/HNS-Strategic-Roadmap-v1.1.md)**
+2. Explore the HNS-36 / 144 / 864 coordinate system
+3. Experiment with EVA-based external verification (optional)
+4. Apply HNS in your own research or implementation (optional)
+
+---
+
+**AI capability has already reached a sufficient level.**  
+**What is now being asked is not what AI can do, but how well it can understand and respect the structure of the human it serves.**
+
+HNS exists as the world-standard OS for that purpose.
+
+**Natural Structure Works**  
+© 2026 S. Hara. All rights reserved.
