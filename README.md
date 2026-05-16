@@ -1,16 +1,16 @@
 # Human Natural Structure (HNS)
 
-**The Operating Structure for Human Cognition — A Foundation Aiming for Global Standardization**
+**The Operating Structure for Human Cognition — A Foundation for Alignment**
 
 **S. Hara | Natural Structure Works**
 
 ## Overview
 
-Human Natural Structure (HNS) is an **Operating Structure (OS)** designed to formally describe human cognition, behavior, and meaning generation.
+Human Natural Structure (HNS) is an **Operating Structure (OS)** designed to formally describe human cognition, behavior, and meaning generation in a structured, hierarchical manner.
 
-HNS provides AI systems with a structural foundation to understand humans not as probabilistic token sequences, but as coherent, layered structures.
+**HNS enables structurally aligned reasoning, interpretable AI behavior, and human-consistent meaning generation.**
 
-This repository publicly shares the theory, design, and strategy of HNS in a progressive manner.
+This repository shares the theory, design, and strategy of HNS in a progressive and open manner.
 
 **[HNS Strategic Roadmap v1.1](./07-Strategy/HNS-Strategic-Roadmap-v1.1.md)**  
 (The complete overview and four-phase strategy are available here)
@@ -25,7 +25,7 @@ Current AI systems treat language as probabilistic token sequences. As a result,
 - **Observer Injection**  Structures from training data leak into the output.
 - **Alignment Asymmetry**  Humans are forced to adapt to the AI’s structure.
 
-HNS is the only coordinate system that addresses these issues at the structural level.
+HNS addresses these issues at the structural level.
 
 ## HNS Structure (36 → 144 → 864)
 
@@ -39,17 +39,13 @@ This layered architecture allows human thought, action, and meaning to be descri
 
 ## EVA (External Verification Architecture)
 
-HNS is externally verifiable through **EVA**:
-
-- Whether AI outputs are consistent with HNS coordinates
-- Whether human intent aligns with the generated structure
-- Whether explanations maintain proper hierarchical integrity
+HNS is externally verifiable through **EVA** — the only architecture that allows AI outputs to be externally validated against a human-structured coordinate system.
 
 This external verification dramatically improves AI transparency, safety, and explainability.
 
 ## Path to Standardization
 
-HNS is designed with the intention of becoming the global standard **Operating Structure for Human Cognition**, with consideration for international standardization bodies.
+HNS is designed with compatibility for future standardization under CEN/CENELEC and ISO/IEC JTC1/SC42.
 
 ## Repository Structure
 
@@ -70,10 +66,7 @@ For those interested in HNS:
 
 ---
 
-**AI capability has already reached a sufficient level.**  
-**What is now being asked is not what AI can do, but how well it can understand and respect the structure of the human it serves.**
-
-HNS exists as the world-standard OS for that purpose.
+**HNS serves as the structural foundation for human–AI alignment.**
 
 **Natural Structure Works**  
 © 2026 S. Hara. All rights reserved.
