@@ -47,7 +47,7 @@ By mapping these into a coordinate system (**HNS-36 → HNS-144 → HNS-864**), 
 L1 | Physical | Perceptual  | Internal      | Intentional| Relational | Societal    |
    +----------+-------------+---------------+-----------+-----------+-------------+
 ```
-4. Stability Born from HNS × LLM Collaboration
+## 4. Stability Born from HNS × LLM Collaboration
 
 HNS and LLM complement each other’s weaknesses.
 
@@ -58,7 +58,7 @@ HNS and LLM complement each other’s weaknesses.
 
 When integrated, LLM refers to HNS coordinates and operates within a defined structural grid. This results in significantly more stable outputs with reduced hallucination and drift.
 
-5. Why “Approximate” Coordinates Are Sufficient
+## 5. Why “Approximate” Coordinates Are Sufficient
 
 HNS coordinates do not need to be mathematically exact. What matters is that the LLM can consistently reference:
 
@@ -68,7 +68,7 @@ HNS coordinates do not need to be mathematically exact. What matters is that the
 
 Simply having these reference points dramatically stabilizes LLM behavior. HNS provides the structural grid that prevents intelligence from drifting.
 
-6. Strategic Conclusion
+## 6. Strategic Conclusion
 
 HNS is not a theory created to prove conceptual correctness. It is a practical Structural OS whose value is realized only when implemented in AI.
 
