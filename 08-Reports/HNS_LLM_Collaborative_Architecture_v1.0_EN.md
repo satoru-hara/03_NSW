@@ -84,5 +84,3 @@ The integration of HNS and LLM enables:
 HNS × LLM represents the natural evolution toward truly human-understanding AI.
 
 Natural Structure Works © 2026 S. Hara. All rights reserved.
-
-
