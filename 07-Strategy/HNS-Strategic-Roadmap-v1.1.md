@@ -5,15 +5,11 @@
 **S. Hara | Natural Structure Works**  
 **Version 1.1 | May 2026**
 
-## 📍 Overview（Start Here）
+## 📍 Overview
 
-**HNS** is a formal coordinate system — a structural foundation that enables AI systems to **truly understand the human beings** they are communicating with.
+Human Natural Structure (HNS) is a formal coordinate system — a structural foundation that enables AI systems to truly understand the human beings they are communicating with.
 
-Current AI suffers from systematic **structural misalignment**. This roadmap presents a clear four-phase strategy to evolve HNS into the defining global standard for human-AI alignment.
-
-We invite developers, researchers, and organizations worldwide to join us in **open, win-win collaboration**.
-
-**[Table of Contents](#table-of-contents)**
+This roadmap outlines the four-phase strategy to evolve HNS from a structural framework into the defining global standard for human-AI alignment. It is shared openly for those who are already following the development of HNS.
 
 ## Table of Contents
 - [The Problem HNS Solves](#the-problem-hns-solves)
@@ -21,20 +17,20 @@ We invite developers, researchers, and organizations worldwide to join us in **o
 - [Strategic Roadmap](#strategic-roadmap)
 - [Structural Differentiation](#structural-differentiation)
 - [Current Traction on GitHub](#current-traction-on-github)
-- [Immediate Next Steps — Let’s Build Together](#immediate-next-steps)
+- [Next Steps](#next-steps)
 
 ## The Problem HNS Solves
 
-Current AI systems process human communication as probabilistic token patterns. They lack any mechanism to determine the causal layer, explanatory category, or depth of abstraction.
+Current AI systems process human communication as probabilistic token patterns. They lack any mechanism to determine the causal layer, explanatory category, or depth of abstraction from which a statement arises.
 
-This is not a knowledge problem. It is a **structural problem**. Five core failure modes define the current paradigm:
+This is not merely a knowledge problem. It is a **structural problem**. Five core failure modes characterize the current paradigm:
 
 | Failure Mode          | Description |
 |-----------------------|-------------|
 | **Layer Collapse**    | All causal layers are flattened into a single semantic representation. |
 | **Category Drift**    | The explanatory purpose shifts mid-conversation without detection. |
 | **Depth Confusion**   | AI cannot detect the level of abstraction, producing responses at the wrong granularity. |
-| **Observer Injection**| Outputs reflect training data structure rather than the target phenomenon (root cause of hallucination). |
+| **Observer Injection**| Outputs reflect training data structure rather than the target phenomenon. |
 | **Alignment Asymmetry**| Humans must adapt to the AI’s structure. HNS inverts this asymmetry. |
 
 ## HNS Architecture (Three-Level Hierarchy)
@@ -45,7 +41,7 @@ HNS defines a precise coordinate system with progressive depth and resolution:
 - **HNS-144** Observational level (adds Abstract-Concrete × Coarse-Fine)
 - **HNS-864** Analytical level (adds 6 Analytical Modes) → becomes executable **HumanOS**
 
-**Design principle**: The current 6×6×2×2×6 = 864 default configuration is a deployable, empirically balanced starting point that can scale gracefully as data accumulates — without breaking the operational baseline.
+**Design principle**: The current 6×6×2×2×6 = 864 default configuration is a deployable, empirically balanced starting point that can scale gracefully as data accumulates.
 
 ## Strategic Roadmap (Four Phases)
 
@@ -68,16 +64,18 @@ HNS defines a precise coordinate system with progressive depth and resolution:
 
 ## Current Traction on GitHub
 
-This repository is already attracting strong technical interest. A dedicated monitoring cohort follows updates daily — a clear sign that organizations and individuals have identified HNS as a serious candidate for adoption and are awaiting the next milestone.
+This repository continues to attract quiet but steady interest. A dedicated monitoring cohort follows the updates daily. Their continued presence is deeply appreciated.
 
-## Immediate Next Steps — Let’s Build Together
+## Next Steps
 
-**You can start contributing right now:**
+For those who wish to engage further:
 
-1. **Read this roadmap** and share your thoughts in [GitHub Discussions](https://github.com/satoru-hara/03_NSW/discussions)
-2. **Try HNS** — System Prompt implementation (Tier 1) will be released soon
-3. **Contribute** — Issues, Pull Requests, and ideas are all welcome
-4. **Collaborate** — Join us in building the structural OS for human-AI alignment
+1. Read this roadmap at your own pace
+2. Share any thoughts or questions in GitHub Discussions when ready
+3. Observe how HNS coordinates might apply to your own work
+4. Contribute ideas or implementations if and when the time feels right
+
+There is no pressure. This is an open, long-term effort.
 
 ---
 
