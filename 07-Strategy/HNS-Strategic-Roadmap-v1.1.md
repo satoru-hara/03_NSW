@@ -9,7 +9,7 @@
 
 Human Natural Structure (HNS) is a formal coordinate system — a structural foundation that enables AI systems to truly understand the human beings they are communicating with.
 
-This roadmap outlines the four-phase strategy to evolve HNS from a structural framework into the defining global standard for human-AI alignment. It is shared openly for those who are already following the development of HNS.
+This roadmap outlines the four-phase strategy to evolve HNS from a structural framework into the defining global standard for human-AI alignment. It is shared openly for those who have been quietly following the development of this work.
 
 ## Table of Contents
 - [The Problem HNS Solves](#the-problem-hns-solves)
@@ -68,14 +68,14 @@ This repository continues to attract quiet but steady interest. A dedicated moni
 
 ## Next Steps
 
-For those who wish to engage further:
+For those who wish to engage further with this work:
 
 1. Read this roadmap at your own pace
 2. Share any thoughts or questions in GitHub Discussions when ready
-3. Observe how HNS coordinates might apply to your own work
+3. Observe how HNS coordinates might apply to your own work or research
 4. Contribute ideas or implementations if and when the time feels right
 
-There is no pressure. This is an open, long-term effort.
+There is no pressure. This is a long-term, open effort.
 
 ---
 
