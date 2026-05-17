@@ -1,226 +1,280 @@
 # EVA × EU AI Act Mapping Report
-External Verification Architecture — Technical Mapping to the EU AI Act  
-Version 1.1 (Standardization-Ready Edition)  
-Author: Satoru Hara (NSW)
+**External Verification Architecture — Technical Mapping to the EU AI Act**
+Version 1.1 (Revised Edition)
+Author: Satoru Hara / Natural Structure Works
 
-------------------------------------------------------------
+---
 
-# 0. Scope
+> **Note on Scope**
+> EVA (External Verification Architecture) is currently at conceptual design stage.
+> The mappings in this document represent intended structural alignments, not
+> implemented or certified compliance. Independent technical validation is required
+> before use in formal standardization submissions.
+> HNS-36, which EVA references as a reasoning baseline, has preliminary empirical
+> support from an internal PoC (5 cases, single evaluator, May 2026).
 
-This document provides a technical mapping between the requirements of the EU Artificial Intelligence Act (Regulation (EU) 2024/1689) and the External Verification Architecture (EVA).  
-It identifies how EVA’s structural components—Verifiability, Transparency, and Physical Immutability—satisfy the Act’s obligations for logging, transparency, traceability, robustness, and human oversight.
+---
 
-This mapping is intended to support the development of EN standards under CEN/CENELEC JTC 21.
+## 0. Scope
 
-------------------------------------------------------------
+This document provides a technical mapping between the requirements of the EU
+Artificial Intelligence Act (Regulation (EU) 2024/1689) and the External
+Verification Architecture (EVA).
 
-# 1. Purpose
+It identifies how EVA's structural components — Verifiability, Transparency, and
+Physical Immutability — are designed to address the Act's obligations for logging,
+transparency, traceability, robustness, and human oversight.
+
+This mapping is intended to support discussion of EN standards under CEN/CENELEC
+JTC 21 and is offered as a conceptual contribution for review.
+
+---
+
+## 1. Purpose
 
 The purpose of this document is to:
 
-- Translate EU AI Act obligations into concrete engineering requirements  
-- Demonstrate how EVA provides a compliant technical foundation  
-- Provide a machine-readable, implementation-ready interpretation of the Act  
-- Support harmonized standards development for high-risk AI systems  
-- Establish a baseline for conformance testing and certification
+- Translate EU AI Act obligations into concrete engineering requirements
+- Describe how EVA is designed to provide a compliant technical foundation
+- Offer an implementation-oriented interpretation of the Act
+- Support harmonized standards discussion for high-risk AI systems
+- Establish a baseline for future conformance testing and certification design
 
-------------------------------------------------------------
+---
 
-# 2. Normative References
+## 2. Normative References
 
-- Regulation (EU) 2024/1689 — Artificial Intelligence Act  
-- ISO/IEC 42001:2023 — AI Management System  
-- ISO/IEC 23894:2023 — AI Risk Management  
-- ISO/IEC 22989:2022 — AI Concepts and Terminology  
-- W3C PROV-O (2013) — The PROV Ontology  
-- Hara, S. (2026). External Verification Architecture (EVA)  
-- Hara, S. (2026). Human Natural Structure (HNS)
+| Reference | Status |
+|---|---|
+| Regulation (EU) 2024/1689 — Artificial Intelligence Act | Normative |
+| ISO/IEC 42001:2023 — AI Management System | Normative |
+| ISO/IEC 23894:2023 — AI Risk Management | Normative |
+| ISO/IEC 22989:2022 — AI Concepts and Terminology | Normative |
+| W3C PROV-O (2013) — The PROV Ontology | Normative |
 
-------------------------------------------------------------
+### Informative References (unpublished, author's own work)
 
-# 3. Terms and Definitions
+| Reference | Status |
+|---|---|
+| Hara, S. (2026). External Verification Architecture (EVA) | Informative — conceptual design, not peer-reviewed |
+| Hara, S. (2026). Human Natural Structure (HNS) | Informative — preliminary PoC, not peer-reviewed |
 
-**External Verification Architecture (EVA)**  
-A structural framework enabling continuous, machine-readable, tamper-resistant monitoring of AI reasoning through mechanisms independent of the model’s internal parameters.
+---
 
-**HNS (Human Natural Structure)**  
-A 36‑cell structural coordinate system used as a reference baseline for classifying AI reasoning steps.
+## 3. Terms and Definitions
 
-**Sidecar Architecture**  
-A parallel process that records reasoning evidence externally without sharing memory with the AI model.
+**External Verification Architecture (EVA)**
+A proposed structural framework intended to enable continuous, machine-readable,
+tamper-resistant monitoring of AI reasoning through mechanisms independent of the
+model's internal parameters. Currently at conceptual design stage.
 
-------------------------------------------------------------
+**HNS (Human Natural Structure)**
+A 36-cell structural coordinate system used as a reference baseline for classifying
+AI reasoning steps. Preliminary empirical validation available (HNS-36 PoC v1.0,
+May 2026).
 
-# 4. Executive Summary
+**Sidecar Architecture**
+A proposed parallel process that records reasoning evidence externally without
+sharing memory with the AI model.
 
-EVA provides a structural mechanism for recording and validating AI system reasoning in an external, machine-readable, tamper-resistant manner.
+---
 
-EVA directly supports the core requirements of the EU AI Act:
+## 4. Executive Summary
 
-- Verifiability  
-- Traceability  
-- Transparency  
-- Accountability  
-- Logging obligations  
-- Human oversight  
-- Robustness and cybersecurity  
+EVA is designed as a structural mechanism for recording and validating AI system
+reasoning in an external, machine-readable, tamper-resistant manner.
 
-This report presents a 1:1 technical mapping between the EU AI Act and EVA’s architectural components.
+If implemented as designed, EVA is intended to support the core requirements of
+the EU AI Act:
 
-------------------------------------------------------------
+- Verifiability
+- Traceability
+- Transparency
+- Accountability
+- Logging obligations
+- Human oversight
+- Robustness and cybersecurity
 
-# 5. EU AI Act → EVA Technical Mapping
+This report presents a conceptual mapping between EU AI Act requirements and
+EVA's architectural components. The mappings reflect design intent, not
+demonstrated implementation.
 
-## 5.1 Article 9 — Risk Management
+---
 
-**EU Requirement:**  
+## 5. EU AI Act → EVA Technical Mapping
+
+### 5.1 Article 9 — Risk Management
+
+**EU Requirement:**
 Documented, traceable, and evidence-based risk management.
 
-**EVA Alignment:**  
-- PROV-O based reasoning evidence  
-- HNS 36-cell structural classification  
-- RDF causal reasoning trace  
+**EVA Design Alignment:**
+- PROV-O based reasoning evidence
+- HNS 36-cell structural classification
+- RDF causal reasoning trace
 
-**Outcome:**  
+**Intended Outcome:**
 Externally verifiable risk-related decisions.
 
-------------------------------------------------------------
+---
 
-## 5.2 Article 10 — Data Governance
+### 5.2 Article 10 — Data Governance
 
-**EU Requirement:**  
+**EU Requirement:**
 Data quality, lineage, and bias mitigation.
 
-**EVA Alignment:**  
-- `prov:used` lineage for all inputs  
-- RDF descriptions of data sources  
+**EVA Design Alignment:**
+- prov:used lineage for all inputs
+- RDF descriptions of data sources
 
-**Outcome:**  
+**Intended Outcome:**
 Full traceability of data origin and usage.
 
-------------------------------------------------------------
+---
 
-## 5.3 Article 12 — Logging
+### 5.3 Article 12 — Logging
 
-**EU Requirement:**  
+**EU Requirement:**
 Mandatory logging for high-risk AI systems.
 
-**EVA Alignment:**  
-- JSON-LD / PROV-O log schema  
-- Sidecar-based external log generation  
-- No shared memory with the model  
+**EVA Design Alignment:**
+- JSON-LD / PROV-O log schema
+- Sidecar-based external log generation
+- No shared memory with the model
 
-**Outcome:**  
-Logs cannot be altered by the AI system.
+**Intended Outcome:**
+Logs that cannot be altered by the AI system.
 
-------------------------------------------------------------
+---
 
-## 5.4 Article 13 — Transparency
+### 5.4 Article 13 — Transparency
 
-**EU Requirement:**  
+**EU Requirement:**
 Explainability and transparency of system behavior.
 
-**EVA Alignment:**  
-- HNS 36-cell reasoning classification  
-- RDF reasoning trace showing evidence chains  
+**EVA Design Alignment:**
+- HNS 36-cell reasoning classification
+- RDF reasoning trace showing evidence chains
 
-**Outcome:**  
-Explainability becomes a structural property.
+**Intended Outcome:**
+Explainability as a structural property of the system.
 
-------------------------------------------------------------
+---
 
-## 5.5 Article 14 — Human Oversight
+### 5.5 Article 14 — Human Oversight
 
-**EU Requirement:**  
+**EU Requirement:**
 Supervisors must understand and intervene.
 
-**EVA Alignment:**  
-- Human-readable EVA log views  
-- Visualization of reasoning steps  
+**EVA Design Alignment:**
+- Human-readable EVA log views
+- Visualization of reasoning steps
 
-**Outcome:**  
-Supervisors gain actionable insight.
+**Intended Outcome:**
+Supervisors gain actionable insight into AI reasoning.
 
-------------------------------------------------------------
+---
 
-## 5.6 Article 15 — Accuracy, Robustness, Cybersecurity
+### 5.6 Article 15 — Accuracy, Robustness, Cybersecurity
 
-**EU Requirement:**  
+**EU Requirement:**
 Protection against manipulation and tampering.
 
-**EVA Alignment:**  
-- Signed logs  
-- TPM/FPGA-based attestation  
-- Hardware-rooted integrity  
+**EVA Design Alignment:**
+- Signed logs
+- TPM/FPGA-based attestation (design stage)
+- Hardware-rooted integrity
 
-**Outcome:**  
+**Intended Outcome:**
 Tamper-resistant evidence of system operation.
 
-------------------------------------------------------------
+---
 
-## 5.7 Annex III — High-Risk AI Use Cases
+### 5.7 Annex III — High-Risk AI Use Cases
 
-**EU Requirement:**  
+**EU Requirement:**
 Sector-specific obligations.
 
-**EVA Alignment:**  
-- EVA profiles per domain  
-- Domain-specific HNS coordinate assignments  
+**EVA Design Alignment:**
+- EVA profiles per domain (proposed)
+- Domain-specific HNS coordinate assignments
 
-**Outcome:**  
-Consistent conformance testing across sectors.
+**Intended Outcome:**
+Consistent conformance testing framework across sectors.
 
-------------------------------------------------------------
+---
 
-# 6. Alignment Between EVA’s Three Conditions and the EU AI Act
+## 6. Alignment Between EVA's Three Conditions and the EU AI Act
 
-| EVA Condition         | EU AI Act Articles | Technical Basis                          |
-|-----------------------|--------------------|------------------------------------------|
-| Verifiability         | Art.12, Art.15     | JSON-LD / PROV-O / Sidecar               |
-| Transparency          | Art.9, Art.13      | HNS classification / RDF reasoning trace |
-| Physical Immutability | Art.12, Art.15     | TPM/FPGA signatures / hardware isolation |
+| EVA Condition | EU AI Act Articles | Technical Basis |
+|---|---|---|
+| Verifiability | Art. 12, Art. 15 | JSON-LD / PROV-O / Sidecar |
+| Transparency | Art. 9, Art. 13 | HNS classification / RDF reasoning trace |
+| Physical Immutability | Art. 12, Art. 15 | TPM/FPGA signatures / hardware isolation |
 
-------------------------------------------------------------
+> **Note:** Physical Immutability (TPM/FPGA) is at design specification stage.
+> Hardware implementation has not been validated.
 
-# 7. Conformance Implications
+---
 
-EVA enables measurable conformance to the EU AI Act:
+## 7. Conformance Implications (Design Intent)
 
-- **Logging (Art.12):**  
-  JSON-LD logs provide machine-verifiable evidence.
+If implemented as designed, EVA is intended to enable measurable conformance
+to the following EU AI Act requirements:
 
-- **Transparency (Art.13):**  
-  HNS-based reasoning classification ensures explainability.
+| Requirement | EVA Mechanism | Status |
+|---|---|---|
+| Logging (Art. 12) | JSON-LD logs provide machine-verifiable evidence | Design stage |
+| Transparency (Art. 13) | HNS-based reasoning classification | Preliminary PoC |
+| Robustness (Art. 15) | Hardware-rooted signatures prevent tampering | Design stage |
+| Human Oversight (Art. 14) | Structured logs support supervisory intervention | Design stage |
+| Risk Management (Art. 9) | PROV-O reasoning chains provide audit-ready evidence | Design stage |
 
-- **Robustness (Art.15):**  
-  Hardware-rooted signatures prevent tampering.
+---
 
-- **Human Oversight (Art.14):**  
-  Structured logs support supervisory intervention.
+## 8. Applicability to EN Standardization Discussion
 
-- **Risk Management (Art.9):**  
-  PROV-O reasoning chains provide audit-ready evidence.
+EVA may be suitable for consideration in EN standardization because its design
+incorporates:
 
-------------------------------------------------------------
+- Machine-readable formats (JSON-LD / RDF)
+- PROV-O compliance design
+- Implementable conformance test structure
+- Direct mapping to EU AI Act requirements
+- Externality through Sidecar architecture
+- A reference baseline (HNS-36) for reasoning evaluation
 
-# 8. Applicability to EN Standardization
+> **Important:** This document is a conceptual contribution. It has not been
+> reviewed by CEN/CENELEC, ISO, or EU regulatory authorities. Formal
+> standardization requires independent technical review and validation.
 
-EVA is suitable for adoption as an EN standard because it provides:
+---
 
-- Machine-readable formats (JSON-LD / RDF)  
-- PROV-O compliance  
-- Implementable conformance tests  
-- Direct mapping to EU AI Act requirements  
-- Externality through Sidecar architecture  
-- A reference baseline (HNS) for reasoning evaluation  
+## 9. Limitations
 
-These characteristics align with CEN/CENELEC expectations for technical standards supporting the EU AI Act.
+| Limitation | Implication |
+|---|---|
+| EVA is at design stage | No implementation has been validated |
+| HNS-36 has preliminary PoC only | n=5 cases, single evaluator |
+| TPM/FPGA component unimplemented | Physical Immutability is design intent only |
+| Self-authored references | No independent peer review of EVA or HNS |
+| No CEN/CENELEC review | Standardization applicability is author's assessment |
 
-------------------------------------------------------------
+---
 
-# 9. Conclusion
+## 10. Conclusion
 
-EVA offers a direct, technically grounded implementation of the EU AI Act’s requirements.  
-Its machine-readable logs, structural reasoning model (HNS), and external verification mechanisms make it a strong candidate for CEN/CENELEC EN standardization.
+EVA is designed as a structural mechanism that may directly address the EU AI
+Act's requirements for logging, transparency, traceability, and human oversight.
 
-------------------------------------------------------------
+Its machine-readable log formats, HNS-based structural reasoning model, and
+external verification design make it a candidate for future CEN/CENELEC EN
+standardization consideration, subject to independent technical validation.
+
+The next required step is external review of the EVA design specification by
+technical experts independent of the author.
+
+---
+
+*Natural Structure Works*
+© 2026 S. Hara. All rights reserved.
