@@ -1,14 +1,23 @@
 # HNS-36 Naming Consolidation & Canonical Specification
-Version: v1.0
-Author: Satoru Hara (NSW)
-Status: Canonical / Normative
+Version: v1.0 (Revised)
+Author: Satoru Hara / Natural Structure Works
+Status: Authoritative Reference (author's own framework; not reviewed by standards bodies)
 Purpose: Unify all HNS layer and category names under a single, stable standard.
+
+---
+
+> **Note on Status**
+> This document is the author's authoritative naming reference for HNS-36.
+> It has not been reviewed or approved by ISO, IEC, SC42, JSAI, CEN/CENELEC,
+> or any other standards body. Use of canonical names in standardization
+> submissions is recommended for consistency, but does not imply acceptance
+> by any standards organization.
 
 ---
 
 ## 1. Purpose of This Document
 
-This document defines the **canonical naming standard** for the HNS-36 coordinate
+This document defines the canonical naming standard for the HNS-36 coordinate
 system. It resolves all historical naming variations across:
 
 - HNS v1.1 (Grok)
@@ -18,85 +27,95 @@ system. It resolves all historical naming variations across:
 - All PoC implementations (GitHub)
 - EVA / SOHU / Verification Layer documents
 
-This specification ensures that **all future HNS documents, PoC implementations,
-and standardization submissions use a single, unified naming system**.
-
-This document is normative.
+This specification ensures that all future HNS documents, PoC implementations,
+and standardization submissions use a single, unified naming system.
 
 ---
 
 ## 2. Canonical Names (Official Standard)
 
-The following names are the **official, canonical HNS-36 names**.
+The following names are the official, canonical HNS-36 names.
 All other names are aliases.
 
 ### 2.1 Canonical Human Natural Layers (L1–L6)
 
-1. **Physical**
-2. **Perceptual**
-3. **Internal**
-4. **Intentional**
-5. **Relational**
-6. **Societal**
+| ID | Canonical Name |
+|---|---|
+| L1 | Physical |
+| L2 | Perceptual |
+| L3 | Internal |
+| L4 | Intentional |
+| L5 | Relational |
+| L6 | Societal |
 
 These six layers represent the causal vertical axis of HNS-36.
 
 ### 2.2 Canonical Abstract Cognitive Categories (C1–C6)
 
-1. **Existence**
-2. **Perception**
-3. **Interpretation**
-4. **Intention**
-5. **Action**
-6. **Interaction**
+| ID | Canonical Name |
+|---|---|
+| C1 | Existence |
+| C2 | Perception |
+| C3 | Interpretation |
+| C4 | Intention |
+| C5 | Action |
+| C6 | Interaction |
 
 These six categories represent the explanatory horizontal axis of HNS-36.
 
-These 6×6 terms constitute the **only official naming set** for HNS-36.
+These 6×6 terms constitute the only official naming set for HNS-36.
 
 ---
 
 ## 3. Alias Names (Historical Variants)
 
-The following names appeared in earlier drafts, PoC prototypes, or descriptive volumes.
-They are **not canonical**, but may be referenced as aliases.
+The following names appeared in earlier drafts, PoC prototypes, or descriptive
+volumes. They are not canonical, but may be referenced as aliases.
 
 ### 3.1 Layer Aliases
 
-| Canonical (v1.1) | v0.1 (OS-style)     | v2.0 (Life/Sensory) |
-|------------------|---------------------|----------------------|
-| Physical         | PhysicalOS          | Physical             |
-| Perceptual       | CognitiveOS (part)  | Sensory              |
-| Internal         | CognitiveOS (part)  | Life                 |
-| Intentional      | InteractionOS (part)| Cognitive            |
-| Relational       | InteractionOS       | Social               |
-| Societal         | EnvironmentOS / PatternOS | Environmental |
+| Canonical (v1.1) | v0.1 (OS-style) | v2.0 (Life/Sensory) |
+|---|---|---|
+| Physical | PhysicalOS | Physical |
+| Perceptual | CognitiveOS (part) | Sensory |
+| Internal | CognitiveOS (part) | Life |
+| Intentional | InteractionOS (part) | Cognitive |
+| Relational | InteractionOS | Social |
+| Societal | EnvironmentOS / PatternOS | Environmental |
 
 ### 3.2 Category Aliases
 
-| Canonical (v1.1) | v0.1 (OS-style)                     | v2.0 (if applicable) |
-|------------------|-------------------------------------|-----------------------|
-| Existence        | Core / Civilization                 | Structure             |
-| Perception       | Module                              | Function              |
-| Interpretation   | System                              | Meaning / Analysis    |
-| Intention        | Application                         | Purpose               |
-| Action           | External / Application (operational)| Behavior              |
-| Interaction      | Civilization / External (contextual)| Interaction           |
+| Canonical (v1.1) | v0.1 (OS-style) | v2.0 (if applicable) |
+|---|---|---|
+| Existence | Core / Civilization | Structure |
+| Perception | Module | Function |
+| Interpretation | System | Meaning / Analysis |
+| Intention | Application | Purpose |
+| Action | External / Application (operational) | Behavior |
+| Interaction | Civilization / External (contextual) | Interaction |
 
-
-Aliases may be shown in parentheses only when necessary for backward compatibility.
+Aliases may appear in parentheses only when referencing older documents.
 
 ---
 
-## 4. Naming Rules (Normative)
+## 4. Naming Rules
 
-1. **All new HNS documents must use canonical names (Section 2).**
-2. **Aliases may appear only in parentheses** when referencing older documents.
-3. **PoC implementations must use canonical names exclusively.**
-4. **Foundational Specification must be updated to reference canonical names.**
-5. **SC42 / JSAI submissions must use canonical names only.**
-6. **Future expansions (HNS-144 / HNS-864) must inherit canonical names.**
-7. **Renaming canonical terms is prohibited** unless a formal revision is approved.
+All new HNS documents must use canonical names (Section 2).
+
+Aliases may appear only in parentheses when referencing older documents.
+
+PoC implementations must use canonical names exclusively.
+
+Foundational Specification must be updated to reference canonical names.
+
+Standardization submissions (SC42, JSAI, or others) should use canonical
+names for consistency. Acceptance by any standards body is not implied.
+
+Future proposed expansions (HNS-144, HNS-864) must inherit canonical
+layer and category names if developed.
+
+Renaming canonical terms is prohibited unless a formal revision is approved
+by the author and documented in a new version.
 
 ---
 
@@ -104,42 +123,70 @@ Aliases may be shown in parentheses only when necessary for backward compatibili
 
 The v1.1 naming set was selected as canonical because:
 
-- It is **already used in all PoC implementations**.
-- It is **abstract, neutral, and culturally independent**.
-- It aligns with **SC42 terminology expectations**.
-- It is compatible with **cognitive science and social science frameworks**.
-- It is stable and extensible for **HNS-144 / HNS-864**.
-- It avoids OS metaphors (PhysicalOS, LoadOS) unsuitable for standardization.
+- It is already used in all PoC implementations
+- It is abstract, neutral, and culturally independent
+- It is designed to align with SC42 terminology expectations
+  (formal alignment has not been independently assessed)
+- It is compatible with cognitive science and social science frameworks
+- It is stable and extensible for potential future expansions
+- It avoids OS metaphors (PhysicalOS, LoadOS) unsuitable for standardization
 
-Thus, v1.1 is the only naming set that satisfies:
-- implementation compatibility  
-- conceptual coherence  
-- standardization readiness  
-- long-term extensibility  
+The v1.1 naming set satisfies the following criteria within the author's framework:
+
+- Implementation compatibility
+- Conceptual coherence
+- Intended standardization alignment
+- Long-term extensibility
 
 ---
 
 ## 6. Versioning Policy
 
-- This document is the **authoritative naming standard** for HNS-36.
-- All future HNS specifications must reference this document.
-- Any proposed naming change requires:
-  - justification,
-  - impact analysis,
-  - version bump (v1.x → v2.0),
-  - and explicit approval.
+This document is the authoritative naming reference for HNS-36.
+
+All future HNS specifications should reference this document.
+
+Any proposed naming change requires:
+
+- Justification
+- Impact analysis on existing documents
+- Version bump (v1.x → v2.0)
+- Explicit approval by the author
 
 ---
 
-## 7. Appendix: Recommended Citation
+## 7. Relationship to Empirical Work
 
-“HNS-36 Naming Consolidation & Canonical Specification v1.0  
-Natural Structure Works (NSW), 2026.”
+The canonical names defined in this document are used throughout the
+HNS-36 empirical validation work:
+
+| Document | Uses canonical names |
+|---|---|
+| HNS-36 PoC Internal Experiment Report v1.0 (May 2026) | Yes |
+| HNS-36 Internal PoC Report Prepared for External Validation v1.1 | Yes |
+| HNS-36 vs HITL Comparison v1.0 (Revised) | Yes |
+| HNS-36 Global Standards Interoperability Map v1.0 (Revised) | Yes |
+| EVA × EU AI Act Mapping Report v1.1 (Revised) | Yes |
+
+Canonical naming consistency across these documents supports
+reproducibility and cross-document traceability.
 
 ---
 
-## 8. One-Sentence Summary
+## 8. Appendix: Recommended Citation
 
-This document establishes the **canonical naming system for HNS-36**, unifying all
-historical variants and ensuring stable terminology for all future HNS research,
-implementations, and standardization activities.
+> HNS-36 Naming Consolidation & Canonical Specification v1.0 (Revised).
+> Natural Structure Works (NSW), 2026.
+
+---
+
+## 9. One-Sentence Summary
+
+This document establishes the author's canonical naming system for HNS-36,
+unifying all historical variants and providing stable terminology for
+HNS research, implementations, and standardization discussions.
+
+---
+
+*Natural Structure Works*
+© 2026 S. Hara. All rights reserved.
