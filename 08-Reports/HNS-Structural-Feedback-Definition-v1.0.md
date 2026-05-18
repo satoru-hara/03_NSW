@@ -77,16 +77,35 @@ determines reliability.
 
 ### 3.1 How HNS-SF Works
 
+HNS-SF operates as a closed loop: AI output is diagnosed, converted into a
+structured signal, and fed back into the generation process as a correction.
+
 ```
-AI-generated output
-        ↓
-HNS-36 structural diagnosis
-        ↓
-Named error type + coordinate assignment
-        ↓
-Structured feedback signal
-        ↓
-Targeted model correction
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│   [AI-Generated Output]                             │
+│           ↓                                         │
+│   [HNS-36 Structural Diagnosis]                     │
+│     · Layer Jump?                                   │
+│     · Scope Drift?                                  │
+│     · Unsupported Causality?                        │
+│     · Metaphor Contamination?                       │
+│     · Category Ambiguity?                           │
+│           ↓                                         │
+│   [Named Error + Coordinate Assignment]             │
+│     e.g. L3×C3 → L6×C1, bridge logic missing       │
+│           ↓                                         │
+│   [HNS-SF Signal]                                   │
+│     · Named · Located · Explained                   │
+│     · Graded · Auditable                            │
+│           ↓                                         │
+│   [Targeted Model Correction]                       │
+│           ↓                                         │
+│   [Re-enters AI Generation Process]  ───────────┐  │
+│                                                  │  │
+└──────────────────────────────────────────────────┘  │
+         ↑                                            │
+         └────────────── Structural Loop ─────────────┘
 ```
 
 ### 3.2 The HNS-SF Signal
