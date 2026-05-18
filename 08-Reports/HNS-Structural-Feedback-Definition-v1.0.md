@@ -1,4 +1,4 @@
-# HNS-SF: HNS Structural Feedback
+# HNS Structural Feedback (HNS-SF)
 ### Coordinate-Based Structural Diagnosis as an AI Feedback Signal
 **Definition Document v1.0**
 
@@ -310,7 +310,7 @@ understanding.
 6 Abstract Cognitive Categories) for diagnosing structural reasoning
 errors in AI-generated text.
 
-**HNS-SF (HNS Structural Feedback):** A coordinate-based feedback mechanism
+**HNS Structural Feedback (HNS-SF):** A coordinate-based feedback mechanism
 that uses HNS-36 structural diagnoses — named error types and
 layer/category coordinates — as training and correction signals for
 AI systems, enabling more precise and reproducible structural alignment
