@@ -1,4 +1,4 @@
-# HNS Structural Feedback (HNS-SF)
+# HNS-SF: HNS Structural Feedback
 ### Coordinate-Based Structural Diagnosis as an AI Feedback Signal
 **Definition Document v1.0**
 
@@ -34,6 +34,8 @@ a human-aligned cognitive coordinate system.
 By converting HNS diagnostic outputs into a structured training signal,
 HNS-SF enables AI models to internalize causal constraints, avoid structural
 reasoning errors, and achieve more stable cognitive alignment across domains.
+The precise mechanism by which coordinate-based signals affect model
+internalization remains under investigation.
 
 ---
 
@@ -93,7 +95,7 @@ structured signal, and fed back into the generation process as a correction.
 │     · Category Ambiguity?                           │
 │           ↓                                         │
 │   [Named Error + Coordinate Assignment]             │
-│     e.g. L3×C3 → L6×C1, bridge logic missing        │
+│     e.g. L3×C3 → L6×C1, bridge logic missing       │
 │           ↓                                         │
 │   [HNS-SF Signal]                                   │
 │     · Named · Located · Explained                   │
@@ -101,7 +103,7 @@ structured signal, and fed back into the generation process as a correction.
 │           ↓                                         │
 │   [Targeted Model Correction]                       │
 │           ↓                                         │
-│   [Re-enters AI Generation Process]   ───────────┐  │
+│   [Re-enters AI Generation Process]  ───────────┐  │
 │                                                  │  │
 └──────────────────────────────────────────────────┘  │
          ↑                                            │
@@ -290,9 +292,10 @@ Where RLHF asks "which output do you prefer?", HNS-SF asks "where and
 why did the reasoning fail?" This shift from preference to structure
 enables feedback that is interpretable, reproducible, and targeted.
 
-The preliminary evidence from HNS-36 PoC work suggests that structural
-reasoning errors are real, recurring, and nameable. HNS-SF converts these
-diagnoses into signals that can guide AI improvement at the coordinate level.
+Within the scope of preliminary observations (n=5–8), the evidence
+suggests that structural reasoning errors are real, recurring, and
+nameable. HNS-SF converts these diagnoses into signals that can guide
+AI improvement at the coordinate level.
 
 HNS-SF is not a replacement for existing alignment methods. It is a
 structural layer that makes AI reasoning more transparent, more
@@ -307,7 +310,7 @@ understanding.
 6 Abstract Cognitive Categories) for diagnosing structural reasoning
 errors in AI-generated text.
 
-**HNS Structural Feedback (HNS-SF):** A coordinate-based feedback mechanism
+**HNS-SF (HNS Structural Feedback):** A coordinate-based feedback mechanism
 that uses HNS-36 structural diagnoses — named error types and
 layer/category coordinates — as training and correction signals for
 AI systems, enabling more precise and reproducible structural alignment
