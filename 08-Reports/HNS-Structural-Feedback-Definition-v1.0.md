@@ -1,4 +1,4 @@
-# HSF: HNS Structural Feedback
+# HNS-SF: HNS Structural Feedback
 **Definition Document v1.0**
 
 Author: Satoru Hara / Natural Structure Works
@@ -9,7 +9,7 @@ Naming Standard: HNS-36 Canonical Specification v1.0
 ---
 
 > **Note on Status**
-> HSF is a proposed feedback mechanism grounded in preliminary empirical
+> HNS-SF is a proposed feedback mechanism grounded in preliminary empirical
 > work (HNS-36 PoC, n=5, single evaluator, May 2026). The concept has
 > not been implemented at scale or validated through independent review.
 > This document is offered as a formal definition for discussion and
@@ -19,19 +19,19 @@ Naming Standard: HNS-36 Canonical Specification v1.0
 
 ## 1. Core Definition
 
-**HSF (HNS Structural Feedback)**
+**HNS-SF (HNS Structural Feedback)**
 
 A coordinate-based feedback mechanism that uses HNS-36 structural
 diagnoses — including named error types and layer/category coordinates —
 as training and correction signals for AI systems.
 
 Unlike conventional RLHF, which provides scalar preference judgments,
-HSF delivers interpretable, reproducible, and structurally grounded
+HNS-SF delivers interpretable, reproducible, and structurally grounded
 feedback that identifies **where** and **why** reasoning failed within
 a human-aligned cognitive coordinate system.
 
 By converting HNS diagnostic outputs into a structured training signal,
-HSF enables AI models to internalize causal constraints, avoid structural
+HNS-SF enables AI models to internalize causal constraints, avoid structural
 reasoning errors, and achieve more stable cognitive alignment across domains.
 
 ---
@@ -72,9 +72,9 @@ determines reliability.
 
 ---
 
-## 3. HSF: The Structural Alternative
+## 3. HNS-SF: The Structural Alternative
 
-### 3.1 How HSF Works
+### 3.1 How HNS-SF Works
 
 ```
 AI-generated output
@@ -88,12 +88,12 @@ Structured feedback signal
 Targeted model correction
 ```
 
-### 3.2 The HSF Signal
+### 3.2 The HNS-SF Signal
 
 Where RLHF produces:
 > "Response A > Response B" (scalar)
 
-HSF produces:
+HNS-SF produces:
 > "Layer Jump detected: L3 Internal × C3 Interpretation →
 >  L6 Societal × C1 Existence, bridge logic missing,
 >  severity: medium"
@@ -107,9 +107,9 @@ This signal is:
 
 ---
 
-## 4. HSF Error Types as Feedback Signals
+## 4. HNS-SF Error Types as Feedback Signals
 
-HSF uses five structural error types as its diagnostic vocabulary:
+HNS-SF uses five structural error types as its diagnostic vocabulary:
 
 | Error Type | Signal Meaning | Correction Direction |
 |---|---|---|
@@ -124,9 +124,9 @@ Each error type provides a **directional correction signal** — not just
 
 ---
 
-## 5. HSF vs RLHF: Comparison
+## 5. HNS-SF vs RLHF: Comparison
 
-| Dimension | RLHF | HSF |
+| Dimension | RLHF | HNS-SF |
 |---|---|---|
 | Signal type | Scalar preference (A > B) | Named error + coordinate |
 | Evaluator requirement | Human preference judgment | HNS-36 structural diagnosis |
@@ -137,14 +137,14 @@ Each error type provides a **directional correction signal** — not just
 | Domain portability | Limited | Cross-domain (universal coordinate system) |
 | Complementarity | Standalone | Complementary to RLHF |
 
-> **Note:** HSF is not a replacement for RLHF. It is a complementary
+> **Note:** HNS-SF is not a replacement for RLHF. It is a complementary
 > mechanism that adds structural precision to existing feedback pipelines.
 
 ---
 
-## 6. Two Modes of HSF
+## 6. Two Modes of HNS-SF
 
-### 6.1 Corrective HSF (post-hoc)
+### 6.1 Corrective HNS-SF (post-hoc)
 
 Applied after generation as a diagnostic and correction layer:
 
@@ -162,7 +162,7 @@ Revised output generated
 
 **Current status:** Demonstrated in HNS-36 PoC v1.0 (May 2026)
 
-### 6.2 Preventive HSF (proactive)
+### 6.2 Preventive HNS-SF (proactive)
 
 Applied as a system-prompt constraint before generation:
 
@@ -180,19 +180,19 @@ Layer Jump, Scope Drift, etc. reduced at source
 
 ## 7. Relationship to Existing Frameworks
 
-| Framework | Relationship to HSF |
+| Framework | Relationship to HNS-SF |
 |---|---|
-| RLHF | HSF complements RLHF by adding structural precision |
-| HITL (Human-in-the-Loop) | HSF provides structured diagnostic records for human reviewers |
-| EVA (External Verification Architecture) | HSF diagnostic logs integrate with EVA PROV-O records |
-| ISO/IEC 42001 | HSF supports transparency and auditability requirements |
-| EU AI Act Art. 13 | HSF enables coordinate-based explainability |
+| RLHF | HNS-SF complements RLHF by adding structural precision |
+| HITL (Human-in-the-Loop) | HNS-SF provides structured diagnostic records for human reviewers |
+| EVA (External Verification Architecture) | HNS-SF diagnostic logs integrate with EVA PROV-O records |
+| ISO/IEC 42001 | HNS-SF supports transparency and auditability requirements |
+| EU AI Act Art. 13 | HNS-SF enables coordinate-based explainability |
 
 ---
 
 ## 8. Empirical Basis
 
-HSF is grounded in the following preliminary empirical work:
+HNS-SF is grounded in the following preliminary empirical work:
 
 | Study | Finding |
 |---|---|
@@ -210,7 +210,7 @@ HSF is grounded in the following preliminary empirical work:
 
 ### 9.1 Model-Specific Error Profiling
 
-Accumulate HSF diagnostic data across AI models:
+Accumulate HNS-SF diagnostic data across AI models:
 
 > "Gemini: Metaphor Contamination rate = X%"
 > "ChatGPT: Unsupported Causality rate = Y%"
@@ -221,17 +221,17 @@ reproducible structural diagnostics.
 
 ### 9.2 Targeted Fine-Tuning
 
-Use HSF error records as training signals to reduce specific error
+Use HNS-SF error records as training signals to reduce specific error
 types in AI models, with measurable, coordinate-level progress tracking.
 
 ### 9.3 AI Safety Audit
 
-HSF diagnostic records provide a structural audit trail for AI outputs,
+HNS-SF diagnostic records provide a structural audit trail for AI outputs,
 supporting external verification and regulatory compliance.
 
 ### 9.4 Cross-Domain Alignment
 
-Because HNS-36 coordinates are domain-independent, HSF signals apply
+Because HNS-36 coordinates are domain-independent, HNS-SF signals apply
 consistently across education, healthcare, governance, and technical domains.
 
 ---
@@ -243,7 +243,7 @@ consistently across education, healthcare, governance, and technical domains.
 | Small empirical base | Current n=5-8; scale validation required |
 | Single evaluator | Independent replication needed |
 | Manual coordinate mapping | Automation required for scale |
-| No training implementation | HSF as training signal is theoretical at this stage |
+| No training implementation | HNS-SF as training signal is theoretical at this stage |
 | Model access | Retraining major models requires developer cooperation |
 
 ---
@@ -253,28 +253,28 @@ consistently across education, healthcare, governance, and technical domains.
 | Phase | Deliverable |
 |---|---|
 | Phase 1 (Complete) | HNS-36 PoC: demonstrate diagnostic capability |
-| Phase 2 (In progress) | Multi-Turn PoC: test preventive HSF |
+| Phase 2 (In progress) | Multi-Turn PoC: test preventive HNS-SF |
 | Phase 3 | 30-case validation dataset |
 | Phase 4 | Automated coordinate mapper |
-| Phase 5 | HSF as corrective feedback: measure revision quality |
-| Phase 6 | HSF as training signal: measure model-level error reduction |
-| Phase 7 | Cross-model structural comparison using HSF profiles |
+| Phase 5 | HNS-SF as corrective feedback: measure revision quality |
+| Phase 6 | HNS-SF as training signal: measure model-level error reduction |
+| Phase 7 | Cross-model structural comparison using HNS-SF profiles |
 
 ---
 
 ## 12. Conclusion
 
-HSF addresses a structural gap in current AI alignment methodology.
+HNS-SF addresses a structural gap in current AI alignment methodology.
 
-Where RLHF asks "which output do you prefer?", HSF asks "where and
+Where RLHF asks "which output do you prefer?", HNS-SF asks "where and
 why did the reasoning fail?" This shift from preference to structure
 enables feedback that is interpretable, reproducible, and targeted.
 
 The preliminary evidence from HNS-36 PoC work suggests that structural
-reasoning errors are real, recurring, and nameable. HSF converts these
+reasoning errors are real, recurring, and nameable. HNS-SF converts these
 diagnoses into signals that can guide AI improvement at the coordinate level.
 
-HSF is not a replacement for existing alignment methods. It is a
+HNS-SF is not a replacement for existing alignment methods. It is a
 structural layer that makes AI reasoning more transparent, more
 correctable, and more aligned with the causal structure of human
 understanding.
@@ -287,14 +287,11 @@ understanding.
 6 Abstract Cognitive Categories) for diagnosing structural reasoning
 errors in AI-generated text.
 
-**HSF (HNS Structural Feedback):** A coordinate-based feedback mechanism
+**HNS-SF (HNS Structural Feedback):** A coordinate-based feedback mechanism
 that uses HNS-36 structural diagnoses — named error types and
 layer/category coordinates — as training and correction signals for
 AI systems, enabling more precise and reproducible structural alignment
 than conventional RLHF.
-
-**CBF (Coordinate-Based Feedback):** Alternative term for HSF,
-emphasizing the coordinate-based nature of the feedback signal.
 
 ---
 
