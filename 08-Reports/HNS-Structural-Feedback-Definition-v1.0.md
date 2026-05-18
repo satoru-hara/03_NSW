@@ -1,4 +1,5 @@
 # HNS-SF: HNS Structural Feedback
+### Coordinate-Based Structural Diagnosis as an AI Feedback Signal
 **Definition Document v1.0**
 
 Author: Satoru Hara / Natural Structure Works
@@ -53,7 +54,7 @@ Model update in the direction of preference
 **Problems with RLHF:**
 
 | Problem | Description |
-|---|---|
+| --- | --- |
 | Subjectivity | Preference judgments vary by evaluator |
 | Opacity | Cannot specify which aspect was better or worse |
 | Irreproducibility | Same pair may be judged differently by different evaluators |
@@ -112,7 +113,7 @@ This signal is:
 HNS-SF uses five structural error types as its diagnostic vocabulary:
 
 | Error Type | Signal Meaning | Correction Direction |
-|---|---|---|
+| --- | --- | --- |
 | Layer Jump | Reasoning crossed layer boundaries without bridge logic | Add explicit transition between L-n and L-m |
 | Scope Drift | Individual claim expanded to societal scale without steps | Insert intermediate relational or institutional logic |
 | Unsupported Causality | Causal claim made without mechanism | Require stated mechanism for all A → B assertions |
@@ -127,7 +128,7 @@ Each error type provides a **directional correction signal** — not just
 ## 5. HNS-SF vs RLHF: Comparison
 
 | Dimension | RLHF | HNS-SF |
-|---|---|---|
+| --- | --- | --- |
 | Signal type | Scalar preference (A > B) | Named error + coordinate |
 | Evaluator requirement | Human preference judgment | HNS-36 structural diagnosis |
 | Reproducibility | Evaluator-dependent | Coordinate-based (reproducible) |
@@ -181,7 +182,7 @@ Layer Jump, Scope Drift, etc. reduced at source
 ## 7. Relationship to Existing Frameworks
 
 | Framework | Relationship to HNS-SF |
-|---|---|
+| --- | --- |
 | RLHF | HNS-SF complements RLHF by adding structural precision |
 | HITL (Human-in-the-Loop) | HNS-SF provides structured diagnostic records for human reviewers |
 | EVA (External Verification Architecture) | HNS-SF diagnostic logs integrate with EVA PROV-O records |
@@ -195,7 +196,7 @@ Layer Jump, Scope Drift, etc. reduced at source
 HNS-SF is grounded in the following preliminary empirical work:
 
 | Study | Finding |
-|---|---|
+| --- | --- |
 | HNS-36 PoC Internal Experiment (n=5, May 2026) | All 3 hypotheses supported; Unsupported Causality in 100% of cases |
 | Gemini Output Validation (n=3, May 2026) | Avg. structural score: 68 → 84 after HNS constraint (+16 pts) |
 | Human Blind Evaluation (n=3, May 2026) | HNS wins on structural clarity 3/3; loses on readability 1/3 |
@@ -239,7 +240,7 @@ consistently across education, healthcare, governance, and technical domains.
 ## 10. Limitations
 
 | Limitation | Implication |
-|---|---|
+| --- | --- |
 | Small empirical base | Current n=5-8; scale validation required |
 | Single evaluator | Independent replication needed |
 | Manual coordinate mapping | Automation required for scale |
@@ -251,7 +252,7 @@ consistently across education, healthcare, governance, and technical domains.
 ## 11. Development Roadmap
 
 | Phase | Deliverable |
-|---|---|
+| --- | --- |
 | Phase 1 (Complete) | HNS-36 PoC: demonstrate diagnostic capability |
 | Phase 2 (In progress) | Multi-Turn PoC: test preventive HNS-SF |
 | Phase 3 | 30-case validation dataset |
