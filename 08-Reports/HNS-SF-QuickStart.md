@@ -6,6 +6,15 @@ diagnosing *where* and *why* AI reasoning fails — more precisely than
 generic critique. This guide lets you run a diagnosis yourself using
 any AI system (Claude, ChatGPT, Gemini, etc.).
 
+**What HNS-SF returns** (example signal):
+> "Layer Jump detected: L3 Internal × C3 Interpretation → L6 Societal × C1 Existence
+> (bridge logic missing, severity: medium)"
+
+**Use cases:**
+- Model-specific structural error profiling
+- Preventive constraints for stable reasoning
+- Targeted fine-tuning using coordinate-based signals
+
 ---
 
 ## Step 1: Copy the Evaluator Prompt
