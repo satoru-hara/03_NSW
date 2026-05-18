@@ -93,7 +93,7 @@ structured signal, and fed back into the generation process as a correction.
 │     · Category Ambiguity?                           │
 │           ↓                                         │
 │   [Named Error + Coordinate Assignment]             │
-│     e.g. L3×C3 → L6×C1, bridge logic missing       │
+│     e.g. L3×C3 → L6×C1, bridge logic missing        │
 │           ↓                                         │
 │   [HNS-SF Signal]                                   │
 │     · Named · Located · Explained                   │
@@ -101,7 +101,7 @@ structured signal, and fed back into the generation process as a correction.
 │           ↓                                         │
 │   [Targeted Model Correction]                       │
 │           ↓                                         │
-│   [Re-enters AI Generation Process]  ───────────┐  │
+│   [Re-enters AI Generation Process]   ───────────┐  │
 │                                                  │  │
 └──────────────────────────────────────────────────┘  │
          ↑                                            │
