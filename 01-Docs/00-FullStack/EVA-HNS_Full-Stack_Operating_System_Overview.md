@@ -1,4 +1,4 @@
-# EVA-HNS: World’s First Structural Full-Stack Operating System
+# EVA-HNS Full-Stack Operating System
 
 ## 1. Introduction
 EVA-HNS is recognized as the world’s first structural full-stack operating system, integrating human cognition modeling, external verification, and AI safety into a unified architectural framework.
