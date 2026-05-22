@@ -1,3 +1,6 @@
+File name:
+HNS-Structural-AI-Hallucination-Prevention-v1.0.md
+
 # HNS Structural AI Hallucination Prevention
 
 ## A Structural Framework for Reducing Conceptual Drift in AI Reasoning
@@ -82,6 +85,7 @@ HNS distinguishes between two major forms of hallucination.
 
 ASCII table:
 
+```text
 +--------------------------+--------------------------------------------------+
 | Type                     | Description                                      |
 +--------------------------+--------------------------------------------------+
@@ -89,6 +93,7 @@ ASCII table:
 | Structural Hallucination | AI places meaning, causality, intent, or scope   |
 |                          | in the wrong structural position.                |
 +--------------------------+--------------------------------------------------+
+```
 
 A fact hallucination can often be detected by checking external data.
 
@@ -97,12 +102,15 @@ A structural hallucination is harder to detect because the output may sound reas
 Example:
 
 Question:
+
 Why do people feel exhausted by digital interfaces even when they enjoy using them?
 
 Surface-level answer:
+
 Because dopamine keeps the brain aroused and drains energy.
 
 Possible structural problem:
+
 A biological mechanism is used to explain psychological exhaustion without an explicit bridge between physical, cognitive, and intentional layers.
 
 The problem is not only factual accuracy.
@@ -139,11 +147,13 @@ HNS-36 is the foundational structural coordinate system of Human Natural Structu
 
 It is formed by the intersection of:
 
+```text
 Six Human Natural Layers
 x
 Six Abstract Cognitive Categories
 =
 36 structural coordinates
+```
 
 The purpose of HNS-36 is to provide a stable coordinate system for positioning human phenomena, AI reasoning, behavior, meaning, and values.
 
@@ -202,10 +212,10 @@ Biological arousal directly explains social distrust.
 
 Valid example:
 
-Biological arousal affects internal state.
-Internal state influences interpretation.
-Interpretation shapes relational trust.
-Relational trust contributes to social distrust.
+Biological arousal affects internal state.  
+Internal state influences interpretation.  
+Interpretation shapes relational trust.  
+Relational trust contributes to social distrust.  
 
 The difference is structural bridging.
 
@@ -245,6 +255,7 @@ HNS Structural Feedback can evaluate AI outputs using structural error categorie
 
 ASCII table:
 
+```text
 +-------------------------+--------------------------------------------------+
 | Error Type              | Meaning                                          |
 +-------------------------+--------------------------------------------------+
@@ -256,6 +267,7 @@ ASCII table:
 |                         | evaluation, or mechanism.                        |
 | Conceptual Drift        | Meaning shifts across turns.                     |
 +-------------------------+--------------------------------------------------+
+```
 
 These error types are especially important because many AI hallucinations are not obvious falsehoods.
 
@@ -318,6 +330,7 @@ It can be applied before, during, or after AI response generation.
 
 Simplified process:
 
+```text
 Input
   |
   v
@@ -334,6 +347,7 @@ Generation of structurally stable response
   |
   v
 External verification through EVA
+```
 
 HNS Structural Feedback does not make the AI omniscient.
 
@@ -446,6 +460,7 @@ SOHU, Structural OS for Human Understanding, can be understood as the OS-level a
 
 In this relationship:
 
+```text
 HNS
 =
 structural coordinate system / kernel
@@ -457,6 +472,7 @@ OS-level architecture for human understanding
 EVA
 =
 external verification and audit layer
+```
 
 HNS Structural AI Hallucination Prevention is one application of this architecture.
 
@@ -478,11 +494,11 @@ Within this full-stack architecture, hallucination prevention is not only an out
 
 It becomes a structural function of the entire system.
 
-HNS defines the coordinate boundaries.
-SOHU processes human understanding.
-EVA verifies structural reasoning.
-ECS supports safe control.
-LCS governs lifecycle-level operation.
+HNS defines the coordinate boundaries.  
+SOHU processes human understanding.  
+EVA verifies structural reasoning.  
+ECS supports safe control.  
+LCS governs lifecycle-level operation.  
 
 This is why HNS hallucination prevention is architectural rather than merely behavioral.
 
