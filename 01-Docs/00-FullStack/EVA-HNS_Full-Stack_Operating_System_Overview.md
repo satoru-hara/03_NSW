@@ -42,7 +42,7 @@ Together, these layers form a multi-resolution structural OS for human cognition
 ## 4. Functional Components
 EVA-HNS integrates four major OS-level subsystems:
 
-### 4.1 EVA — External Verification OS
+### 4.1 EVA — External Verification Architecture
 - Ensures AI reasoning is interpretable and auditable
 - Provides structural verification independent of model internals
 - Supports regulatory compliance for high-risk AI systems
