@@ -1,6 +1,3 @@
-File name:
-HNS-Structural-AI-Hallucination-Prevention-v1.0.md
-
 # HNS Structural AI Hallucination Prevention
 
 ## A Structural Framework for Reducing Conceptual Drift in AI Reasoning
