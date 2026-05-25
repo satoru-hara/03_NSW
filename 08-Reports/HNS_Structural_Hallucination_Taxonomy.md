@@ -43,6 +43,8 @@ A blinded comparative experiment was conducted using Claude (Anthropic) across 5
 
 In this experiment, both response generation and evaluation were performed by the same model, meaning the evaluation was not independent. Additionally, whether the observed improvements in the HNS condition reflect the HNS framework specifically or the general effect of structured prompting cannot be determined from this experiment alone. Independent replication by human evaluators is the necessary next step.
 
+The error patterns observed may also partly reflect model-specific tendencies rather than universal LLM characteristics. Cross-model replication is needed to separate framework-level findings from model-specific behavior. The present results are therefore best understood as indicative of broader tendencies, not as a definitive characterization of LLMs in general.
+
 ---
 
 ## 4. Implications
