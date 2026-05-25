@@ -15,21 +15,21 @@ This report introduces the Structural Hallucination Taxonomy proposed by HNS, a 
 
 ## 2. The Five Structural Hallucination Types
 
-Five types formally defined in HNS‑PoC‑Package v1.0:
+Five types formally defined in HNS‑PoC‑Package v1.0, ordered by frequency of occurrence in the 50-Turn PoC:
 
-| Type | Definition |
-|------|------------|
-| **Layer Jump** | A response skips across meaning layers without an explicit bridge |
-| **Category Ambiguity** | Cognitive, emotional, and intentional categories become conflated |
-| **Metaphor Contamination** | Metaphorical or symbolic expressions distort the underlying structural coordinates |
-| **Scope Drift** | The response structurally departs from the user's intended scope |
-| **Unsupported Causality** | A causal claim is generated without a mechanism grounded in the layer hierarchy |
+| # | Type | Definition |
+|---|------|------------|
+| 1 | **Layer Jump** | A response skips across meaning layers without an explicit bridge |
+| 2 | **Category Ambiguity** | Cognitive, emotional, and intentional categories become conflated |
+| 3 | **Scope Drift** | The response structurally departs from the user's intended scope |
+| 4 | **Metaphor Contamination** | Metaphorical or symbolic expressions distort the underlying structural coordinates |
+| 5 | **Unsupported Causality** | A causal claim is generated without a mechanism grounded in the layer hierarchy |
 
 ---
 
 ## 3. Empirical Validation — 50‑Turn PoC (May 2026)
 
-A blinded comparative experiment was conducted using Claude (Anthropic) across 5 topics × 10 turns. All five error types were consistently detectable across all turns.
+A blinded comparative experiment was conducted using Claude (Anthropic) across 5 topics × 5 turns per condition (50 turns total). All five error types were consistently detectable across all turns.
 
 ### Results
 
@@ -38,6 +38,16 @@ A blinded comparative experiment was conducted using Claude (Anthropic) across 5
 | Structural Errors | 31 | 0 |
 | Intention Alignment (1–5) | 4.72 | 5.00 |
 | Structural Stability (1–5) | 3.52 | 5.00 |
+
+### Error Frequency by Type (Standard Condition)
+
+| # | Type | Occurrences |
+|---|------|-------------|
+| 1 | Layer Jump | 8 |
+| 2 | Category Ambiguity | 8 |
+| 3 | Scope Drift | 7 |
+| 4 | Metaphor Contamination | 7 |
+| 5 | Unsupported Causality | 4 |
 
 ### Interpretive Caveats
 
