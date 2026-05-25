@@ -13,7 +13,7 @@ This report introduces the Structural Hallucination Taxonomy proposed by HNS, a 
 
 ---
 
-## 2. The Five Structural Hallucination Types
+## 2. HNS Structural Hallucination Taxonomy
 
 Five types formally defined in HNS‑PoC‑Package v1.0, ordered by frequency of occurrence in the 50-Turn PoC:
 
