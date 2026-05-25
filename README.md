@@ -17,7 +17,7 @@ This repository shares the theory, design, and strategy of HNS in a progressive 
 
 ---
 
-## The Structural Misalignment HNS Solves
+## HNS Structural Hallucination Taxonomy
 
 Current AI systems treat language as probabilistic token sequences. As a result, they inevitably encounter the following **structural failure modes**:
 
