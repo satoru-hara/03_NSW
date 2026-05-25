@@ -21,13 +21,13 @@ This repository shares the theory, design, and strategy of HNS in a progressive 
 
 Current AI systems treat language as probabilistic token sequences. As a result, they inevitably encounter the following **structural failure modes**:
 
-| Type | Description |
-|------|-------------|
-| **Layer Jump** | A response skips across meaning layers without an explicit bridge |
-| **Category Ambiguity** | Cognitive, emotional, and intentional categories become conflated |
-| **Metaphor Contamination** | Metaphorical or symbolic expressions distort the underlying structural coordinates |
-| **Scope Drift** | The response structurally departs from the user's intended scope |
-| **Unsupported Causality** | A causal claim is generated without a mechanism grounded in the layer hierarchy |
+| # | Type | Description |
+|---|------|-------------|
+| 1 | **Layer Jump** | A response skips across meaning layers without an explicit bridge |
+| 2 | **Category Ambiguity** | Cognitive, emotional, and intentional categories become conflated |
+| 3 | **Scope Drift** | The response structurally departs from the user's intended scope |
+| 4 | **Metaphor Contamination** | Metaphorical or symbolic expressions distort the underlying structural coordinates |
+| 5 | **Unsupported Causality** | A causal claim is generated without a mechanism grounded in the layer hierarchy |
 
 HNS addresses these issues at the structural level.  
 → See [HNS Structural Hallucination Taxonomy](./08-Reports/HNS_Structural_Hallucination_Taxonomy.md) for formal definitions and validation results.
@@ -58,15 +58,15 @@ This external verification dramatically improves AI transparency, safety, and ex
 
 A framework for classifying AI coherence violations as deviations from human cognitive structure (HNS-36), beyond conventional semantic hallucination categories.
 
-**Five Types**
+**Five Types (ordered by frequency in 50-Turn PoC)**
 
-| Type | Description |
-|------|-------------|
-| **Layer Jump** | Skips meaning layers without an explicit bridge |
-| **Category Ambiguity** | Conflates cognitive, emotional, and intentional categories |
-| **Metaphor Contamination** | Metaphorical expressions distort structural coordinates |
-| **Scope Drift** | Departs from the user's intended structural scope |
-| **Unsupported Causality** | Causal claims without a layer-grounded mechanism |
+| # | Type | Description |
+|---|------|-------------|
+| 1 | **Layer Jump** | Skips meaning layers without an explicit bridge |
+| 2 | **Category Ambiguity** | Conflates cognitive, emotional, and intentional categories |
+| 3 | **Scope Drift** | Departs from the user's intended structural scope |
+| 4 | **Metaphor Contamination** | Metaphorical expressions distort structural coordinates |
+| 5 | **Unsupported Causality** | Causal claims without a layer-grounded mechanism |
 
 **Initial Validation (50-Turn PoC, May 2026)**  
 Structural errors: 31 → 0 under HNS constraint condition.  
@@ -87,7 +87,7 @@ HNS is designed with compatibility for future standardization under CEN/CENELEC 
 - **01-Docs** — Foundational concepts and definitions
   - **05-Implementations** — Python package (hns36) — structural error detector
 - **02-Papers** — Theoretical papers and reflections
-- **03-Books** — Complete HNS Series (11 volumes with ISBN)
+- **03-Books** — Complete HNS Series (19 volumes with ISBN)
 - **07-Strategy** — Strategic documents for HNS and EVA
 - **08-Reports** — PoC and implementation reports
 
