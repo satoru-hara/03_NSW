@@ -232,7 +232,7 @@ International AI standards and Human Natural Structure (HNS) are complementary �
                       ▼
 ┌──────────────────────────────────────────────────────────┐
 │                  HNS / EVA / ECS                         │
-│  HNS-36 → HNS-144 → HNS-864 → EVA → ECS                 │
+│  HNS-36 → HNS-144 → HNS-864 → EVA → ECS                  │
 └─────────────────────┬────────────────────────────────────┘
                       ▼
 ┌──────────────────────────────────────────────────────────┐
@@ -348,11 +348,11 @@ HNS Hierarchy
 └────────────────────┬────────────────────────────────┘
                      │ outputs only
                      ▼
-┌─────────────────────────────────────────────────────┐
-│          EVA — Sidecar Architecture                 │
-│  Verifiability · Transparency · Physical Immutability│
-│  JSON-LD Audit Records (PROV-O) — ISO/IEC 27002     │
-└─────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│          EVA — Sidecar Architecture                   │
+│  Verifiability · Transparency · Physical Immutability │
+│  JSON-LD Audit Records (PROV-O) — ISO/IEC 27002       │
+└───────────────────────────────────────────────────────┘
 ```
 
 ### 6.3 ECS — External Control System
@@ -754,26 +754,26 @@ Test processes SHALL follow ISO/IEC 29119-2:2021. Test documentation SHALL follo
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                     HNS Runtime Architecture                            │
 │                                                                         │
-│  ┌──────────────┐     ┌───────────────┐     ┌─────────────────────┐    │
-│  │  AI System   │────▶│  AI Output    │────▶│    EVA Sidecar      │    │
-│  │  (opaque)    │     │  (text/action)│     │  HNS-36 attribution │    │
-│  └──────────────┘     └───────────────┘     │  HNS-864 risk score │    │
-│                                             │  PROV-O JSON-LD log │    │
-│                                             └──────────┬──────────┘    │
-│                                                        │               │
-│                              ┌─────────────────────────▼──────────┐    │
-│                              │          ECS                        │    │
-│                              │  PASS ──▶ DELIVER                  │    │
-│                              │  FLAG ──▶ DELIVER_WITH_FLAG         │    │
-│                              │  HOLD ──▶ HOLD_FOR_REVIEW           │    │
-│                              │  FAIL ──▶ BLOCK                    │    │
-│                              └──────────────────┬─────────────────┘    │
-│                                                 ▼                      │
-│                              ┌──────────────────────────────────────┐  │
-│                              │  Human Oversight Operator            │  │
-│                              │  (EU AI Act Art. 14; CoE CETS 225    │  │
-│                              │   Art. 16; ISO/IEC 38507:2022)       │  │
-│                              └──────────────────────────────────────┘  │
+│  ┌──────────────┐     ┌───────────────┐     ┌─────────────────────┐     │
+│  │  AI System   │────▶│  AI Output    │────▶│    EVA Sidecar      │     │
+│  │  (opaque)    │     │  (text/action)│     │  HNS-36 attribution │     │
+│  └──────────────┘     └───────────────┘     │  HNS-864 risk score │     │
+│                                             │  PROV-O JSON-LD log │     │
+│                                             └──────────┬──────────┘     │
+│                                                        │                │
+│                              ┌─────────────────────────▼──────────┐     │
+│                              │          ECS                       │     │
+│                              │  PASS ──▶ DELIVER                  │     │
+│                              │  FLAG ──▶ DELIVER_WITH_FLAG        │     │
+│                              │  HOLD ──▶ HOLD_FOR_REVIEW          │     │
+│                              │  FAIL ──▶ BLOCK                    │     │
+│                              └──────────────────┬─────────────────┘     │
+│                                                 ▼                       │
+│                              ┌──────────────────────────────────────┐   │
+│                              │  Human Oversight Operator            │   │
+│                              │  (EU AI Act Art. 14; CoE CETS 225    │   │
+│                              │   Art. 16; ISO/IEC 38507:2022)       │   │
+│                              └──────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
