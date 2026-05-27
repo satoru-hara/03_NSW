@@ -119,16 +119,16 @@ The relationship between HNS and international standards is grounded in the full
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                    Origin Trilogy                        │
-│  (MAV Paper → HNS Implementation → Structural           │
+│  (MAV Paper → HNS Implementation → Structural            │
 │   Isomorphism)                                           │
-│  Human brain structure → Structural baseline (HNS-36)   │
+│  Human brain structure → Structural baseline (HNS-36)    │
 └─────────────────────┬────────────────────────────────────┘
                       │
                       ▼
 ┌──────────────────────────────────────────────────────────┐
 │                  HNS / EVA / ECS                         │
 │  AI output verification and control                      │
-│  (HNS-36 → HNS-144 → HNS-864 → EVA → ECS)              │
+│  (HNS-36 → HNS-144 → HNS-864 → EVA → ECS)                │
 └─────────────────────┬────────────────────────────────────┘
                       │
                       ▼
@@ -212,17 +212,17 @@ This means that every major requirement of every major AI standard currently lac
 ┌─────────────────────────────────────────────────────────────────────┐
 │                   THE STRUCTURAL GAP                                │
 │                                                                     │
-│  ┌─────────────────────────┐     ┌───────────────────────────────┐ │
+│  ┌──────────────────────────┐     ┌───────────────────────────────┐ │
 │  │  International Standards │     │  Technical Implementation     │ │
-│  │  (EU AI Act / ISO / NIST)│     │  (Who defines HOW?)          │ │
-│  │                         │     │                               │ │
+│  │  (EU AI Act / ISO / NIST)│     │  (Who defines HOW?)           │ │
+│  │                          │     │                               │ │
 │  │  WHAT AI must do:        │ ──▶ │  ??? (undefined by standards) │ │
 │  │  • Be transparent        │     │                               │ │
 │  │  • Log outputs           │     │  HNS fills this gap:          │ │
 │  │  • Human oversight       │ ──▶ │  • HNS-36 structural baseline │ │
 │  │  • Risk assessment       │     │  • EVA verification layer     │ │
 │  │  • Conformance testing   │     │  • ECS control system         │ │
-│  └─────────────────────────┘     └───────────────────────────────┘ │
+│  └──────────────────────────┘     └───────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -278,12 +278,12 @@ An independent structural verification layer operating alongside — but separat
 ┌─────────────────────────────────────────────────────┐
 │          EVA — Sidecar Architecture                 │
 │                                                     │
-│  ┌──────────────┐  ┌─────────────┐  ┌───────────┐  │
-│  │ Verifiability│  │Transparency │  │ Physical  │  │
-│  │ (HNS coord  │  │(independent │  │Immutability│  │
-│  │  attribution)│  │ monitoring) │  │(hardware  │  │
-│  └──────────────┘  └─────────────┘  │ anchor)   │  │
-│                                     └───────────┘  │
+│  ┌──────────────┐  ┌─────────────┐  ┌────────────┐  │
+│  │ Verifiability│  │Transparency │  │ Physical   │  │
+│  │ (HNS coord   │  │(independent │  │Immutability│  │
+│  │  attribution)│  │ monitoring) │  │(hardware   │  │
+│  └──────────────┘  └─────────────┘  │ anchor)    │  │
+│                                     └────────────┘  │
 │         JSON-LD Audit Records (PROV-O)              │
 └─────────────────────────────────────────────────────┘
 ```
@@ -293,14 +293,14 @@ An independent structural verification layer operating alongside — but separat
 The executive control layer implementing human oversight requirements:
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                ECS Control Layer                         │
-│                                                          │
+┌───────────────────────────────────────────────────────────┐
+│                ECS Control Layer                          │
+│                                                           │
 │  Output control ──────── blocks/modifies violating outputs│
 │  Action constraints ───── limits agentic AI action space  │
 │  Risk boundary enforcement ── triggers at risk thresholds │
 │  Emergency override ──────── hardware-level intervention  │
-└──────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────────┘
 ```
 
 ### 6.4 HumanOS — Integration Meta-Architecture
@@ -312,18 +312,18 @@ The integration layer coordinating HNS, EVA, and ECS into a unified system-level
 │                        HumanOS                                   │
 │         (Integration Meta-Architecture)                          │
 │                                                                  │
-│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐  │
-│   │  HNS-36  │───▶│ HNS-144  │───▶│ HNS-864  │───▶│   EVA    │  │
-│   │(baseline)│    │(verify)  │    │(risk)    │    │(audit)   │  │
-│   └──────────┘    └──────────┘    └──────────┘    └────┬─────┘  │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐   │
+│   │  HNS-36  │───▶│ HNS-144  │───▶│ HNS-864  │───▶│   EVA    │   │
+│   │(baseline)│    │(verify)  │    │(risk)    │    │(audit)   │   │
+│   └──────────┘    └──────────┘    └──────────┘    └────┬─────┘   │
 │                                                         │        │
 │   ┌──────────────────────────────────────────────────────────┐   │
-│   │                    ECS                                    │   │
+│   │                    ECS                                   │   │
 │   │            (Control & Enforcement)                       │   │
 │   └──────────────────────────────────────────────────────────┘   │
 │                                                                  │
 │   ┌──────────────────────────────────────────────────────────┐   │
-│   │              Social Meta Structure (SMS)                  │   │
+│   │              Social Meta Structure (SMS)                 │   │
 │   │     (Societal / Institutional / Civilisational)          │   │
 │   └──────────────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────────────┘
@@ -635,27 +635,27 @@ The following table maps EU AI Act Annex III high-risk AI use cases to the relev
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                     HNS Runtime Architecture                            │
 │                                                                         │
-│  ┌──────────────┐     ┌───────────────┐     ┌─────────────────────┐    │
-│  │  AI System   │────▶│  AI Output    │────▶│    EVA Sidecar      │    │
-│  │  (opaque)    │     │  (text/action)│     │                     │    │
-│  └──────────────┘     └───────────────┘     │  HNS-36 attribution │    │
-│                                             │  HNS-144 boundary   │    │
-│                                             │  HNS-864 risk score │    │
-│                                             │  PROV-O JSON-LD log │    │
-│                                             └──────────┬──────────┘    │
-│                                                        │               │
-│                              ┌─────────────────────────▼──────────┐    │
-│                              │          ECS                        │    │
-│                              │  PASS ──▶ Output delivered         │    │
-│                              │  FAIL ──▶ Output blocked / flagged │    │
-│                              │  RISK ──▶ Human oversight alerted  │    │
-│                              └──────────────────┬─────────────────┘    │
-│                                                 │                      │
-│                                                 ▼                      │
-│                              ┌──────────────────────────────────────┐  │
-│                              │  Human Oversight Operator            │  │
-│                              │  (EU AI Act Art. 14 requirement)     │  │
-│                              └──────────────────────────────────────┘  │
+│  ┌──────────────┐     ┌───────────────┐     ┌─────────────────────┐     │
+│  │  AI System   │────▶│  AI Output    │────▶│    EVA Sidecar      │     │
+│  │  (opaque)    │     │  (text/action)│     │                     │     │
+│  └──────────────┘     └───────────────┘     │  HNS-36 attribution │     │
+│                                             │  HNS-144 boundary   │     │
+│                                             │  HNS-864 risk score │     │
+│                                             │  PROV-O JSON-LD log │     │
+│                                             └──────────┬──────────┘     │
+│                                                        │                │
+│                              ┌─────────────────────────▼──────────┐     │
+│                              │          ECS                       │     │
+│                              │  PASS ──▶ Output delivered         │     │
+│                              │  FAIL ──▶ Output blocked / flagged │     │
+│                              │  RISK ──▶ Human oversight alerted  │     │
+│                              └──────────────────┬─────────────────┘     │
+│                                                 │                       │
+│                                                 ▼                       │
+│                              ┌──────────────────────────────────────┐   │
+│                              │  Human Oversight Operator            │   │
+│                              │  (EU AI Act Art. 14 requirement)     │   │
+│                              └──────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
