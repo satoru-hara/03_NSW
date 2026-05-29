@@ -1,4 +1,4 @@
-# Relationship Between International AI Standards and HNS
+# HNS International AI-Standards Framework
 
 ## Overview
 
