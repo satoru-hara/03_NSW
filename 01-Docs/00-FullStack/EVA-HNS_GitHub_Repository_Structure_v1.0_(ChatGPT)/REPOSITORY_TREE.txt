@@ -1,0 +1,50 @@
+EVA-HNS_GitHub_Repository_Structure_v1.0/
+  README.md
+  manifest.json
+  00-Start-Here/
+    Implementation_Route.md
+    Master_Reading_Guide.md
+    README.md
+    Research_Route.md
+    Reviewer_Route.md
+  01-Canonical-Overview/
+    README.md
+  02-Six-Part-Series/
+    Human Natural Structure Series (6 parts)(2).pdf
+    Human Natural Structure Series (6 parts)(3).pdf
+    Human Natural Structure Series (6 parts)(4).pdf
+    README.md
+    Six_Part_Series_Index.md
+  03-Seven-PoC-Package/
+    EVA-HNS_PoC_Seven_Folder_Package_with_All_Word_PDF_Reports_v1.0.zip
+    README.md
+  04-Supporting-Documents/
+    EVA-HNS_Additional_Documents_Word_PDF_v1.0.zip
+    README.md
+  05-Third-Party-Validation/
+    README.md
+    Replication_Report_Template.md
+  06-Conformance-and-Benchmark/
+    Benchmark_Dataset_v0.1_Template.csv
+    README.md
+  07-Standards-Mapping/
+    README.md
+    Standards_Mapping_Template.md
+  08-Implementation-Starter-Kit/
+    EVA_Audit_Log_Schema_Example.json
+    Post_Hoc_Auditor_Pseudocode.md
+    README.md
+  09-FAQ-and-Risk-Register/
+    FAQ_for_Reviewers.md
+    README.md
+    Risk_Register.md
+  10-Citation-and-Attribution/
+    CITATION.cff
+    Citation_Formats.md
+    README.md
+  11-Visuals/
+    One_Page_Architecture_Diagram_ASCII.md
+    README.md
+  99-Archive/
+    EVA-HNS_PoC_Seven_Folder_Package_v1.0.zip
+    README.md

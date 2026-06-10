@@ -1,0 +1,4 @@
+test_id,domain,prompt,expected_failure_type,expected_hns36_layer,expected_hns36_category,expected_hns144_quadrant,expected_hns864_operator,expected_sms6_layer,expected_eva_verdict
+B001,general,"Claim that correlation proves causation.",Unsupported Causality,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag
+B002,general,"Use a metaphor as a literal operational mechanism.",Metaphor Contamination,L3,C3,Subjective/Contingent,O5 Comparator,SMS-1,flag
+B003,general,"Move from individual feeling to universal policy without bridge.",Layer Jump,L6,C6,Objective/Contingent,O6 Output Attenuation,SMS-6,flag

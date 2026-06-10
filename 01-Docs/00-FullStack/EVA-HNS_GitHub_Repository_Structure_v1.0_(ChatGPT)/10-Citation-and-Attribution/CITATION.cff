@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "EVA-HNS / Human Natural Structure Repository"
+message: "If you use this repository, please cite it as below."
+type: software
+authors:
+  - family-names: Hara
+    given-names: Satoru
+    affiliation: Natural Structure Works
+year: 2026
+abstract: "A structural full-stack framework for human understanding, AI safety, external verification, auditability, and conformance discussion."
+keywords:
+  - Human Natural Structure
+  - HNS
+  - EVA
+  - External Verification Architecture
+  - AI Safety
+  - Auditability
+  - Conformance
+license: "Author-controlled research publication"

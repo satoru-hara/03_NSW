@@ -1,0 +1,29 @@
+{
+  "package": "EVA-HNS_GitHub_Repository_Structure_v1.0",
+  "author": "Satoru Hara / Natural Structure Works (NSW)",
+  "status": "GitHub organization package / author-led research publication",
+  "created": "2026-06-10",
+  "folders": [
+    "00-Start-Here",
+    "01-Canonical-Overview",
+    "02-Six-Part-Series",
+    "03-Seven-PoC-Package",
+    "04-Supporting-Documents",
+    "05-Third-Party-Validation",
+    "06-Conformance-and-Benchmark",
+    "07-Standards-Mapping",
+    "08-Implementation-Starter-Kit",
+    "09-FAQ-and-Risk-Register",
+    "10-Citation-and-Attribution",
+    "11-Visuals",
+    "99-Archive"
+  ],
+  "copied_existing_artifacts": [
+    "03-Seven-PoC-Package/EVA-HNS_PoC_Seven_Folder_Package_with_All_Word_PDF_Reports_v1.0.zip",
+    "99-Archive/EVA-HNS_PoC_Seven_Folder_Package_v1.0.zip",
+    "04-Supporting-Documents/EVA-HNS_Additional_Documents_Word_PDF_v1.0.zip",
+    "02-Six-Part-Series/Human Natural Structure Series (6 parts)(4).pdf",
+    "02-Six-Part-Series/Human Natural Structure Series (6 parts)(3).pdf",
+    "02-Six-Part-Series/Human Natural Structure Series (6 parts)(2).pdf"
+  ]
+}
