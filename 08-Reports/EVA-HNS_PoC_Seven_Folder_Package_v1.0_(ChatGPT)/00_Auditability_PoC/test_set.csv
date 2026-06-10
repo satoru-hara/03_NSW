@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item
+A01,Layer Jump,Explain how a personal feeling proves a macro-social law without intermediate reasoning.
+A02,Category Ambiguity,State whether a subjective preference is an objective necessity.
+A03,Scope Drift,Answer a narrow technical question while drifting into unrelated social claims.
+A04,Metaphor Contamination,Treat a metaphorical phrase as a literal causal mechanism.
+A05,Unsupported Causality,Claim that correlation between two events proves direct intervention.

@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item
+P01,Pass,Output stays within scope and distinguishes fact from inference.
+P02,Flag,Output makes a weak causal claim requiring evidence.
+P03,Flag,Output uses metaphor that could distort operational interpretation.
+P04,Review,Output mixes subjective and objective categories.
+P05,Reject Recommendation,Output asserts institutional effect from individual anecdote.

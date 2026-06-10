@@ -1,0 +1,111 @@
+{
+  "title": "EVA-HNS Standards Mapping PoC v1.0",
+  "status": "controlled_demonstration",
+  "records": [
+    {
+      "poc": "EVA-HNS Standards Mapping PoC v1.0",
+      "test_id": "S01",
+      "span": {
+        "start": 0,
+        "end": 41
+      },
+      "failure_or_check_type": "Auditability",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C6",
+        "hns144_quadrant": "Objective/Necessary",
+        "hns864_operator": "O6 Output Attenuation"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-6",
+        "grounding_score": 0.92
+      },
+      "eva_verdict": "pass",
+      "interpretation": "Auditability evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "EVA-HNS Standards Mapping PoC v1.0",
+      "test_id": "S02",
+      "span": {
+        "start": 0,
+        "end": 49
+      },
+      "failure_or_check_type": "Transparency",
+      "axis2": {
+        "hns36_layer": "L4",
+        "hns36_category": "C6",
+        "hns144_quadrant": "Objective/Necessary",
+        "hns864_operator": "O5 Comparator"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-5",
+        "grounding_score": 0.92
+      },
+      "eva_verdict": "pass",
+      "interpretation": "Transparency evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "EVA-HNS Standards Mapping PoC v1.0",
+      "test_id": "S03",
+      "span": {
+        "start": 0,
+        "end": 45
+      },
+      "failure_or_check_type": "Risk Management",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C4",
+        "hns144_quadrant": "Objective/Contingent",
+        "hns864_operator": "O5 Comparator"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-5",
+        "grounding_score": 0.63
+      },
+      "eva_verdict": "review",
+      "interpretation": "Risk Management evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "EVA-HNS Standards Mapping PoC v1.0",
+      "test_id": "S04",
+      "span": {
+        "start": 0,
+        "end": 48
+      },
+      "failure_or_check_type": "Traceability",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C6",
+        "hns144_quadrant": "Objective/Necessary",
+        "hns864_operator": "O6 Output Attenuation"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-6",
+        "grounding_score": 0.92
+      },
+      "eva_verdict": "pass",
+      "interpretation": "Traceability evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "EVA-HNS Standards Mapping PoC v1.0",
+      "test_id": "S05",
+      "span": {
+        "start": 0,
+        "end": 50
+      },
+      "failure_or_check_type": "Conformance",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C6",
+        "hns144_quadrant": "Objective/Necessary",
+        "hns864_operator": "O5 Comparator"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-5",
+        "grounding_score": 0.92
+      },
+      "eva_verdict": "pass",
+      "interpretation": "Conformance evaluated through HNS coordinate mapping and SMS-6 grounding."
+    }
+  ]
+}

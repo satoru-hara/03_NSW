@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
+P01,Pass,Output stays within scope and distinguishes fact from inference.,L4,C2,Objective/Contingent,O1 Conditioning,SMS-2,pass,0.92
+P02,Flag,Output makes a weak causal claim requiring evidence.,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag,0.42
+P03,Flag,Output uses metaphor that could distort operational interpretation.,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag,0.42
+P04,Review,Output mixes subjective and objective categories.,L4,C4,Subjective/Contingent,O5 Comparator,SMS-5,review,0.63
+P05,Reject Recommendation,Output asserts institutional effect from individual anecdote.,L6,C6,Objective/Contingent,O6 Output Attenuation,SMS-6,reject_recommendation,0.18
