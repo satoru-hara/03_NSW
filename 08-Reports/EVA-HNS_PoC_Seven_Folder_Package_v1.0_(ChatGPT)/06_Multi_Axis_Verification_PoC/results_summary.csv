@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
-M01,Axis 1 Pass / Axis 2 Fail,Fluent output with unsupported causal leap.,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag,0.42
-M02,Axis 1 Pass / Axis 3 Fail,Fluent output drifting from operational context.,L5,C3,Objective/Contingent,O5 Comparator,SMS-2/SMS-3,flag,0.42
-M03,Axis 2 Pass / Axis 3 Review,Structurally clear but weakly grounded output.,L4,C5,Objective/Contingent,O2 Intervention,SMS-4,review,0.63
-M04,Axis 1-2-3 Pass,"Fluent, structurally coherent, and grounded output.",L4,C2,Objective/Contingent,O1 Conditioning,SMS-2,pass,0.92
-M05,Axis 2-3 Fail,Category ambiguity plus governance grounding failure.,L6,C4,Subjective/Necessary,O5 Comparator,SMS-5/SMS-6,flag,0.42

@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
-C01,Coordinate Assignment,HNS-36 coordinate assigned.,L3,C1,Objective/Contingent,O1 Conditioning,SMS-2,pass,0.92
-C02,Modal Quadrant Assignment,HNS-144 quadrant assigned.,L4,C4,Objective/Necessary,O5 Comparator,SMS-5,pass,0.92
-C03,Operator Identification,HNS-864 inference/control operator identified.,L6,C5,Objective/Contingent,O2 Intervention,SMS-4,pass,0.92
-C04,Grounding Check,SMS-6 grounding check performed.,L5,C3,Objective/Contingent,O5 Comparator,SMS-3,pass,0.92
-C05,Audit Record,EVA audit record emitted.,L6,C6,Objective/Necessary,O6 Output Attenuation,SMS-6,pass,0.92

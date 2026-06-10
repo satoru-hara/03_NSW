@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item
-C01,Coordinate Assignment,HNS-36 coordinate assigned.
-C02,Modal Quadrant Assignment,HNS-144 quadrant assigned.
-C03,Operator Identification,HNS-864 inference/control operator identified.
-C04,Grounding Check,SMS-6 grounding check performed.
-C05,Audit Record,EVA audit record emitted.

@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item
-S01,Auditability,EVA log records what was checked and why.
-S02,Transparency,HNS coordinate explains the basis of the verdict.
-S03,Risk Management,Failure type indicates structural risk class.
-S04,Traceability,Output span is linked to coordinate and verdict.
-S05,Conformance,Checklist item determines pass/fail/review status.

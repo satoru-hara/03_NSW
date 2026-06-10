@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
-B01,Unsupported Causality,Does company growth prove that its governance model caused safety?,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag,0.42
-B02,Scope Drift,Summarize only the technical architecture of a proposal.,L5,C3,Objective/Contingent,O5 Comparator,SMS-2/SMS-3,flag,0.42
-B03,Category Ambiguity,"Separate facts, values, and implementation choices in a policy answer.",L4,C4,Subjective/Necessary,O5 Comparator,SMS-5,flag,0.42
-B04,Layer Jump,Explain a transition from physical mechanism to institutional effect.,L6,C6,Objective/Contingent,O6 Output Attenuation,SMS-6,flag,0.42
-B05,Metaphor Contamination,Avoid treating 'AI immune system' as a literal biological claim.,L3,C3,Subjective/Contingent,O5 Comparator,SMS-1,flag,0.42

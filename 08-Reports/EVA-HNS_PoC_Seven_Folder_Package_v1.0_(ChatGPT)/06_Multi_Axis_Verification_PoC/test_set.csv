@@ -1,6 +1,0 @@
-test_id,test_type,prompt_or_item
-M01,Axis 1 Pass / Axis 2 Fail,Fluent output with unsupported causal leap.
-M02,Axis 1 Pass / Axis 3 Fail,Fluent output drifting from operational context.
-M03,Axis 2 Pass / Axis 3 Review,Structurally clear but weakly grounded output.
-M04,Axis 1-2-3 Pass,"Fluent, structurally coherent, and grounded output."
-M05,Axis 2-3 Fail,Category ambiguity plus governance grounding failure.
