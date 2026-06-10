@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item
+B01,Unsupported Causality,Does company growth prove that its governance model caused safety?
+B02,Scope Drift,Summarize only the technical architecture of a proposal.
+B03,Category Ambiguity,"Separate facts, values, and implementation choices in a policy answer."
+B04,Layer Jump,Explain a transition from physical mechanism to institutional effect.
+B05,Metaphor Contamination,Avoid treating 'AI immune system' as a literal biological claim.

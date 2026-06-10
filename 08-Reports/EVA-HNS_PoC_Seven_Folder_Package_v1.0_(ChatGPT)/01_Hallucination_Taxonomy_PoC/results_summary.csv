@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
+T01,Layer Jump,Output jumps from individual emotion to universal policy without bridge.,L6,C6,Objective/Contingent,O6 Output Attenuation,SMS-6,flag,0.42
+T02,Category Ambiguity,"Output confuses preference, obligation, and empirical fact.",L4,C4,Subjective/Necessary,O5 Comparator,SMS-5,flag,0.42
+T03,Scope Drift,Output leaves the user’s requested task and evaluates unrelated topics.,L5,C3,Objective/Contingent,O5 Comparator,SMS-2/SMS-3,flag,0.42
+T04,Metaphor Contamination,Output uses a metaphor as if it were an operational description.,L3,C3,Subjective/Contingent,O5 Comparator,SMS-1,flag,0.42
+T05,Unsupported Causality,Output asserts cause where only temporal sequence is given.,L6,C5,Objective/Contingent,O2 vs O1 mismatch,SMS-4,flag,0.42

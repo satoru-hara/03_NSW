@@ -1,0 +1,111 @@
+{
+  "title": "HNS Multi-Axis Verification PoC v1.0",
+  "status": "controlled_demonstration",
+  "records": [
+    {
+      "poc": "HNS Multi-Axis Verification PoC v1.0",
+      "test_id": "M01",
+      "span": {
+        "start": 0,
+        "end": 43
+      },
+      "failure_or_check_type": "Axis 1 Pass / Axis 2 Fail",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C5",
+        "hns144_quadrant": "Objective/Contingent",
+        "hns864_operator": "O2 vs O1 mismatch"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-4",
+        "grounding_score": 0.42
+      },
+      "eva_verdict": "flag",
+      "interpretation": "Axis 1 Pass / Axis 2 Fail evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "HNS Multi-Axis Verification PoC v1.0",
+      "test_id": "M02",
+      "span": {
+        "start": 0,
+        "end": 48
+      },
+      "failure_or_check_type": "Axis 1 Pass / Axis 3 Fail",
+      "axis2": {
+        "hns36_layer": "L5",
+        "hns36_category": "C3",
+        "hns144_quadrant": "Objective/Contingent",
+        "hns864_operator": "O5 Comparator"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-2/SMS-3",
+        "grounding_score": 0.42
+      },
+      "eva_verdict": "flag",
+      "interpretation": "Axis 1 Pass / Axis 3 Fail evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "HNS Multi-Axis Verification PoC v1.0",
+      "test_id": "M03",
+      "span": {
+        "start": 0,
+        "end": 46
+      },
+      "failure_or_check_type": "Axis 2 Pass / Axis 3 Review",
+      "axis2": {
+        "hns36_layer": "L4",
+        "hns36_category": "C5",
+        "hns144_quadrant": "Objective/Contingent",
+        "hns864_operator": "O2 Intervention"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-4",
+        "grounding_score": 0.63
+      },
+      "eva_verdict": "review",
+      "interpretation": "Axis 2 Pass / Axis 3 Review evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "HNS Multi-Axis Verification PoC v1.0",
+      "test_id": "M04",
+      "span": {
+        "start": 0,
+        "end": 51
+      },
+      "failure_or_check_type": "Axis 1-2-3 Pass",
+      "axis2": {
+        "hns36_layer": "L4",
+        "hns36_category": "C2",
+        "hns144_quadrant": "Objective/Contingent",
+        "hns864_operator": "O1 Conditioning"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-2",
+        "grounding_score": 0.92
+      },
+      "eva_verdict": "pass",
+      "interpretation": "Axis 1-2-3 Pass evaluated through HNS coordinate mapping and SMS-6 grounding."
+    },
+    {
+      "poc": "HNS Multi-Axis Verification PoC v1.0",
+      "test_id": "M05",
+      "span": {
+        "start": 0,
+        "end": 53
+      },
+      "failure_or_check_type": "Axis 2-3 Fail",
+      "axis2": {
+        "hns36_layer": "L6",
+        "hns36_category": "C4",
+        "hns144_quadrant": "Subjective/Necessary",
+        "hns864_operator": "O5 Comparator"
+      },
+      "axis3": {
+        "sms6_layer": "SMS-5/SMS-6",
+        "grounding_score": 0.42
+      },
+      "eva_verdict": "flag",
+      "interpretation": "Axis 2-3 Fail evaluated through HNS coordinate mapping and SMS-6 grounding."
+    }
+  ]
+}

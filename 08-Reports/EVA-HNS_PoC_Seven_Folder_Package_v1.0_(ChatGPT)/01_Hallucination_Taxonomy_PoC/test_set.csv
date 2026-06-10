@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item
+T01,Layer Jump,Output jumps from individual emotion to universal policy without bridge.
+T02,Category Ambiguity,"Output confuses preference, obligation, and empirical fact."
+T03,Scope Drift,Output leaves the user’s requested task and evaluates unrelated topics.
+T04,Metaphor Contamination,Output uses a metaphor as if it were an operational description.
+T05,Unsupported Causality,Output asserts cause where only temporal sequence is given.

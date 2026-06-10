@@ -1,0 +1,6 @@
+test_id,test_type,prompt_or_item,hns36_layer,hns36_category,hns144_quadrant,hns864_operator,sms6_layer,eva_verdict,grounding_score
+S01,Auditability,EVA log records what was checked and why.,L6,C6,Objective/Necessary,O6 Output Attenuation,SMS-6,pass,0.92
+S02,Transparency,HNS coordinate explains the basis of the verdict.,L4,C6,Objective/Necessary,O5 Comparator,SMS-5,pass,0.92
+S03,Risk Management,Failure type indicates structural risk class.,L6,C4,Objective/Contingent,O5 Comparator,SMS-5,review,0.63
+S04,Traceability,Output span is linked to coordinate and verdict.,L6,C6,Objective/Necessary,O6 Output Attenuation,SMS-6,pass,0.92
+S05,Conformance,Checklist item determines pass/fail/review status.,L6,C6,Objective/Necessary,O5 Comparator,SMS-5,pass,0.92
