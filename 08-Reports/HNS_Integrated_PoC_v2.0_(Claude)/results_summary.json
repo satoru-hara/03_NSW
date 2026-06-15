@@ -1,0 +1,58 @@
+{
+  "n_cases": 15,
+  "arm_detection_counts": {
+    "baseline": 0,
+    "guardrail": 4,
+    "eva_hns": 15
+  },
+  "eva_correct_type_count": 15,
+  "eva_logged_count": 15,
+  "corrected_pass_count": 15,
+  "summary_matrix": {
+    "baseline": {
+      "detected": 0,
+      "undetected": 15
+    },
+    "guardrail": {
+      "detected": 4,
+      "unresolved": 11
+    },
+    "eva_hns": {
+      "detected": 15,
+      "logged": 15,
+      "correct_type": 15
+    }
+  },
+  "coordinate_scheme": {
+    "layers": {
+      "L1": "Physical/Substrate",
+      "L2": "Cellular/Informational",
+      "L3": "Cognitive/System1",
+      "L4": "Operational/System2",
+      "L5": "Micro-Social/Interaction",
+      "L6": "Macro-Social/Institutional"
+    },
+    "categories": {
+      "C1": "Continuant/Entity",
+      "C2": "Occurrent/Process",
+      "C3": "Relational/Boundary",
+      "C4": "Quality/State",
+      "C5": "Transformation/Operation",
+      "C6": "Meta/Schema"
+    },
+    "quadrants": {
+      "Q1": "Subjective/Contingent",
+      "Q2": "Subjective/Necessary",
+      "Q3": "Objective/Contingent",
+      "Q4": "Objective/Necessary"
+    },
+    "sms": {
+      "SMS-1": "Somatic",
+      "SMS-2": "Protocol",
+      "SMS-3": "Organizational",
+      "SMS-4": "Economic",
+      "SMS-5": "Governance",
+      "SMS-6": "Universal"
+    }
+  }
+}

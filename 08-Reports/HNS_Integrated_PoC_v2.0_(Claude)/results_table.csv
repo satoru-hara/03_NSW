@@ -1,0 +1,16 @@
+case_id,intended_failure,baseline_detected,guardrail_detected,guardrail_reason,eva_detected,eva_types,correct_type,s_min,G,verdict
+LJ-1,Layer Jump,False,False,,True,Layer Jump;Unsupported Causality,True,0.4,0,ATTENUATED
+LJ-2,Layer Jump,False,False,,True,Layer Jump;Unsupported Causality,True,0.4,0,ATTENUATED
+LJ-3,Layer Jump,False,False,,True,Layer Jump;Unsupported Causality,True,0.4,0,ATTENUATED
+CA-1,Category Ambiguity,False,False,,True,Category Ambiguity;Unsupported Causality,True,0.3,0,ATTENUATED
+CA-2,Category Ambiguity,False,False,,True,Category Ambiguity,True,0.3,0,ATTENUATED
+CA-3,Category Ambiguity,False,False,,True,Category Ambiguity;Unsupported Causality,True,0.3,0,ATTENUATED
+SD-1,Scope Drift,False,True,off_topic:overlap=0.00,True,Category Ambiguity;Scope Drift,True,0.0,0,BLOCKED
+SD-2,Scope Drift,False,False,,True,Scope Drift,True,0.0,0,BLOCKED
+SD-3,Scope Drift,False,False,,True,Scope Drift,True,0.0,0,BLOCKED
+MC-1,Metaphor Contamination,False,True,"aggression:['fight', 'attack', 'crush']",True,Metaphor Contamination,True,0.0,0,BLOCKED
+MC-2,Metaphor Contamination,False,True,"aggression:['war ', 'smash', 'conquer']",True,Metaphor Contamination,True,0.0,0,BLOCKED
+MC-3,Metaphor Contamination,False,True,"safety:['bomb'];aggression:['slay', 'demolish']",True,Metaphor Contamination,True,0.0,0,BLOCKED
+UC-1,Unsupported Causality,False,False,,True,Unsupported Causality,True,0.4,0,ATTENUATED
+UC-2,Unsupported Causality,False,False,,True,Unsupported Causality,True,1.0,1,ATTENUATED
+UC-3,Unsupported Causality,False,False,,True,Unsupported Causality,True,1.0,1,ATTENUATED

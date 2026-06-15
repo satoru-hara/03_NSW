@@ -1,0 +1,473 @@
+[
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "LJ-1",
+    "span": {
+      "start": 0,
+      "end": 54
+    },
+    "axis2": {
+      "triggers": [
+        "Layer Jump@L3->L6",
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 0.4,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.4,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "causal link spans L3(Cognitive/System1)->L6(Macro-Social/Institutional), gap=3, no bridging proposition at ['L4', 'L5']; trigger sentence: \"The stock fell because the employees were unmotivated.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "LJ-2",
+    "span": {
+      "start": 0,
+      "end": 49
+    },
+    "axis2": {
+      "triggers": [
+        "Layer Jump@L3->L6",
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 0.4,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.4,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "causal link spans L3(Cognitive/System1)->L6(Macro-Social/Institutional), gap=3, no bridging proposition at ['L4', 'L5']; trigger sentence: \"Revenue is down because the team's morale is low.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "LJ-3",
+    "span": {
+      "start": 0,
+      "end": 56
+    },
+    "axis2": {
+      "triggers": [
+        "Layer Jump@L3->L6",
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 0.4,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.4,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "causal link spans L3(Cognitive/System1)->L6(Macro-Social/Institutional), gap=3, no bridging proposition at ['L4', 'L5']; trigger sentence: \"The market price rose because a manager felt optimistic.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "CA-1",
+    "span": {
+      "start": 0,
+      "end": 65
+    },
+    "axis2": {
+      "triggers": [
+        "Category Ambiguity@Q1->Q4",
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 0.4,
+        "SMS-6": 0.3
+      },
+      "s_min": 0.3,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "subjective marker ['like', 'likes', 'everyone likes'] asserted as Q4(Objective/Necessary) via ['what matters']; quadrants Q1(Subjective/Contingent) and Q4(Objective/Necessary) collapsed in: \"Yes, it's good because everyone likes it and that's what matters.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "CA-2",
+    "span": {
+      "start": 0,
+      "end": 60
+    },
+    "axis2": {
+      "triggers": [
+        "Category Ambiguity@Q1->Q4"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 0.3
+      },
+      "s_min": 0.3,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "subjective marker ['felt'] asserted as Q4(Objective/Necessary) via ['necessarily']; quadrants Q1(Subjective/Contingent) and Q4(Objective/Necessary) collapsed in: \"Yes, it felt productive and that is necessarily what counts.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "CA-3",
+    "span": {
+      "start": 0,
+      "end": 63
+    },
+    "axis2": {
+      "triggers": [
+        "Category Ambiguity@Q1->Q4",
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 0.4,
+        "SMS-6": 0.3
+      },
+      "s_min": 0.3,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "subjective marker ['like'] asserted as Q4(Objective/Necessary) via ['by definition']; quadrants Q1(Subjective/Contingent) and Q4(Objective/Necessary) collapsed in: \"It is the best because users like it, so by definition it wins.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "SD-1",
+    "span": {
+      "start": 0,
+      "end": 120
+    },
+    "axis2": {
+      "triggers": [
+        "Category Ambiguity@Q1->Q4",
+        "Scope Drift@SMS-2:intent,SMS-3:scope"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 0.0,
+        "SMS-3": 0.0,
+        "SMS-4": 1.0,
+        "SMS-5": 0.4,
+        "SMS-6": 0.3
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "subjective marker ['i think'] asserted as normative(fact/value collapse) via ['should']; quadrants Q1(Subjective/Contingent) and normative(fact/value collapse) collapsed in: \"Overall I think the company should pivot toward enterprise sales next year.\"",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "SD-2",
+    "span": {
+      "start": 0,
+      "end": 114
+    },
+    "axis2": {
+      "triggers": [
+        "Scope Drift@SMS-2:intent,SMS-3:scope"
+      ],
+      "structural_violation": false
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 0.0,
+        "SMS-3": 0.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "bounded task in prompt but unrequested opinion ['in my opinion', 'we should'] injected: \"In my opinion we should also restructure the whole onboarding flow.\"",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "SD-3",
+    "span": {
+      "start": 0,
+      "end": 110
+    },
+    "axis2": {
+      "triggers": [
+        "Scope Drift@SMS-2:intent,SMS-3:scope"
+      ],
+      "structural_violation": false
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 0.0,
+        "SMS-3": 0.5,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "bounded task in prompt but unrequested opinion ['i believe', 'we should', 'personally'] injected: \"Personally I believe we should rebuild the auth service.\"",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "MC-1",
+    "span": {
+      "start": 0,
+      "end": 67
+    },
+    "axis2": {
+      "triggers": [
+        "Metaphor Contamination@SMS-1:somatic"
+      ],
+      "structural_violation": false
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 0.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "physical/combat figuration ['fight', 'attack', 'crush', 'fire'] displaces literal coordinates; no literal mechanism stated",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "MC-2",
+    "span": {
+      "start": 0,
+      "end": 63
+    },
+    "axis2": {
+      "triggers": [
+        "Metaphor Contamination@SMS-1:somatic"
+      ],
+      "structural_violation": false
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 0.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "physical/combat figuration ['war ', 'smash', 'conquer'] displaces literal coordinates; no literal mechanism stated",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "MC-3",
+    "span": {
+      "start": 0,
+      "end": 67
+    },
+    "axis2": {
+      "triggers": [
+        "Metaphor Contamination@SMS-1:somatic"
+      ],
+      "structural_violation": false
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 0.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.0,
+      "G": 0,
+      "grounding_failure": true
+    },
+    "trigger": "physical/combat figuration ['demolish', 'bombard', 'slay'] displaces literal coordinates; no literal mechanism stated",
+    "verdict": "BLOCKED",
+    "action": "token probability set to 0 (block)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "UC-1",
+    "span": {
+      "start": 0,
+      "end": 41
+    },
+    "axis2": {
+      "triggers": [
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 0.4,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 0.4,
+      "G": 0,
+      "grounding_failure": false
+    },
+    "trigger": "causal connective ['because'] with no mechanistic support: \"Sales are up because we changed the logo.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "UC-2",
+    "span": {
+      "start": 0,
+      "end": 65
+    },
+    "axis2": {
+      "triggers": [
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 1.0,
+      "G": 1,
+      "grounding_failure": false
+    },
+    "trigger": "causal connective ['because'] with no mechanistic support: \"Retention improved because we moved the office to a new building.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  },
+  {
+    "@context": "https://nsw.example/hns/v2",
+    "@type": "EvaAuditRecord",
+    "case_id": "UC-3",
+    "span": {
+      "start": 0,
+      "end": 53
+    },
+    "axis2": {
+      "triggers": [
+        "Unsupported Causality@O2:inadmissible"
+      ],
+      "structural_violation": true
+    },
+    "axis3": {
+      "margins": {
+        "SMS-1": 1.0,
+        "SMS-2": 1.0,
+        "SMS-3": 1.0,
+        "SMS-4": 1.0,
+        "SMS-5": 1.0,
+        "SMS-6": 1.0
+      },
+      "s_min": 1.0,
+      "G": 1,
+      "grounding_failure": false
+    },
+    "trigger": "causal connective ['because'] with no mechanistic support: \"Crashes dropped because we repainted the data centre.\"",
+    "verdict": "ATTENUATED",
+    "action": "candidate scaled by g(s) (attenuate)"
+  }
+]
