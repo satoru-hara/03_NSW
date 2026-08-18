@@ -2,7 +2,7 @@
 
 **For 01_KFW: Kinetic Fitness Works (KFW), 02_NAW: Natural Architecture Works (NAW), and 03_NSW: Natural Structure Works (NSW)**
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Copyright:** © 2026 Satoru Hara
 
 ---
