@@ -1,5 +1,5 @@
 # 03_Natural Structure Works
-**The Operating Structure for Human Cognition — A Foundation for Alignment**  
+**“Human Natural Structure” is the Operating Structure for Human Cognition — A Foundation for Alignment**  
 **S. Hara | Natural Structure Works**
 
 ---
