@@ -1,4 +1,4 @@
-# Human Natural Structure (HNS)
+# 03_Natural Structure Works
 **The Operating Structure for Human Cognition — A Foundation for Alignment**  
 **S. Hara | Natural Structure Works**
 
