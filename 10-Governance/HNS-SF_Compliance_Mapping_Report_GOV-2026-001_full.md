@@ -7,12 +7,12 @@
 
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
-║            HNS-SF COMPLIANCE MAPPING REPORT                        ║
+║            HNS-SF COMPLIANCE MAPPING REPORT                          ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Document ID : HNS-GOV-2026-001                                     ║
-║  Version     : 1.0 (Final Edition)                                  ║
-║  Status      : Ready for Implementation                             ║
-║  Author      : Satoru Hara / Natural Structure Works                ║
+║  Document ID : HNS-GOV-2026-001                                      ║
+║  Version     : 1.0 (Final Edition)                                   ║
+║  Status      : Ready for Implementation                              ║
+║  Author      : Satoru Hara / Natural Structure Works                 ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -47,16 +47,16 @@ HNS-SF consists of a **four-stage structural feedback loop**:
 ┌──────────────────────────────────────────────────────────────┐
 │                    HNS-SF FEEDBACK LOOP                      │
 │                                                              │
-│   ┌─────────────────┐         ┌──────────────────────────┐  │
-│   │  1. Observation │────────▶│  2. Reflective           │  │
-│   │                 │         │     Evaluation (HNS-36)  │  │
-│   └─────────────────┘         └────────────┬─────────────┘  │
+│   ┌─────────────────┐         ┌──────────────────────────┐   │
+│   │  1. Observation │────────▶│  2. Reflective           │   │
+│   │                 │         │     Evaluation (HNS-36)  │   │
+│   └─────────────────┘         └────────────┬─────────────┘   │
 │            ▲                               │                 │
 │            │                               ▼                 │
-│   ┌─────────────────┐         ┌──────────────────────────┐  │
-│   │  4. Structural  │◀────────│  3. Adjustment           │  │
-│   │     Re-entry    │         │                          │  │
-│   └─────────────────┘         └──────────────────────────┘  │
+│   ┌─────────────────┐         ┌──────────────────────────┐   │
+│   │  4. Structural  │◀────────│  3. Adjustment           │   │
+│   │     Re-entry    │         │                          │   │
+│   └─────────────────┘         └──────────────────────────┘   │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -85,11 +85,11 @@ ISO/IEC 42001 defines requirements for an AI Management System across Clauses 4�
 ┌──────────────────────────────────────┬──────────────────────────────────┬────────────────────────────────────────────────────────┐
 │ HNS-SF Component                     │ ISO/IEC 42001 Clause             │ Correspondence                                         │
 ├──────────────────────────────────────┼──────────────────────────────────┼────────────────────────────────────────────────────────┤
-│ Observation                          │ 8.2 AI risk assessment           │ Continuous monitoring; detection of deviations          │
+│ Observation                          │ 8.2 AI risk assessment           │ Continuous monitoring; detection of deviations         │
 │                                      │                                  │ and anomalies in AI system behavior                    │
 ├──────────────────────────────────────┼──────────────────────────────────┼────────────────────────────────────────────────────────┤
 │ Reflective Evaluation (HNS-36)       │ 6.1 Address risks &              │ Structured risk evaluation using HNS cells;            │
-│                                      │ opportunities / 8.3 Risk         │ identification of structural reasoning errors           │
+│                                      │ opportunities / 8.3 Risk         │ identification of structural reasoning errors          │
 │                                      │ treatment                        │                                                        │
 ├──────────────────────────────────────┼──────────────────────────────────┼────────────────────────────────────────────────────────┤
 │ Adjustment                           │ 8.3 AI risk treatment /          │ Corrective actions aligned with structural             │
@@ -227,8 +227,8 @@ HNS-SF integrates with **EVA (External Verification Architecture)**, enabling:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│   SCALAR RLHF              →      COORDINATE-BASED ALIGNMENT       │
-│   (subjective, opaque)            (objective, transparent)         │
+│   SCALAR RLHF              →      COORDINATE-BASED ALIGNMENT        │
+│   (subjective, opaque)            (objective, transparent)          │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -242,12 +242,12 @@ It allows developers to declare not just that an AI system *is* safe, but that i
 
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
-║   HNS-SF provides the structural OS beneath modern AI              ║
-║   governance frameworks.                                           ║
+║   HNS-SF provides the structural OS beneath modern AI                ║
+║   governance frameworks.                                             ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  ✔ ISO/IEC 42001 compliance           ✔ Transparent reasoning      ║
-║  ✔ EU AI Act lifecycle alignment      ✔ Stable corrective loop     ║
-║  ✔ Machine-readable documentation     ✔ Third-party verification   ║
+║  ✔ ISO/IEC 42001 compliance           ✔ Transparent reasoning       ║
+║  ✔ EU AI Act lifecycle alignment      ✔ Stable corrective loop      ║
+║  ✔ Machine-readable documentation     ✔ Third-party verification    ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
