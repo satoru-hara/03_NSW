@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://naturalstructureworks.com/schemas/hns36-eva-verification.v1.json",
+  "title": "HNS-36 and EVA Verification Record",
+  "description": "Schema for machine-readable external verification records under Human Natural Structure (HNS-36) and External Verification Architecture (EVA).",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "timestamp_utc",
+    "hns_spec_level",
+    "target_model",
+    "verification_result",
+    "eva_audit"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "example": "1.0.0"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 4
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hns_spec_level": {
+      "type": "string",
+      "enum": [
+        "HNS-36",
+        "HNS-144",
+        "HNS-864"
+      ]
+    },
+    "target_model": {
+      "type": "object",
+      "required": [
+        "provider",
+        "model_id",
+        "mode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "unconstrained",
+            "hns_constrained"
+          ]
+        }
+      }
+    },
+    "coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "layer_index": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "layer_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category_index": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "category_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cell_id": {
+          "type": "string",
+          "pattern": "^C[1-6]-L[1-6]$"
+        }
+      }
+    },
+    "verification_result": {
+      "type": "object",
+      "required": [
+        "status",
+        "structural_error_count",
+        "violations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "WARN",
+            "FAIL"
+          ]
+        },
+        "structural_error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "taxonomy_code",
+              "severity",
+              "detail"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "taxonomy_code": {
+                "type": "string",
+                "enum": [
+                  "LAYER_JUMP",
+                  "CATEGORY_AMBIGUITY",
+                  "SCOPE_DRIFT",
+                  "METAPHOR_CONTAMINATION",
+                  "UNSUPPORTED_CAUSALITY"
+                ]
+              },
+              "severity": {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "medium",
+                  "high",
+                  "critical"
+                ]
+              },
+              "turn_index": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "detail": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "eva_audit": {
+      "type": "object",
+      "required": [
+        "non_invasive_blackbox",
+        "independent_monitor",
+        "hardware_root_profile"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "non_invasive_blackbox": {
+          "type": "boolean",
+          "const": true
+        },
+        "independent_monitor": {
+          "type": "boolean",
+          "const": true
+        },
+        "hardware_root_profile": {
+          "type": "string",
+          "enum": [
+            "SOFTWARE_SIMULATION",
+            "TPM",
+            "FPGA",
+            "ASIC"
+          ]
+        },
+        "payload_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  }
+}
