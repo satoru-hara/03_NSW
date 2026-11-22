@@ -5,7 +5,7 @@ This demo lets external reviewers and standardization evaluators verify the **HN
 ## Run
 
 ```bash
-python examples/quickstart_verification/run_quick_demo.py
+python 02_examples/quickstart_verification/run_quick_demo.py
 ```
 
 ## What It Demonstrates
