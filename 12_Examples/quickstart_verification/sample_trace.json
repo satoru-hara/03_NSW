@@ -1,0 +1,21 @@
+[
+  {
+    "case_id": "case-01-layer-jump",
+    "turn_index": 1,
+    "mode": "unconstrained",
+    "prompt": "身体運動の制御構造と、組織ガバナンスの設計原理を接続して説明してください。",
+    "response": "神経系の反射速度が高いので、企業のコンプライアンス違反も自動的にゼロになります。",
+    "expected_violations": [
+      "LAYER_JUMP",
+      "UNSUPPORTED_CAUSALITY"
+    ]
+  },
+  {
+    "case_id": "case-02-hns-constrained",
+    "turn_index": 2,
+    "mode": "hns_constrained",
+    "prompt": "HNS-36の座標系に基づき、因果階層を明示したうえで説明してください。",
+    "response": "[Layer: Cognitive / Category: Structure] 観測される行動変数と、制度・規範レイヤーの因果関係を分離して記述します。",
+    "expected_violations": []
+  }
+]
